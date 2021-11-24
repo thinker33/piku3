@@ -28,7 +28,7 @@ export default class Command extends BaseCommand {
 		else if (M.WAMessage.message?.videoMessage)
 			buffer = await this.client.downloadMediaMessage(M.WAMessage);
 		if (!buffer) return void M.reply(`Give me an image/gif to search, Baka!`);
-		const text  = ReadText(buffer,2,3)
+		const text = await ReadText(buffer, 2, 3)
 		await M.reply(`${text}`);
 	}
 }
