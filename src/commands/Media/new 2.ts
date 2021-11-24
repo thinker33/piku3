@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
         console.log(chitoge)
         const { data } = await axios.get(`https://api-xcoders.xyz/api/stalk/ig?username=${chitoge}&apikey=LJowCce5Pn`)
         if ((data as { error: string }).error) return void (await M.reply('Sorry, couldn\'t find'))
-        const buffer = await request.buffer(data.result[Math.floor(Math.random() * data.result.length)]).catch((e) => {
+        const buffer = await request.buffer(data.result.profile_url).catch((e) => {
             return void M.reply(e.message)
         })
         while (true) {
@@ -45,7 +45,7 @@ export default class Command extends BaseCommand {
                 break
             } catch (e) {
                 // console.log('Failed2')
-                M.reply(`âœ– An error occurred. Please try again later.`)
+                M.reply(`An error occurred. Please try again later.`)
                 console.log(`This error occurs when an image is sent via M.reply()\n Parent Catch Block : \n${e}`)
             }
         }
