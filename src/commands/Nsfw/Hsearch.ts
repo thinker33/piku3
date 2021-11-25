@@ -23,7 +23,7 @@ export default class Command extends BaseCommand {
         if (!joined) return void (await M.reply(`Give me a manga title, Baka!`))
         const chitoge = joined.trim()
         console.log(chitoge)
-        const { data } = await axios.get(`https://velgrynd.herokuapp.com/api/nHentaiSearch?query=${chitoge}`)
+        const { data } = await axios.get(`https://velgrynd.herokuapp.com/api/nhentai?code=${chitoge}`)
         if ( !(await this.client.getGroupData(M.from)).nsfw)
             return void M.reply(
                 `Sorry NSFW is not enabled`
