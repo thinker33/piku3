@@ -32,7 +32,7 @@ export default class Command extends BaseCommand {
  */
             .then((response) => {
                 // console.log(response);
-                const i = Math.floor(Math.random() * data.result[0].answer.length)
+                const i = Math.floor(Math.random() * response.data.result[0].answer.length)
                 const text = `🔎 *Question*: *${place}*\n\n_*Answer*_ : ${response.data.result[0].answer[i].answer}\n `
                 M.reply(text)
             })
