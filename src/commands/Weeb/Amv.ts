@@ -25,7 +25,7 @@ run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
             .then((response) => {
         const i = Math.floor(Math.random() * response.result.length)
                 const text = `${response.result[i].url}`
-               console.log(text)
+               console.log(text)}
        const { data } = await axios.get('http://zekais-api.herokuapp.com/ytmp4?url=${text}&apikey=CnXf9Ojs')
         const buffer = await request.buffer(data.thumb).catch((e) => {
             return void M.reply(e.message)
