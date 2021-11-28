@@ -19,15 +19,37 @@ export default class Command extends BaseCommand {
         })
     }
 
-    run = async (M: ISimplifiedMessage): Promise<void> => {
-      await axios
+run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
+          await axios
             .get(`http://zekais-api.herokuapp.com/yts?query=amv&apikey=CnXf9Ojs`)
-            .then((response) => {
-              const i = Math.floor(Math.random() * response.data.result.length)
+        const i = Math.floor(Math.random() * response.data.result.length)
                 const text = `${response.data.result[i].url}`
                console.log(text)
-        const { data } = await axios.get('http://zekais-api.herokuapp.com/ytmp4?url=${text}&apikey=CnXf9Ojs')
-       M.reply(await data.thumb.getBuffer(), MessageType.video) .catch((e) => 
-       M.reply(`✖ An error occurred, Reason:`)
-    )
-};
+       const { data } = await axios.get('http://zekais-api.herokuapp.com/ytmp4?url=${text}&apikey=CnXf9Ojs')
+        const buffer = await request.buffer(data.thumb).catch((e) => {
+            return void M.reply(e.message)
+        })
+        while (true) {
+            try {
+                M.reply(
+                    buffer || '🌟 An error occurred. Please try again later',
+                    MessageType.video,
+                    undefined,
+                    undefined,
+                    `💐 amv`,
+                    undefined
+                ).catch((e) => {
+                    console.log(`This error occurs when an image is sent via M.reply()\n Child Catch Block : \n${e}`)
+                    // console.log('Failed')
+                    M.reply(`🌟An error occurred. Please try again later.`)
+                })
+                break
+            } catch (e) {
+                // console.log('Failed2')
+                M.reply(` An error occurred. Please try again later.`)
+                console.log(`This error occurs when an image is sent via M.reply()\n Parent Catch Block : \n${e}`)
+            }
+        }
+        return void null
+    }
+}
