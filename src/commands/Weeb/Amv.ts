@@ -31,4 +31,4 @@ export default class Command extends BaseCommand {
        M.reply(`✖ An error occurred, Reason:`)
     )
     }
-}
+};
