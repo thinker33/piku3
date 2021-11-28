@@ -27,18 +27,8 @@ export default class Command extends BaseCommand {
                 const text = `${response.data.result[i].url}`
                console.log(text)
         const { data } = await axios.get('http://zekais-api.herokuapp.com/ytmp4?url=${text}&apikey=CnXf9Ojs')
-        const buffer = await request.buffer(data.thumb).catch((e) => {
-            return void M.reply(e.message)
-        })
-        while (true) {
-            try {
-                M.reply(
-                    buffer || '🌟 An error occurred. Please try again later',
-                    MessageType.video,
-                    undefined,
-                    undefined,
-                    `Amv`,
-                    undefined
-                
+       M.reply(await data.thumb.getBuffer(), MessageType.video) .catch((e) => 
+       M.reply(`✖ An error occurred, Reason:`)
+    )
     }
 }
