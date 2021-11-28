@@ -29,7 +29,7 @@ run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
                 console.log(text)
             })
        const { data } = await axios.get('http://zekais-api.herokuapp.com/ytmp4?url=${text}&apikey=CnXf9Ojs')
-        const buffer = await request.buffer(data.thumb).catch((e) => {
+        const buffer = await request.buffer(data.result).catch((e) => {
             return void M.reply(e.message)
         })
         while (true) {
