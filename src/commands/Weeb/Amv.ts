@@ -77,12 +77,6 @@ export default class Command extends BaseCommand {
                     M.reply(`🌟An error occurred. Please try again later.`)
                 })
                 break
-            } catch (e) {
-                // console.log('Failed2')
-                M.reply(`An error occurred. Please try again later.`)
-                console.log(`This error occurs when an image is sent via M.reply()\n Parent Catch Block : \n${e}`)
-            }
-        }
-        return void null
+            
     }
 }
