@@ -21,7 +21,7 @@ export default class Command extends BaseCommand {
 
 run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
         const { dat } =  await axios.get(`http://zekais-api.herokuapp.com/yts?query=amv&apikey=CnXf9Ojs`)
-        const i = Math.floor(Math.random() * data.result.length)
+        const i = Math.floor(Math.random() * dat.result.length)
                 const text = `${dat.result[i].url}`
                console.log(text)
        const { data } = await axios.get('http://zekais-api.herokuapp.com/ytmp4?url=${text}&apikey=CnXf9Ojs')
