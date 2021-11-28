@@ -30,5 +30,4 @@ export default class Command extends BaseCommand {
        M.reply(await data.thumb.getBuffer(), MessageType.video) .catch((e) => 
        M.reply(`✖ An error occurred, Reason:`)
     )
-    }
 };
