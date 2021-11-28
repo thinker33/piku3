@@ -20,11 +20,14 @@ export default class Command extends BaseCommand {
     }
 
 run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
-    const f = await axios
+    await axios
             .get(`http://zekais-api.herokuapp.com/yts?query=amv&apikey=CnXf9Ojs`)
-        const i = Math.floor(Math.random() * f.result.length)
-                const text = `${f.result[i].url}`
-               console.log(text)}
+            .then((response) => {
+                // console.log(response);
+                const i = Math.floor(Math.random() * response.data.result.length)
+                const text = `${response.data.result[i].url}`
+                console.log(text)
+            })
        const { data } = await axios.get('http://zekais-api.herokuapp.com/ytmp4?url=${text}&apikey=CnXf9Ojs')
         const buffer = await request.buffer(data.thumb).catch((e) => {
             return void M.reply(e.message)
