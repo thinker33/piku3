@@ -110,7 +110,7 @@ let image = await yuricanvas.rank({
             color: "white", 
             background: "https://upload.wikimedia.org/wikipedia/commons/7/71/Black.png"
         });
-M.reply( await request.buffer(image),
+M.reply(image,
         MessageType.image,
                     undefined,
                     undefined,
