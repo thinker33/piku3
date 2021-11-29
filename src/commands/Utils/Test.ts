@@ -96,7 +96,14 @@ run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
             level = 'Max × Infinity'
         }
         
-const pfp = await this.client.getProfilePicture(user);
+let pfp: string
+        try {
+            pfp = await this.client.getProfilePicture(user)
+        } catch (err) {
+            M.reply(`Profile Picture not Accessible of ${username}`)
+            pfp =
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWhshgkXh025auPy0RDEeY9j3B14jlZMqgaw&usqp=CAU'
+        }
 let discrim = `${rxp}`
 let image = await yuricanvas.rank({ 
             username,  
