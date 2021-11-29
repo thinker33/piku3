@@ -4,13 +4,12 @@ import BaseCommand from '../../lib/BaseCommand'
 import request from '../../lib/request'
 import WAClient from '../../lib/WAClient'
 import { IParsedArgs, ISimplifiedMessage } from "../../typings";
-const yuricanvas = require("yuri-canvas");
 
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'rahnk',
-            description: 'Displays user-rank 📜',
+            description: 'Displays user-rank ',
             category: 'general',
             usage: `${client.config.prefix}rahnk [tag/quote]`,
             aliases: ['rg', 'rok'],
@@ -29,25 +28,25 @@ run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
      const exp = (await this.client.getUser(user)).Xp
         let role
         if (exp < 500) {
-            role = '🌸 Citizen'
+            role = ' Citizen'
         } else if (exp < 1000) {
-            role = '🔎 Cleric'
+            role = ' Cleric'
         } else if (exp < 2000) {
-            role = '🔮 Wizard'
+            role = ' Wizard'
         } else if (exp < 5000) {
-            role = '♦️ Mage'
+            role = ' Mage'
         } else if (exp < 10000) {
-            role = '🎯 Noble'
+            role = ' Noble'
         } else if (exp < 25000) {
-            role = '✨ Elite'
+            role = ' Elite'
         } else if (exp < 50000) {
-            role = '🔶️ Ace'
+            role = ' Ace'
         } else if (exp < 75000) {
-            role = '🌀 Hero'
+            role = ' Hero'
         } else if (exp < 100000) {
-            role = '💎 Supreme'
+            role = ' Supreme'
         } else {
-            role = '❄️ Mystic'
+            role = ' Mystic'
         }
 
         let level
@@ -97,26 +96,13 @@ run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
         }
         
 const pfp = await this.client.getProfilePicture(user);
-let discrim = `${rxp}`
-let image = await yuricanvas.rank({ 
-            username,  
-            discrim,
-            level: level, 
-            rank: role, 
-            totalXP: rxp,
-            neededXP: rxp, 
-            currentXP: exp || 0, 
-            avatarURL: pfp, 
-            color: "white", 
-            background: "https://upload.wikimedia.org/wikipedia/commons/7/71/Black.png"
-        });
-M.reply( await request.buffer(image),
+M.reply( await request.buffer(`https://api.ichikaa.xyz/api/rankcard?name=${username}&currentxp=${exp || 0}&requiredxp=${rxp}&level=${level}&picurl=${pfp}&bgurl=https://i.ibb.co/4YBNyvP/images-76.jpg`),
         MessageType.image,
                     undefined,
                     undefined,
                     ``,
                     undefined
                 ).catch((reason: any) =>
-            M.reply(`✖ An error occurred. Please try again later. ${reason}`))
+            M.reply(` An error occurred. Please try again later. ${reason}`))
     }
 }
