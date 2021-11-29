@@ -4,6 +4,7 @@ import BaseCommand from '../../lib/BaseCommand'
 import request from '../../lib/request'
 import WAClient from '../../lib/WAClient'
 import { IParsedArgs, ISimplifiedMessage } from "../../typings";
+const yuricanvas = require("yuri-canvas");
 
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
@@ -96,7 +97,17 @@ run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
         }
         
 const pfp = await this.client.getProfilePicture(user);
-M.reply( await request.buffer(`https://api.ichikaa.xyz/api/rankcard?name=${username}&currentxp=${exp || 0}&requiredxp=${rxp}&level=${level}&picurl=${pfp}&bgurl=https://i.ibb.co/4YBNyvP/images-76.jpg`),
+let image = await yuricanvas.rank({ 
+            username,  
+            level: level, 
+            rank: role, 
+            neededXP: rxp, 
+            currentXP: exp || 0, 
+            avatarURL: pfp, 
+            color: "white", 
+            background: "https://upload.wikimedia.org/wikipedia/commons/7/71/Black.png"
+        });
+M.reply( await request.buffer(image),
         MessageType.image,
                     undefined,
                     undefined,
