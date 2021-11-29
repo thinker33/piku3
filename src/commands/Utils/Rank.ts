@@ -104,14 +104,14 @@ let pfp: string
             pfp =
                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWhshgkXh025auPy0RDEeY9j3B14jlZMqgaw&usqp=CAU'
         }
-let discrim = `${rxp}`
+let discrim = `${level}`
 let image = await yuricanvas.rank({ 
             username,  
             discrim,
-            level: level, 
+            level: rxp, 
             rank: role, 
-            totalXP: rxp,
-            neededXP: rxp, 
+            totalXP: level,
+            neededXP: level, 
             currentXP: exp || 0, 
             avatarURL: pfp, 
             color: "white", 
@@ -121,7 +121,7 @@ M.reply(image,
         MessageType.image,
                     undefined,
                     undefined,
-                    `🏮 *Username: ${username}*\n\n〽️ *Level: ${level}*\n\n⭐ *Exp: ${exp || 0}*\n\n💫 *Role: ${role}*\n`,
+                    `🏮 *Username: ${username}*\n\n〽️ *Level: ${rxp}*\n\n⭐ *Exp: ${exp || 0}*\n\n💫 *Role: ${role}*\n`,
                     undefined
                 ).catch((reason: any) =>
             M.reply(`✖ An error occurred. Please try again later. ${reason}`))
