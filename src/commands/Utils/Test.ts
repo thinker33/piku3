@@ -9,11 +9,11 @@ const yuricanvas = require("yuri-canvas");
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'rahnk',
+            command: 'rank',
             description: 'Displays user-rank 📜',
             category: 'general',
-            usage: `${client.config.prefix}rahnk [tag/quote]`,
-            aliases: ['rg', 'rok'],
+            usage: `${client.config.prefix}rank [tag/quote]`,
+            aliases: ['rk', 'rnk'],
             baseXp: 30
         })
     }
@@ -114,7 +114,7 @@ M.reply(image,
         MessageType.image,
                     undefined,
                     undefined,
-                    ``,
+                    `🏮 *Username: ${username}*\n\n〽️ *Level: ${level}*\n\n⭐ *Exp: ${exp || 0}*\n\n💫 *Role: ${role}*\n`,
                     undefined
                 ).catch((reason: any) =>
             M.reply(`✖ An error occurred. Please try again later. ${reason}`))
