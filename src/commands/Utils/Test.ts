@@ -97,7 +97,7 @@ run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
         }
         
 const pfp = await this.client.getProfilePicture(user);
-let discrim = ${rxp}
+let discrim = `${rxp}`
 let image = await yuricanvas.rank({ 
             username,  
             discrim,
