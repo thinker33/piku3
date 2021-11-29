@@ -1,5 +1,5 @@
 {
-  "name": "Chitoge",
+  "name": "Cara",
   "description": "A WhatsApp Bot With Rich Anime Features.",
   "keywords": [
       "bot",
@@ -11,8 +11,8 @@
       "whatsapp-sticker-bot",
       "whatsapp-botto"
   ],
-  "website": "https://github.com/ShinNouzen/Chitoge#readme",
-  "repository": "https://github.com/ShinNouzen/Chitoge.git",
+  "website": "https://github.com/iamherok/Cara_public#readme",
+  "repository": "https://github.com/iamherok/Cara_public.git",
   "logo": "https://wallpapermemory.com/uploads/711/chitoge-kirisaki-wallpaper-full-hd-323316.jpg",
   "success_url": "/",
   "env": {
