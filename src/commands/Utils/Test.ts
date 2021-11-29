@@ -101,6 +101,7 @@ let image = await yuricanvas.rank({
             username,  
             level: level, 
             rank: role, 
+            totalXP: rxp,
             neededXP: rxp, 
             currentXP: exp || 0, 
             avatarURL: pfp, 
