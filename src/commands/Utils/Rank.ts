@@ -104,7 +104,7 @@ let pfp: string
             pfp =
                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWhshgkXh025auPy0RDEeY9j3B14jlZMqgaw&usqp=CAU'
         }
-let discrim = `${level}`
+let discrim = `${rxp}`
 let image = await yuricanvas.rank({ 
             username,  
             discrim,
