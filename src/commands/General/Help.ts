@@ -43,7 +43,7 @@ export default class Command extends BaseCommand {
             //)
            const buttons = [ {buttonId: 'id1', buttonText: {displayText: '/mod'}, type: 1}, {buttonId: 'id2', buttonText: {displayText: '/cara'}, type: 1} ]
 const buttonMessage = { contentText: `${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`, footerText: 'Cara', buttons: buttons, headerType: 1 } 
-client.sendMessage(M.from, buttonMessage, MessageType.buttonsMessage)
+return void this.client.sendMessage(M.from, buttonMessage, MessageType.buttonsMessage)
         }
         const key = parsedArgs.joined.toLowerCase()
         const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
