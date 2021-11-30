@@ -26,7 +26,7 @@ run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
             const contact = this.client.getContact(user)
             username = contact.notify || contact.vname || contact.name || user.split('@')[0]
         }
-     const exp = (await this.client.getUser(user)).Xp
+     const exp = (await this.client.getUser(user)).Xp || 0 
         let role
         if (exp < 500) {
             role = '🌸 Citizen'
