@@ -2,6 +2,7 @@ import MessageHandler from '../../Handlers/MessageHandler'
 import BaseCommand from '../../lib/BaseCommand'
 import WAClient from '../../lib/WAClient'
 import { ICommand, IParsedArgs, ISimplifiedMessage } from '../../typings'
+const { MessageType} = require('@adiwajshing/baileys');
 
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
@@ -37,9 +38,12 @@ export default class Command extends BaseCommand {
                 ]
                     .map((command) => command.config?.command)
                     .join(', ')}\`\`\`\n\n`
-            return void M.reply(
-                `${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`
-            )
+            //return void M.reply(
+                //`${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`
+            //)
+           const buttons = [ {buttonId: 'id1', buttonText: {displayText: '/mod'}, type: 1}, {buttonId: 'id2', buttonText: {displayText: '/cara'}, type: 1} ]
+const buttonMessage = { contentText: `${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`, footerText: 'Cara', buttons: buttons, headerType: 1 } 
+client.sendMessage(M.from, buttonMessage, MessageType.buttonsMessage)
         }
         const key = parsedArgs.joined.toLowerCase()
         const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
