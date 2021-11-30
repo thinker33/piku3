@@ -38,14 +38,10 @@ export default class Command extends BaseCommand {
                 ]
                     .map((command) => command.config?.command)
                     .join(', ')}\`\`\`\n\n`
-            //return void M.reply(
-                //`${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`
-            //)
-const id = 'abcd@s.whatsapp.net' 
-           const buttons = ' {buttonId: 'id1', buttonText: {displayText: '/mod'}, type: 1}, {buttonId: 'id2', buttonText: {displayText: '/cara'}, type: 1} '
-const buttonMessage = { contentText: `${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`, footerText: 'Cara', buttons: buttons, headerType: 1 } 
-return void this.client.sendMessage(M.from, buttonMessage, MessageType.buttonsMessage)
-        };
+            return void M.reply(
+                `${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`
+            )
+        }
         const key = parsedArgs.joined.toLowerCase()
         const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
         if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
