@@ -25,11 +25,11 @@ export default class Command extends BaseCommand {
         const cara = joined.trim()
         console.log(cara)
         
-        const { data } = await axios.get(`https://api.xteam.xyz/sticker/stickerly?q=${cara}&APIKEY=80ff35f542ee4149`)
+        const { data } = await axios.get(`https://api.mojilala.com/v1/stickers/search?q=${cara}&api_key=dc6zaTOxFJmzC`)
         
 if ((data as { error: string }).error) return void (await M.reply('Sorry, couldn\'t find'))
-        const i = Math.floor(Math.random() * data.result.stickerlist.length)
-const b = `${data.result.stickerlist[i]}`
+        const i = Math.floor(Math.random() * data.data[0].id.images.fixed_height.length)
+const b = `${data.data[0].id.images.fixed_height[i].url}`
 
         const sticker: any = await new Sticker(b, {
 			pack: "sticker",
