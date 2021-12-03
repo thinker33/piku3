@@ -35,7 +35,7 @@ const b = `${data.results?.[Math.floor(Math.random() * data.results.length)]?.me
 			pack: "sticker",
 			author: "BY cara",
 			quality: 90,
-			type: "full",
+			type: "crop",
 			categories: ["🎊"],
 		});
 
