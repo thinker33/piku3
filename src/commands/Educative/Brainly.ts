@@ -23,7 +23,7 @@ export default class Command extends BaseCommand {
         const place = joined.trim()
         await axios
             .get(
-                `http://zekais-api.herokuapp.com/brainly?query=${place}&lang=us&apikey=CnXf9Ojs`
+                `https://api.zekais.com/brainly?query=${place}&lang=us&apikey=CnXf9Ojs`
             )
             /* Note
   If you want to add some response, we'd recommend you to explore the json itself which provided link returns.
