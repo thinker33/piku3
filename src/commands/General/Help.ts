@@ -36,7 +36,7 @@ export default class Command extends BaseCommand {
                 }
             }
             let text = `
-╭─「(づ￣ 3￣)づ」
+╭─「Please check Rules too by using *,rules*」
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
 │⋊ ɴᴀᴍᴇ: PIKU
 │⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
