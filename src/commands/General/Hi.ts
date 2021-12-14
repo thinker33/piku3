@@ -19,11 +19,11 @@ export default class Command extends BaseCommand {
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
 		const chitoge =
-			"https://tenor.com/Vh2b.gif";
+			"https://tenor.com/view/hello-kitty-sorry-gif-11231673";
 		return void this.client.sendMessage(
 			M.from,
 			{ url: chitoge },
-			MessageType.video/gif,
+			MessageType.video,
 			{
 				quoted: M.WAMessage,
 				mimetype: Mimetype.gif,
