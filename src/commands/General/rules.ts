@@ -21,11 +21,11 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         const chitoge =
-			"assets/sappletoast.gif";
+			"assets/sappletoast.mp4";
 		return void this.client.sendMessage(
 			M.from,
 			{ url: chitoge },
-                MessageType.gif,
+                MessageType.video,
                     undefined,
                     undefined,
                     `_*----⚠️[Rule]📋----*_\n\n📃Please Kindly follow the rules \n📢 use ,mods to know anything\n🔖  bot doesn't talk. So don't try
