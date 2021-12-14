@@ -18,9 +18,8 @@ export default class Command extends BaseCommand {
 	}
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
-		const n = 
-            './assets/hello-kitty.mp4'
-        ;
+		const chitoge =
+			"assets/hello-kitty.mp4";
 		return void this.client.sendMessage(
 			M.from,
 			{ url: chitoge },
