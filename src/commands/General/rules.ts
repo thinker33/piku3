@@ -20,9 +20,12 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-        // fetch result of https://tenor.com/view/sappletoast-gif-21862218
-        return void M.reply( await request.buffer('https://c.tenor.com/U_dtJlIKJYEAAAAd/sappletoast.gif'),
-        MessageType.gif,
+        const chitoge =
+			"assets/sappletoast.gif";
+		return void this.client.sendMessage(
+			M.from,
+			{ url: chitoge },
+                MessageType.gif,
                     undefined,
                     undefined,
                     `_*----⚠️[Rule]📋----*_\n\n📃Please Kindly follow the rules \n📢 use ,mods to know anything\n🔖  bot doesn't talk. So don't try
