@@ -21,7 +21,7 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         // fetch result of https://waifu.pics/api/sfw/waifu from the API using axios
-        return void M.reply( await request.buffer(`./assets/sappletoast.gif`),
+        return void M.reply( await request.buffer('https://i.pinimg.com/564x/96/eb/e1/96ebe1427aa8505cf56b110a620503a3.jpg'),
         MessageType.image,
                     undefined,
                     undefined,
