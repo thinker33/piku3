@@ -92,7 +92,7 @@ export default class MessageHandler {
 			);
 			if (!command)
 				return void M.reply(
-					`No such command, Baka! Have you never seen someone use the command *${this.client.config.prefix}help*.`
+					`No such command,use command from help list. *${this.client.config.prefix}help*.`
 				);
 			const user = await this.client.getUser(M.sender.jid);
 			if (user.ban) return void M.reply("You're Banned from using commands.");
@@ -106,7 +106,7 @@ export default class MessageHandler {
 					}`
 				);
 			if (!command.config?.dm && M.chat === "dm")
-				return void M.reply("This command can only be used in groups");
+				return void M.reply("This command can only be used in groups. Don't use command in bot's DM otherwise you can be block for bot's dm");
 			if (
 				command.config?.modsOnly &&
 				!this.client.config.mods?.includes(M.sender.jid)
