@@ -32,7 +32,7 @@ export default class Command extends BaseCommand {
                     undefined
                 )
 //(await M.reply('Sorry, couldn\'t find or got some errors'))
-        const buffer = await request.buffer(data.result.url).catch((e) => {
+        const buffer = await request.buffer(data.result.link[0].url).catch((e) => {
             return void M.reply(e.message)
         })
         while (true) {
