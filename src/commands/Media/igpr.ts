@@ -24,8 +24,15 @@ export default class Command extends BaseCommand {
         const chitoge = joined.trim()
         console.log(chitoge)
         const { data } = await axios.get(`https://api-xcoders.xyz/api/download/ig?url=${chitoge}&apikey=Zl0clXuAbx`)
-        if (data.result) return void (await M.reply('Sorry, couldn\'t find or got some errors'))
-        const buffer = await request.buffer(data.result.medias[0].url).catch((e) => {
+        if (data.result) return void M.reply( await request.buffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEIJBLGeoanLhbUyzTNXLXXRPUDjUuDKIS8g&usqp=CAU`),
+        MessageType.image,
+                    undefined,
+                    undefined,
+                    `*Sorry, couldn\'t find or got some errors*`,
+                    undefined
+                )
+//(await M.reply('Sorry, couldn\'t find or got some errors'))
+        const buffer = await request.buffer(data.result.url).catch((e) => {
             return void M.reply(e.message)
         })
         while (true) {
