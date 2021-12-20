@@ -14,7 +14,7 @@ export default class Command extends BaseCommand {
             description: `Get rules list`,
             aliases: ['rules'],
             category: 'general',
-            usage: `${client.config.prefix}rules`, 'botrule',
+            usage: `${client.config.prefix}rules`, '$botrule',
             baseXp: 50
         })
     }
