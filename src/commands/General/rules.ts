@@ -12,9 +12,9 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'rules',
             description: `Get rules list`,
-            aliases: ['rules', 'botrule'],
+            aliases: ['rules', 'guide'],
             category: 'general',
-            usage: `${client.config.prefix}rules`, 'botrule',
+            usage: `${client.config.prefix}rules`,
             baseXp: 500
         })
     }
