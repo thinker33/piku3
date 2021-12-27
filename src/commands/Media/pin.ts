@@ -18,37 +18,38 @@ export default class Command extends BaseCommand {
         })
     }
     // static count = 0
-    run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
-        
-        if (!joined) return void M.reply('Provide the keywords you wanna search, Baka!')
-        const chitoge = joined.trim()
-        console.log(chitoge)
-        const { data } = await axios.get(`https://api.ichikaa.xyz/api/pinterest?query=${chitoge}`)
+    run = async (
+		M: ISimplifiedMessage,
+		{ joined }: IParsedArgs
+	): Promise<void> => {
+		if (!joined)
+			return void (await M.reply(`Give me a term to search, Baka!`));
+		const chitoge: any = joined.trim().split("|");
+		const term: string = chitoge[0];
+		const amount: number = chitoge[1];
+		if (!amount)
+			return void M.reply(
+				`Give me the number , Baka!\n\nExample: *${this.client.config.prefix}pin tomioka|5*`
+			);
+		if (amount > 20)
+			return void M.reply(`Do you want me to spam in this group?`);
+   
+         const { data } = await axios.get(`https://api.ichikaa.xyz/api/pinterest?query=${term}&apikey=8NtSMQPG`)
         if ((data as { error: string }).error) return void (await M.reply('Sorry, couldn\'t find'))
         const buffer = await request.buffer(data.result[Math.floor(Math.random() * data.result.length)]).catch((e) => {
             return void M.reply(e.message)
         })
-        while (true) {
-            try {
-                M.reply(
-                    buffer || '🌟 An error occurred. Please try again later',
-                    MessageType.image,
-                    undefined,
-                    undefined,
-                    `💐 *Result: ${chitoge} has been found*\n`,
-                    undefined
-                ).catch((e) => {
-                    console.log(`This error occurs when an image is sent via M.reply()\n Child Catch Block : \n${e}`)
-                    // console.log('Failed')
-                    M.reply(`🌟An error occurred. Please try again later.`)
-                })
-                break
-            } catch (e) {
-                // console.log('Failed2')
-                M.reply(`âœ– An error occurred. Please try again later.`)
-                console.log(`This error occurs when an image is sent via M.reply()\n Parent Catch Block : \n${e}`)
-            }
-        }
-        return void null
-    }
+        for (let i = 0; i < amount; i++) {
+			const res = `*🌟 Here you go.*`;
+			this.client.sendMessage(
+				M.from,
+				{ url: data.result[Math.floor(Math.random() * data.result.length)] },
+				MessageType.image,
+				{
+					quoted: M.WAMessage,
+					caption: `${res}`,
+				}
+			);
+		}
+}
 }
