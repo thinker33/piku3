@@ -34,15 +34,17 @@ export default class Command extends BaseCommand {
             pfp =
                 'https://wallpaperaccess.com/full/5304840.png'
         }
-		return void this.client.sendMessage(
-			M.from,
-			{ url: chitoge },
-			MessageType.video,
-			{
-				quoted: M.WAMessage,
-				mimetype: Mimetype.gif,
-				caption: `happy birthday *${this.client.config.prefix}help* list if you want anything. \n`,
-			}
-		);
-	};
+        const exp = (await this.client.getUser(user)).Xp
+        let role: string;
+        await M.reply(
+            await request.buffer(
+                pfp ||
+                    'https://wallpaperaccess.com/full/5304840.png'
+            ),
+            MessageType.image,
+            undefined,
+            undefined,
+            `🏮 *Username: ${username}*\n\n🎗️ *WISHING YOU A VERY VERY HAPPY BIRTHDAY*`
+        )
+    }
 }
