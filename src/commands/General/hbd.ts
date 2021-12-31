@@ -87,7 +87,7 @@ export default class Command extends BaseCommand {
             MessageType.image,
             undefined,
             undefined,
-            `✨WISHING YOU A VERY VERY HAPPY BIRTHDAY 🎂🥂🍨✨${username}*\n\n🎗️ *About: $`
+            `✨ツ•wíshíng чσu α vєrч vєrч• 🎂🎂🎂ℋᎯℙℙᎽ ℬℐℛᏆℋⅅᎯᎽ🥂🍾🥳🥳🥳✨ @${username}*\n\n`
         )
     }
 }
