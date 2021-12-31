@@ -53,8 +53,10 @@ export default class Command extends BaseCommand {
 					role = "🌀 Hero";
 				} else if (exp < 100000) {
 					role = "💎 Supreme";
+				} else if (exp < 500000) {
+					role = "❄️ Mystic ";
 				} else {
-					role = "❄️ Mystic";
+					role = "Owner";
 				}
 
 				let level: number;
@@ -76,8 +78,10 @@ export default class Command extends BaseCommand {
 					level = 8;
 				} else if (exp < 100000) {
 					level = 9;
+				} else if (exp < 500000) {
+					level = 10(max);
 				} else {
-					level = 10;
+					level = *Crown 👑*;
 				}
         await M.reply(
             await request.buffer(
