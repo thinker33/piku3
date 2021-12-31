@@ -36,12 +36,13 @@ export default class Command extends BaseCommand {
                 }
             }
             let text = `
-╭─「😉Please 🌸check guide command too *,guide*」
+╭─「check guide command *,guide*」
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
 │⋊ ɴᴀᴍᴇ: PIKU
 │⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
 │⋊ ᴏᴡɴᴇʀ: <${this.client.config.prefix}mod>
-╰────────────┈平和                            \n\n`
+│⋊ ᴏᴡɴᴇʀ: if you wanna add bot ask to owner
+╰────────────                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
                 text += `${this.emojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}* ${this.emojis[keys.indexOf(key)]}\n\n• \`\`\`${categories[
