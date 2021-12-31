@@ -19,8 +19,21 @@ export default class Command extends BaseCommand {
 	}
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
-		const chitoge =
-			"assets/hello-kitty.mp4";
+        if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)
+        const user = M.mentioned[0] ? M.mentioned[0] : M.sender.jid
+        let username = user === M.sender.jid ? M.sender.username : ''
+        if (!username) {
+            const contact = this.client.getContact(user)
+            username = contact.notify || contact.vname || contact.name || user.split('@')[0]
+        }
+        let pfp: string
+        try {
+            pfp = await this.client.getProfilePicture(user)
+        } catch (err) {
+            M.reply(`Profile Picture not Accessible of ${username}`)
+            pfp =
+                'https://wallpaperaccess.com/full/5304840.png'
+        }
 		return void this.client.sendMessage(
 			M.from,
 			{ url: chitoge },
