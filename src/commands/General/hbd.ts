@@ -17,8 +17,6 @@ export default class Command extends BaseCommand {
 			baseXp: 10,
 		});
 	}
-
-
 	run = async (M: ISimplifiedMessage): Promise<void> => {
         if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)
         const user = M.mentioned[0] ? M.mentioned[0] : M.sender.jid
