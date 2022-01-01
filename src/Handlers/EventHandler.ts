@@ -43,6 +43,12 @@ export default class EventHandler {
                     contextInfo
                 }))
         }
+const groupData = await this.client.groupMetadata(event.jid);
+const members = groupData.participants.length
+if (members < 20) { 
+await this.client.sendMessage(event.jid, `Bye mfs. Your members are so low`, MessageType.text)
+await this.client.groupLeave(event.jid)
+}
         return void this.client.sendMessage(event.jid, text, MessageType.extendedText, { contextInfo })
     }
 }
