@@ -82,7 +82,7 @@ export default class Command extends BaseCommand {
         await M.reply(
             await request.buffer(
                 pfp ||
-                    'https://wallpaperaccess.com/full/5304840.png'
+                    'https://wallpaperaccess.com/birthday-phone'
             ),
             MessageType.image,
             undefined,
