@@ -77,7 +77,7 @@ export default class Command extends BaseCommand {
 				} else if (exp < 100000) {
 					level = 9;
 				} else if (exp < 500000) {
-					level = Maker;
+					level = 10;
 				}
         await M.reply(
             await request.buffer(
