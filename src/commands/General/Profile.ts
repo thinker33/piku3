@@ -53,8 +53,8 @@ export default class Command extends BaseCommand {
 					role = "🌀 Hero";
 				} else if (exp < 100000) {
 					role = "💎 Supreme";
-				} else if (exp < 500000) {
-					role = "🌟 owner";
+				} else {
+					role = "❄️ Mystic";
 				}
 
 				let level: number;
@@ -76,7 +76,7 @@ export default class Command extends BaseCommand {
 					level = 8;
 				} else if (exp < 100000) {
 					level = 9;
-				} else if (exp < 500000) {
+				} else {
 					level = 10;
 				}
         await M.reply(
