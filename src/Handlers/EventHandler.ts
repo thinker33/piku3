@@ -17,7 +17,6 @@ export default class EventHandler {
         const members = groupData.participants.length
         if (members < 3) { 
         await this.client.sendMessage(event.jid, `Bye. Your members are so low`, MessageType.text)
-        await this.client.groupLeave(event.jid)
     return void (await this.client.sendMessage(event.jid, `Bye`, MessageType.text))
 }
        
