@@ -55,7 +55,7 @@ export default class Command extends BaseCommand {
 					role = "💎 Supreme";
 				} else if (exp < 500000) {
 					role = "❄️ Mystic";
-				} else {
+				} else if (exp < 1000000) {
 					role = "Owner 🌟";
 				}
 
@@ -80,7 +80,7 @@ export default class Command extends BaseCommand {
 					level = 9;
 				} else if (exp < 500000) {
 					level = 10;
-				} else {
+				} else if (exp < 1000000) {
 					level = 11;
 				}
         await M.reply(
