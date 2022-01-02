@@ -14,10 +14,10 @@ export default class EventHandler {
             )} in ${chalk.cyanBright(group?.subject || 'Group')}`
         )
         const groupData = await this.client.groupMetadata(event.jid);
-        const members = groupData.participants.length
-        if (members < 3) { 
-        await this.client.sendMessage(event.jid, `Bye. Your members are so low`, MessageType.text)
-    return void (await this.client.sendMessage(event.jid, `Bye`, MessageType.text))
+const members = groupData.participants.length
+if (members < 3) { 
+await this.client.sendMessage(event.jid, `Bye. Your members are so low`, MessageType.text)
+await this.client.groupLeave(event.jid)
 }
        
         const data = await this.client.getGroupData(event.jid)
