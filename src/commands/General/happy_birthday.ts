@@ -9,8 +9,8 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
                         command: "hbd",
-                        aliases: ["happy birthday", "hhp"],
-			description: "Generally used to check if bot is Up",
+                        aliases: ["happy_birthday", "hhp"],
+			description: "use for birthday wish",
 			category: "general",
 			usage: `${client.config.prefix}hbd`,
 			baseXp: 10,
