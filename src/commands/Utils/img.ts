@@ -12,11 +12,22 @@ export default class Command extends BaseCommand {
             aliases: ['blabla'],
             description: 'Blank',
             category: 'utils',
-            usage: `${client.config.prefix}sticker [(as caption | tag)[video | image]]`,
+            usage: `${client.config.prefix}img [(as caption | tag)[sticker]]`,
             baseXp: 30
         })
     }
 {
+    run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
+        let buffer
+        if (M.quoted?.message?.message?.stickerMessage) buffer = await this.client.downloadMediaMessage(M.quoted.message)
+        else if (M.WAMessage.message?.imageMessage) buffer = await this.client.downloadMediaMessage(M.WAMessage)
+        else if (M.quoted?.message?.message?.stickerMessage)
+            // return void M.reply(`*Sticker to Gif/Video* feature is currently unavailable.\nYou can still use Sticker to Image though!!`)
+            buffer = await this.client.downloadMediaMessage(M.quoted.message)
+        else if (M.WAMessage.message?.videoMessage)
+            // return void M.reply(`*Sticker to Gif/Video* feature is currently unavailable.\nYou can still use Sticker to Image though!!`)
+            buffer = await this.client.downloadMediaMessage(M.WAMessage)
+        
     const image = new Image(data, {
         crop,
         author,
