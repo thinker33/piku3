@@ -8,8 +8,8 @@ import { ISimplifiedMessage } from '../../typings'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-                        command: "hbd",
-                        aliases: ["happy_birthday", "hhp"],
+                        command: "happy_birthday",
+                        aliases: ["hbd", "hhp"],
 			description: "use for birthday wish",
 			category: "general",
 			usage: `${client.config.prefix}hbd`,
