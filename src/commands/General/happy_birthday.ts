@@ -41,7 +41,7 @@ export default class Command extends BaseCommand {
             MessageType.image,
             undefined,
             undefined,
-            `✨ツ•wíshíng чσu α vєrч vєrч• 🎂🎂🎂ℋᎯℙℙᎽ ℬℐℛᏆℋⅅᎯᎽ🥂🍾🥳🥳🥳✨ *@${contextInfo: "mentionedJid": [0]}*\n\n`
+            `✨ツ•wíshíng чσu α vєrч vєrч• 🎂🎂🎂ℋᎯℙℙᎽ ℬℐℛᏆℋⅅᎯᎽ🥂🍾🥳🥳🥳✨ *${contextInfo: "mentionedJid": [0]}*\n\n`
         )
     }
 }
