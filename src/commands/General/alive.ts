@@ -19,10 +19,13 @@ export default class Command extends BaseCommand {
 	}
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
-                    return void M.reply(
-					`Hai, Hai \n\n I am here \n`
-				),
-			}
+                    const chitoge =
+		return void this.client.sendMessage(
+			M.from,
+			{
+				quoted: M.WAMessage,
+				caption: `Hai, Hai \n\n I am here \n`,
+                }
 		);
 	};
 }
