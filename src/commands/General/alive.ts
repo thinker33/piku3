@@ -21,10 +21,7 @@ export default class Command extends BaseCommand {
 	run = async (M: ISimplifiedMessage): Promise<void> => {
 		const chitoge =
 		return void this.client.sendMessage(
-			M.from,
-			{ url: chitoge },
-			MessageType.video,
-			{
+		{
 				quoted: M.WAMessage,
 				mimetype: Mimetype.gif,
 				caption: `Hai, Hai \n\n I am here \n`,
