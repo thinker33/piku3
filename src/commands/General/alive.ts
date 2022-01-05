@@ -19,7 +19,6 @@ export default class Command extends BaseCommand {
 	}
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
-		const chitoge =
                     return void M.reply(
 					`Hai, Hai \n\n I am here \n`
 				),
