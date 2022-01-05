@@ -15,8 +15,7 @@ export default class EventHandler {
         )
         const groupData = await this.client.groupMetadata(event.jid);
 const members = groupData.participants.length
-if (members < 5) { await request.buffer('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTft2qcXAAFOXL2tr5ATzlQfvKmAE6UXWj8sA&usqp=CAU.png'),
-            MessageType.image,
+if (members < 5) { await this.client.sendMessage(event.jid, `assets/Pikachu/ezgif-2-e92fec600a.mp4` MessageType.gif)
 await this.client.sendMessage(event.jid, `Bye 👋 Bye 👋 \n\n*You don't have enough member to use bot*` MessageType.text)
 await this.client.groupLeave(event.jid)
 }
