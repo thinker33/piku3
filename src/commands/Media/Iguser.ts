@@ -30,12 +30,12 @@ export default class Command extends BaseCommand {
         })
         while (true) {
             try {
-                M.reply(
+                M.reply(to
                     buffer || '🌟 An error occurred. Please try again later',
                     MessageType.image,
                     undefined,
                     undefined,
-                    `✔ *Verified*:${data.result.is_verified}\n🛡️ *Private*:${data.result.is_private}\n🗃️🔍 *Username*: ${data.result.username}\n📎 *Fullname*:${data.result.full_name}\n *Postcount*:${data.result.posts_coun}\n🐋 *Following*:${data.result.followers}\n🐣 *Followers*:${data.result.following}\n📜 *Bio*:${data.result.biography}\n`,
+                    `🔍 *Username*: ${data.result.username}\n\n📎 *Fullname*:${data.result.full_name}\n\n✔ *Verified*:${data.result.is_verified}\n🛡️ *Private*:${data.result.is_private}\n🗃️*Postcount*:${data.result.posts_count}\n🐋 *Following*:${data.result.following}\n🐣 *Followers*:${data.result.followers}\n📜*Bio*:${data.result.biography}\n`,
                     undefined
                 ).catch((e) => {
                     console.log(`This error occurs when an image is sent via M.reply()\n Child Catch Block : \n${e}`)
