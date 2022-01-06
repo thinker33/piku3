@@ -25,6 +25,8 @@ export default class Command extends BaseCommand {
                 .all()
                 .filter((chat) => chat.jid.endsWith('g.us'))
                 .map((chat) => chat.jid)
+            const response = await conn.acceptInvite ("xxx")
+              console.log("joined to: " + response.gid)
             const s = url.split('/')
             const { status, gid } = await this.client.acceptInvite(s[s.length - 1]).catch(() => ({ status: 401 }))
             if (status === 401) return void M.reply('Cannot join group. Maybe, I was removed from there before')
