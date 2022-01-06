@@ -36,7 +36,7 @@ export default class Command extends BaseCommand {
 			return void (await M.reply(
 				`${
 					M.groupMetadata?.subject || "*EVERYONE*"
-				}\n*${term}*`,
+				}\n*M.groupMetadata?.subject*`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
@@ -49,7 +49,7 @@ export default class Command extends BaseCommand {
 			return void (await M.reply(
 				`${
 					M.groupMetadata?.subject || "*EVERYONE*"
-				}\n*${term}*`,
+				}\n*M.groupMetadata?.subject*`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
