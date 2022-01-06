@@ -30,7 +30,7 @@ export default class Command extends BaseCommand {
         })
         while (true) {
             try {
-                M.reply(to
+                M.reply(
                     buffer || '🌟 An error occurred. Please try again later',
                     MessageType.image,
                     undefined,
