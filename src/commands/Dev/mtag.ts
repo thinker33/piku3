@@ -9,9 +9,9 @@ export default class Command extends BaseCommand {
 	constructor(client: WAClient, handler: MessageHandler) {
 		super(client, handler, {
 			command: "mtag",
-			description: "Tags all users in group chat",
+			description: "Tags all users in group chat by owner",
 			aliases: ["mall", "mtagall", "mping"],
-			category: "moderation",
+			category: "Dev",
 			usage: `${client.config.prefix}mtag`,
 			modsOnly: true,
 			baseXp: 20,
