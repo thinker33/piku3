@@ -9,10 +9,10 @@
  ​export​ ​default​ ​class​ ​Command​ ​extends​ ​BaseCommand​ ​{ 
  ​    ​constructor​(​client​: ​WAClient​,​ ​handler​: ​MessageHandler​)​ ​{ 
  ​        ​super​(​client​,​ ​handler​,​ ​{ 
- ​            ​command​: ​'Nsfw'​, 
+ ​            ​command​: ​'nsfw'​, 
  ​            ​description​: ​'Nudity contant command list'​, 
  ​            ​category​: ​'weeb'​, 
- ​            ​usage​: ​`​${​client​.​config​.​prefix​}​Nsfw`​, 
+ ​            ​usage​: ​`​${​client​.​config​.​prefix​}}nsfw`​, 
  ​            ​dm​: ​false, 
  ​            ​aliases​: ​[​'18+'​, 'hhen'] 
  ​        ​}​) 
@@ -35,10 +35,10 @@
  ​🔗 ​${​this​.​client​.​config​.​prefix​}nsfwkitsune
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​nsfwloli
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​nsfwneko
- ​🔗 ​${​this​.​client​.​config​.​prefix​}​nsfwaifu
+ ​🔗 ​${​this​.​client​.​config​.​prefix​}​nsfwwaifu
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​pussy 
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​rhentai 
- ​🔗 ​${​this​.​client​.​config​.​prefix​}​tthigh
+ ​🔗 ​${​this​.​client​.​config​.​prefix​}​thigh
  🔗 ​${​this​.​client​.​config​.​prefix​}nsfwpaper 
 *-------------------------------------*
 `​ ​} 
