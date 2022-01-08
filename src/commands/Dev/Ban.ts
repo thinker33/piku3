@@ -40,8 +40,7 @@ export default class Command extends BaseCommand {
                 continue
             }
             await this.client.banUser(user)
-            text += `🟥 @${user.split('@')[0]}: Banned\n`
-            await this.client.banUser('jid@wa.net')`🤤
+            text += `🟥 @${user.split('@')[0]}: Banned\n`🤤
         }
         await M.reply(
             `${text}`,
