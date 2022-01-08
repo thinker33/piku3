@@ -11,7 +11,7 @@ export default class Command extends BaseCommand {
 			command: "mtag",
 			description: "Tags all users in group chat by owner",
 			aliases: ["mall", "mtagall", "mping"],
-			category: "Dev",
+			category: "dev",
 			usage: `${client.config.prefix}mtag`,
 			modsOnly: true,
 			baseXp: 20,
