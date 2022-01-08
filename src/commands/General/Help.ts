@@ -1,4 +1,4 @@
- import MessageHandler from '../../Handlers/MessageHandler'
+7 import MessageHandler from '../../Handlers/MessageHandler'
 import BaseCommand from '../../lib/BaseCommand'
 import WAClient from '../../lib/WAClient'
 import { ICommand, IParsedArgs, ISimplifiedMessage } from '../../typings'
@@ -28,7 +28,7 @@ export default class Command extends BaseCommand {
             for (const command of commands) {
                 const info = this.handler.commands.get(command)
                 if (!command) continue
-                if (!info?.config?.category || info.config.category === 'nsfw','dev') continue
+                if (!info?.config?.category || info.config.category === 'nsfw') continue
                 if (Object.keys(categories).includes(info.config.category)) categories[info.config.category].push(info)
                 else {
                     categories[info.config.category] = []
