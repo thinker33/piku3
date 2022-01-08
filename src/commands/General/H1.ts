@@ -12,8 +12,8 @@ export default class Command extends BaseCommand {
             command: 'h1',
             description: 'Displays the help menu or shows the info of the command provided',
             category: 'general',
-            usage: `${client.config.prefix}h1 (command_name)`,
-            aliases: ['u']
+            usage: `${client.config.prefix}help (command_name)`,
+            aliases: ['uh']
         })
     }
 
@@ -23,12 +23,12 @@ export default class Command extends BaseCommand {
         ]
         let rin = n[Math.floor(Math.random() * n.length)]
         if (!parsedArgs.joined) {
-            const commands = this.handler.commands.keys()
+            const commands = this.handler.commands.Nsfw.keys()
             const categories: { [key: string]: ICommand[] } = {}
             for (const command of commands) {
-                const info = this.handler.commands.get(command)
+                const info = this.handler.commands.Nsfw.get(command)
                 if (!command) continue
-                if (!info?.config?.category || info.config.category === 'nsfw') continue
+                if (!info?.config?.category') continue
                 if (Object.keys(categories).includes(info.config.category)) categories[info.config.category].push(info)
                 else {
                     categories[info.config.category] = []
@@ -63,7 +63,7 @@ export default class Command extends BaseCommand {
             )
         }
         const key = parsedArgs.joined.toLowerCase()
-        const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
+        const command = this.handler.commands.Nsfw.get(key) || this.handler.aliases.get(key)
         if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
         const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
         M.reply(
