@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
             command: 'ban',
             description: 'Bans the tagged users globally',
             category: 'dev',
-            usage: `${client.config.prefix}ban [@mention | tag]`,
+            usage: `${client.config.prefix}ban [@tag]`,
             modsOnly: true,
             baseXp: 0
         })
@@ -40,7 +40,7 @@ export default class Command extends BaseCommand {
                 continue
             }
             await this.client.banUser(user)
-            text += `🟥 @${user.split('@')[0]}: Banned\n`🤤
+            text += `🟥 @${user.split('@')[0]}: Banned\n`
         }
         await M.reply(
             `${text}`,
