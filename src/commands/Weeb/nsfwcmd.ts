@@ -9,10 +9,10 @@
  ​export​ ​default​ ​class​ ​Command​ ​extends​ ​BaseCommand​ ​{ 
  ​    ​constructor​(​client​: ​WAClient​,​ ​handler​: ​MessageHandler​)​ ​{ 
  ​        ​super​(​client​,​ ​handler​,​ ​{ 
- ​            ​command​: ​'nsfwcmd'​, 
+ ​            ​command​: ​'nsfw'​, 
  ​            ​description​: ​'Nudity contant command list'​, 
  ​            ​category​: ​'weeb'​, 
- ​            ​usage​: ​`​${​client​.​config​.​prefix​}}nsfwcmd'​, 
+ ​            ​usage​: ​`​${​client​.​config​.​prefix​}}nsfw'​, 
  ​            ​dm​: ​false, 
  ​            ​aliases​: ​[​'18+'​, 'hhen'] 
  ​        ​}​) 
