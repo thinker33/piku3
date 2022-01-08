@@ -12,7 +12,7 @@
  ​            ​command​: ​'Nsfw'​, 
  ​            ​description​: ​'Nudity contant command list'​, 
  ​            ​category​: ​'weeb'​, 
- ​            ​usage​: ​`​${​client​.​config​.​prefix​}​Nsfw (command_name)`​, 
+ ​            ​usage​: ​`​${​client​.​config​.​prefix​}​Nsfw`​, 
  ​            ​dm​: ​false, 
  ​            ​aliases​: ​[​'18+'​, 'hhen'] 
  ​        ​}​) 
@@ -32,7 +32,7 @@
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​maid
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​masturbation
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​nsfwdoujin 
- ​🔗 ​${​this​.​client​.​config​.​prefix​}}nsfwkitsune
+ ​🔗 ​${​this​.​client​.​config​.​prefix​}nsfwkitsune
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​nsfwloli
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​nsfwneko
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​nsfwaifu
@@ -40,7 +40,8 @@
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​rhentai 
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​tthigh
  🔗 ​${​this​.​client​.​config​.​prefix​}nsfwpaper 
- ​*-------------------------------------*`​ ​} 
+*-------------------------------------*
+`​ ​} 
  ​        ​) 
  ​    ​} 
  ​}
