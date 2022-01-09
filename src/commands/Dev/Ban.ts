@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
             command: 'ban',
             description: 'Bans the tagged users globally',
             category: 'dev',
-            usage: `${client.config.prefix}ban [@tag]`,
+            usage: `${client.config.prefix}ban [@mention | tag]`,
             modsOnly: true,
             baseXp: 0
         })
@@ -38,6 +38,8 @@ export default class Command extends BaseCommand {
             if (data?.ban) {
                 text += `🟨 @${user.split('@')[0]}: Already Banned\n`
                 continue
+            if(!this.client.banUser(M.from,[`${number}@s.whatsapp.net`]))
+            return void M.reply(`the person is banned`)
             }
             await this.client.banUser(user),
             await this.client.banUser(M.sender.jid),
