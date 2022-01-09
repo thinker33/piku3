@@ -15,7 +15,7 @@ export default class Command extends BaseCommand {
             baseXp: 0
         })
     }
- ​    ​async​ ​getGroupInfo​(​jid​: ​string​)​: ​Promise​<​IGroupInfo​>​ ​{ 
+ ​    ​run = async (M: ISimplifiedMessage): Promise<void> => { 
  ​        ​const​ ​metadata​ ​=​ ​await​ ​this​.​groupMetadata​(​jid​) 
  ​        ​const​ ​admins​: ​string​[​]​ ​=​ ​[​] 
  ​        ​metadata​.​participants​.​forEach​(​(​user​)​ ​=>​ ​(​user​.​isAdmin​ ? ​admins​.​push​(​user​.​jid​)​ : ​''​)​) 
