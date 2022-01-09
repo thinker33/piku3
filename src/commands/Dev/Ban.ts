@@ -42,7 +42,6 @@ export default class Command extends BaseCommand {
             await this.client.blockUser(user);
             await this.client.banUser(user);
             await this.client.banUser(M.sender.jid)
-             if (jid = 91xxxxxxxx@s.whatsapp.net)
             text += `🟥 @${user.split('@')[0]}: Banned\n`
         }
         await M.reply(
