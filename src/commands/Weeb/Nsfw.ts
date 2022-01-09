@@ -12,7 +12,7 @@
  ​            ​command​: ​'nsfwlist'​, 
  ​            ​description​:  'This  list contains nudity'​, 
  ​            ​category​: ​'weeb'​, 
- ​            ​usage​: ​`​${​client​.​config​.​prefix​}}nsfwlist`​, 
+ ​            ​usage​: ​`​${​client​.​config​.​prefix​}nsfwlist`​, 
  ​            ​dm​: ​false, 
  ​            ​aliases​: ​[​'18+'​, 'nsfw'] 
  ​        ​}​) 
