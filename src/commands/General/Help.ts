@@ -53,7 +53,7 @@ export default class Command extends BaseCommand {
             return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
             mimetype: Mimetype.gif,
             caption: `${text} 
- ──❅┈[ ᖇᎥᑎ ᗷᗝ丅 ]┈❅───
+ ──❅┈[ Chitoge ]┈❅───
 ┌────────────┈❅
 │   🧨 PIKU
 │   ©️ Synthesized Infinity Botto
