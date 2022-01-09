@@ -1,11 +1,20 @@
- 
- ​import​ ​{​ ​GroupEx​ ​}​ ​from​ ​'../lib' 
- ​import​ ​{​ ​IGroupInfo​ ​}​ ​from​ ​'../Typings' 
- ​import​ ​{​ ​Client​ ​as​ ​Base​ ​}​ ​from​ ​'./ML' 
-  
- ​export​ ​class​ ​Client​ ​extends​ ​Base​ ​{ 
- ​    ​group​ ​=​ ​new​ ​GroupEx​(​this​) 
-  
+import MessageHandler from '../../Handlers/MessageHandler'
+import BaseCommand from '../../lib/BaseCommand'
+import WAClient from '../../lib/WAClient'
+import { ISimplifiedMessage } from '../../typings'
+
+export default class Command extends BaseCommand {
+    constructor(client: WAClient, handler: MessageHandler) {
+        super(client, handler, {
+            adminOnly: true,
+            command: 'group',
+            description: 'Group Description.',
+            category: 'moderation',
+            aliases: ['ginfo', 'gc'],
+            usage: `${client.config.prefix}group)`,
+            baseXp: 0
+        })
+    }
  ​    ​async​ ​getGroupInfo​(​jid​: ​string​)​: ​Promise​<​IGroupInfo​>​ ​{ 
  ​        ​const​ ​metadata​ ​=​ ​await​ ​this​.​groupMetadata​(​jid​) 
  ​        ​const​ ​admins​: ​string​[​]​ ​=​ ​[​] 
