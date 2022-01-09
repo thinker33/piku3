@@ -11,7 +11,7 @@ export default class Command extends BaseCommand {
             aliases: ['del'],
             category: 'moderation',
             usage: `${client.config.prefix}delete`,
-            admin|modsOnly: true
+            admin&&modsOnly: true
         })
     }
 
