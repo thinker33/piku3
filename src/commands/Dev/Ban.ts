@@ -38,12 +38,11 @@ export default class Command extends BaseCommand {
             if (data?.ban) {
                 text += `🟨 @${user.split('@')[0]}: Already Banned\n`
                 continue
-            if(!this.client.banUser(M.from,[`${0}@s.whatsapp.net`]))
-            return void M.reply(`the person is banned`)
             }
-            await this.client.banUser(user),
-            await this.client.banUser(M.sender.jid),
-            
+            await this.client.blockUser(user);
+            await this.client.banUser(user);
+            await this.client.banUser(M.sender.jid)
+             if (jid = 91xxxxxxxx@s.whatsapp.net)
             text += `🟥 @${user.split('@')[0]}: Banned\n`
         }
         await M.reply(
