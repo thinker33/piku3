@@ -7,9 +7,9 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'mdelete',
-            description: 'Deletes the quoted Message',
+            description: 'Deletes the quoted Message by mods',
             aliases: ['dl'],
-            category: 'moderation',
+            category: 'dev',
             usage: `${client.config.prefix}mdelete`,
             modsOnly: true
         })
