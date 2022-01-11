@@ -8,6 +8,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             adminOnly: true,
             command: 'demote',
+            aliases: ['dem', 'noadmin'],
             description: 'demotes the mentioned users',
             category: 'moderation',
             usage: `${client.config.prefix}demote [mention | @tag]`,
