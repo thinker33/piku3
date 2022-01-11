@@ -15,23 +15,26 @@ export default class Command extends BaseCommand {
             baseXp: 0
         })
     }
-     ​run = ​async​ ​exec​(​msg​: ​Message​)​: ​Promise​<​void​>​ ​{ 
- ​        ​const​ ​chat​ ​=​ ​await​ ​msg​.​getChat​(​)​ ​as​ ​any​; 
- ​        ​const​ ​url​ ​=​ ​await​ ​this​.​client​.​getProfilePicUrl​(​msg​.​from​)​; 
+     ​run = ​async​ ​​(​msg​: ​ISimplifiedMessage​)​: ​Promise​<​void​>​ ​{ 
+ ​        ​const​ ​chat​ ​=​ ​await.msg​.​getChat​(​)​ ​as​ ​any​; 
+ ​        ​const​ ​url​ ​=​ ​await​.​this​.​client​.​getProfilePicture(​msg​.​from​)​; 
  ​        ​if​ ​(​url​)​ ​{ 
- ​            ​const​ ​{​ ​body​: ​img​ ​}​: ​{​ ​body​: ​Buffer​ ​}​ ​=​ ​await​ ​this​.​client​.​request​.​get​(​url​)​; 
- ​            ​msg​.​reply​(​new​ ​MessageMedia​(​"image/png"​,​ ​img​.​toString​(​"base64"​)​,​ ​"icon.png"​)​,​ ​msg​.​from​,​ ​{ 
- ​                ​caption​: ​stripIndent​(​` 
+ ​            ​const​ ​{​ ​body​: ​img​ ​}​: ​{​ ​body​: ​Buffer​ ​}​ ​=​ ​await​.​this​.​client​.​WAClient​.​get​(​url​)​; 
+ ​            ​msg​.​reply​(​new​ ​Message.Media​(​"image/png"​,​ ​img​.​toString​(​"base64"​)​,​ ​"icon.png"​)​,​ ​msg​.​from​,​ ​{ 
+ ​                ​caption​: 
+​(​` 
  ​                *Group Info* [​${​chat​.​groupMetadata​.​participants​.​length​}​ members] 
  ​                - Name: ​${​chat​.​name​} 
  ​                - ID: ​${​msg​.​from​} 
+                 - Members: ${count.participants}
  ​            `​) 
  ​            ​}​)​; 
  ​        ​}​ ​else​ ​{ 
- ​            ​msg​.​reply​(​stripIndent​(​` 
+ ​            ​msg​.​reply​(​` 
  ​            *Group Info* [​${​chat​.​groupMetadata​.​participants​.​length​}​ members] 
  ​            - Name: ​${​chat​.​name​} 
  ​            - ID: ​${​msg​.​from​} 
+             - Members: ${count.participants}
  ​            `​)​)​; 
  ​        ​} 
  ​    ​} 
