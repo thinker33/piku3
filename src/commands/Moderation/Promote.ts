@@ -8,6 +8,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             adminOnly: true,
             command: 'promote',
+            aliases: ['uadmin', 'pr'],
             description: 'promotes the mentioned users',
             category: 'moderation',
             usage: `${client.config.prefix}promote [@mention | tag]`,
