@@ -19,7 +19,7 @@ export default class Command extends BaseCommand {
  ​        ​const​ ​chat​ ​=​ ​await.msg​.​getChat​(​)​ ​as​ ​any​; 
  ​        ​const​ ​url​ ​=​ ​await​.​this​.​client​.​getProfilePicture(​msg​.​from​)​; 
  ​        ​if​ ​(​url​)​ ​{ 
- ​            ​const​ ​{​ ​body​: ​img​ ​}​: ​{​ ​body​: ​Buffer​ ​}​ ​=​ ​await​.​this​.​client​.​WAClient​.​get​(​url​)​; 
+ ​            ​const​ ​{​ ​body​: ​img​ ​}​:​{​ ​body​: ​Buffer​ ​}​  m.reply.await​.​this​.​client​.​WAClient​.​get​(​url​)​; 
  ​            ​msg​.​reply​(​new​ ​Message.Media​(​"image/png"​,​ ​img​.​toString​(​"base64"​)​,​ ​"icon.png"​)​,​ ​msg​.​from​,​ ​{ 
  ​                ​caption​: 
 ​(​` 
@@ -28,11 +28,11 @@ export default class Command extends BaseCommand {
  ​                - ID: ​${​msg​.​from​} 
                  - Members: ${count.participants}
  ​            `​) 
- ​            ​}​)​; 
+ ​            ​}​)​ 
  ​        ​}​ ​else​ ​{ 
- ​            ​msg​.​reply​(​` 
- ​            *Group Info* [​${​chat​.​groupMetadata​.​participants​.​length​}​ members] 
- ​            - Name: ​${​chat​.​name​} 
+ ​            ​msg​.​reply​(​`
+ ​            *Group Info* [​${​chat​.​groupMetadata​.​participants​.​length​}​ members]
+ ​            - Name: ​${​chat​.​name​}
  ​            - ID: ​${​msg​.​from​} 
              - Members: ${count.participants}
  ​            `​)​)​; 
