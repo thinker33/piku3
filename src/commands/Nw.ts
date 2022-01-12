@@ -28,7 +28,7 @@ export default class Command extends BaseCommand {
             for (const command of commands) {
                 const info = this.handler.commands.get(command)
                 if (!command) continue
-                if (!info?.config?.category  || info.config.category === 'coding' || info.config.category === 'general' || info.config.category === 'weeb' || info.config.category === 'fun' || info.config.category === 'moderation' || info.config.category === 'utils' || info.config.category === 'educative' || info.config.category === 'games' || info.config.category === 'dev') continue
+                if (!info?.config?.category || info.config.category === 'coding' || info.config.category === 'general' || info.config.category === 'weeb' || info.config.category === 'fun' || info.config.category === 'moderation' || info.config.category === 'utils' || info.config.category === 'educative' || info.config.category === 'games' || info.config.category === 'dev') continue
                 if (Object.keys(categories).includes(info.config.category)) categories[info.config.category].push(info)
                 else {
                     categories[info.config.category] = []
