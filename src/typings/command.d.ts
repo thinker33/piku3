@@ -35,3 +35,7 @@ export type TCategory =
 	| "utils"
 	| "weeb"
 	| "category";
+
+
+export type NCategory =
+	| "nsfw"
