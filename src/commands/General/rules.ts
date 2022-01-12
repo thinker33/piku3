@@ -26,7 +26,6 @@ const chitoge =
 			M.from,
 			{ url: chitoge },
 			MessageType.video,
-			{
 				mimetype: Mimetype.gif,
                     undefined,
                     undefined,
