@@ -24,10 +24,9 @@
  ​        ​let​ ​well​ ​=​ ​n​[​Math​.​floor​(​Math​.​random​(​)​ ​*​ ​n​.​length​)​] 
  ​        ​return​ ​void​ ​this​.​client​.​sendMessage​(​M​.​from​,​ ​{​ ​url​: ​well​ ​}​,​ ​MessageType​.​video​,​ ​{​quoted​:​M​.​WAMessage​, 
  ​            ​mimetype​: ​Mimetype​.​gif​, 
- ​            ​caption​: ​`-📯 commands only for mods🛠️
+ ​            ​caption​: ​`-📯 *commands only for mods* 🛠️
 *------------------------------------*
- ​🔊  ​*${​this​.​client​.​config​.​prefix​}​broadcast* *.............* ✂️ ​*${​this​.​client​.​config​.​prefix​}​mdelete*\n\n 🔓 *${​this​.​client​.​config​.​prefix​}​enable* *.............* 🔒 *${​this​.​client​.​config​.​prefix​}​disable* \n\n♻️ *​${​this​.​client​.​config​.​prefix​}eval* *.............* ▪️ *​${​this​.​client​.​config​.​prefix​}mtag* \n\n➕ *${​this​.​client​.​config​.​prefix​}​join* *.............* 🛑 *​${​this​.​client​.​config​.​prefix​}​leave* \n\n 🖇️ *​${​this​.​client​.​config​.​prefix​}setprefix* *.............* 📰 *${​this​.​client​.​config​.​prefix​}​status* \n\n ❌ ​​*${​this​.​client​.​config​.​prefix​}​ban* *.............* 🆓 *​${​this​.​client​.​config​.​prefix​}​unban* \n\n
-*-------------------------------------*
+ 🔊 ​ *,​broadcast* *.....* ✂️ *,mdelete* \n\n🔓 *,​enable* *...........* 🔒 *,​disable* \n\n♻️ *​,eval* *...............* ▪️ *​,mtag* \n\n➕ *,​join* *................* 🛑 *​,​leave* \n\n🖇️ *​,setprefix* *.......* 📰 *,​status* \n\n❌ ​ *,​ban* *...............* 🆓 *​,​unban* *-------------------------------------*
 `​ ​} 
  ​        ​) 
  ​    ​} 
