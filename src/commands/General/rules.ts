@@ -20,12 +20,8 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-const chitoge =
-			"assets/sappletoast.mp4";
-		return void this.client.sendMessage(
-			M.from,
-			{ url: chitoge },
-			MessageType.video,
+        return void M.reply( await request.buffer(`assets/sappletoast.mp4`),
+        MessageType.gif,
                     undefined,
                     undefined,
                     `_⚠️ *-----🗃️GUIDE/📄RULE-----* ⚠️_\n\n📃Please Kindly follow the rules \n\n\n📢 use ,mods to know anything\n\n🔖 bot doesn't talk. So don't try
