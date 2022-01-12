@@ -20,8 +20,8 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-       // fetch result of https://github.com/bpking7/piku/blob/7b481e48dd123495277b34e7495484278bbdc402/assets/sappletoast.mp4
-        return void M.reply( await request.buffer(`assets/sappletoast.mp4`),
+       // fetch result of // fetch result of https://waifu.pics/api/sfw/waifu from the API using axios
+        return void M.reply( await request.buffer(`https://i.pinimg.com/564x/96/eb/e1/96ebe1427aa8505cf56b110a620503a3.jpg`),
         MessageType.video,
                     undefined,
                     undefined,
