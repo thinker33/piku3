@@ -39,6 +39,7 @@
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​pussy 
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​rhentai 
  ​🔗 ​${​this​.​client​.​config​.​prefix​}​thigh
+ ​🔗 ​${​this​.​client​.​config​.​prefix​}​trap
  🔗 ​${​this​.​client​.​config​.​prefix​}nsfwpaper 
 *-------------------------------------*
 `​ ​} 
