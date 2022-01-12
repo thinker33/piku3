@@ -21,7 +21,6 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
 const chitoge =
-			"const chitoge =
 			"assets/sappletoast.mp4";
 		return void this.client.sendMessage(
 			M.from,
