@@ -26,7 +26,6 @@ const chitoge =
 			M.from,
 			{ url: chitoge },
 			MessageType.video,
-				mimetype: Mimetype.gif,
                     undefined,
                     undefined,
                     `_⚠️ *-----🗃️GUIDE/📄RULE-----* ⚠️_\n\n📃Please Kindly follow the rules \n\n\n📢 use ,mods to know anything\n\n🔖 bot doesn't talk. So don't try
