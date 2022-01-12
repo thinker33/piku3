@@ -20,9 +20,16 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-        // fetch result of https://waifu.pics/api/sfw/waifu from the API using axios
-        return void M.reply( await request.buffer(`https://i.pinimg.com/564x/96/eb/e1/96ebe1427aa8505cf56b110a620503a3.jpg`),
-        MessageType.image,
+const chitoge =
+			"const chitoge =
+			"assets/sappletoast.mp4";
+		return void this.client.sendMessage(
+			M.from,
+			{ url: chitoge },
+			MessageType.video,
+			{
+				quoted: M.WAMessage,
+				mimetype: Mimetype.gif,
                     undefined,
                     undefined,
                     `_⚠️ *-----🗃️GUIDE/📄RULE-----* ⚠️_\n\n📃Please Kindly follow the rules \n\n\n📢 use ,mods to know anything\n\n🔖 bot doesn't talk. So don't try
