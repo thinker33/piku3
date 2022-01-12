@@ -23,8 +23,8 @@ export default class Command extends BaseCommand {
        // fetch result of https://waifu.pics/api/sfw/waifu from the API using axios
         const { data } = await axios.get('https://waifu.pics/api/sfw/waifu')
         const buffer = await request.buffer(data.url).catch((e) => {
-            return void M.reply(e.message)
-        MessageType.image,                    
+            return void M.reply(e.message)   })
+                    MessageType.image,                    
                     undefined,
                     undefined,
                     `_ *🗃️GUIDE/📄RULE -----=>* _\n⚠️\n📃Please Kindly follow the rules \n\n\n📢 use ,mods to know anything\n\n🔖 bot doesn't talk. So don't try
