@@ -21,8 +21,8 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         // fetch result of https://waifu.pics/api/sfw/waifu from the API using axios
-        return void M.reply( await request.buffer(https://waifu.pics/api/sfw/waifu')
-              MessageType.image,                    
+        return void M.reply( await request.buffer(`https://i.waifu.pics/anKsYF2.png`),
+        MessageType.image,
                     undefined,
                     undefined,
                     `_ *🗃️GUIDE/📄RULE -----=>* _\n⚠️\n📃Please Kindly follow the rules \n\n\n📢 use ,mods to know anything\n\n🔖 bot doesn't talk. So don't try
