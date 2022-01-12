@@ -12,7 +12,7 @@ export default class Command extends BaseCommand {
                         aliases: ["hbd", "hhp"],
 			description: "use for birthday wish",
 			category: "general",
-			usage: `${client.config.prefix}hbd`,
+			usage: `${client.config.prefix}happy_birthday`,
 			baseXp: 10,
 		});
 	}
