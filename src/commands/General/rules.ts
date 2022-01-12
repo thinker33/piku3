@@ -27,7 +27,6 @@ const chitoge =
 			{ url: chitoge },
 			MessageType.video,
 			{
-				quoted: M.WAMessage,
 				mimetype: Mimetype.gif,
                     undefined,
                     undefined,
