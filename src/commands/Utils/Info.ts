@@ -18,7 +18,7 @@ export default class Command extends BaseCommand {
 		/*eslint-disable @typescript-eslint/no-explicit-any*/
 		const chats: any = this.client.chats
 			.all()
-			.filter((v) => !v.read_only && !v.archive)
+			.filter((v) => !v.jid.endsWith && !v.archive)
 			.map((v) => v.jid)
 			.map((jids) => (jids.includes("g.us") ? jids : null))
 			.filter((v) => v);
