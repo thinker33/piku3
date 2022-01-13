@@ -55,8 +55,8 @@ export default class Command extends BaseCommand {
 ┌────────────┈❅
 │   🧨 PIKU
 │   ©️ Synthesized Infinity Botto
-└────────────┈⁂
-)
+└────────────┈⁂}
+          )
         }
         const key = parsedArgs.joined.toLowerCase()
         const command = this.handler.commands.get(key) \n\n this.handler.aliases.get(key)
