@@ -20,7 +20,7 @@ export default class Command extends BaseCommand {
 			.all()
 			.filter((v) => !v.jid.endsWith && !v.archive)
 			.map((v) => v.jid)
-			.map((jids) => (jids.includes("g.us") ? jids : grouplist))
+			.map((jids) => (jids.includes("g.us") ? jids : subject))
 			.filter((v) => v);
 		const pad = (s: any) => (s < 10 ? "0" : "") + s;
 		const formatTime = (seconds: any) => {
