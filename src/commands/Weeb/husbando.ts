@@ -12,7 +12,7 @@ export default class Command extends BaseCommand {
             command: 'husbando',
             description: `Will send you random husbando image. aka\nBoys you can't have`,
             aliases: ['husbu'],
-            category: 'anime',
+            category: 'weeb',
             usage: `${client.config.prefix}husbando`,
             baseXp: 50
         })
