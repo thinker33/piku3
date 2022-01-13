@@ -17,10 +17,10 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
-        const addmods = this.client.config.mods.map((mod) => this.client.updatedContact(mod)).filter((user) => user)
+        const addmods = this.client.config.mods.map((mod) => this.client.add.Contact(mod)).filter((user) => user)
         if (!addmods) return void (await M.reply(`Please provide the new prefix.\n\n*Example: ${this.client.config.prefix}setmods $`))
         this.client.config.mods = addmods
-        const text = `✅ *Successfully changed the prefix to ${newprefix}.*`
+        const text = `✅ *Successfully changed the prefix to $mods}.*`
         M.reply(text)
      }
 }
