@@ -9,11 +9,11 @@ import request from '../../lib/request'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'nsf',
+            command: 'nsfw',
             description: 'Displays the help menu or shows the info of the command provided',
             category: 'general',
-            usage: `${client.config.prefix}nsf (command_name)`,
-            aliases: ['hu']
+            usage: `${client.config.prefix}nsfw (command_name)`,
+            aliases: ['henlist', 'hlist']
         })
     }
 
@@ -28,7 +28,7 @@ export default class Command extends BaseCommand {
             for (const command of commands) {
                 const info = this.handler.commands.get(command)
                 if (!command) continue
-                if (!info?.config?.category || info.config.category === 'moderation' || info.config.category === 'media' || info.config.category === 'utils' || info.config.category === 'weeb' || info.config.category === 'fun' || info.config.category === 'general' || info.config.category === 'dev') continue
+                if (!info?.config?.category || info.config.category === 'games' || info.config.category === 'moderation' || info.config.category === 'educative' || info.config.category === 'coding' || info.config.category === 'media' || info.config.category === 'utils' || info.config.category === 'weeb' || info.config.category === 'fun' || info.config.category === 'general' || info.config.category === 'dev') continue
                 if (Object.keys(categories).includes(info.config.category)) categories[info.config.category].push(info)
                 else {
                     categories[info.config.category] = []
@@ -40,8 +40,6 @@ export default class Command extends BaseCommand {
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
 │⋊ ɴᴀᴍᴇ: PIKU
 │⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
-│⋊ ᴏᴡɴᴇʀ: <${this.client.config.prefix}mod>
-│⋊ ᴏᴡɴᴇʀ: if you wanna add bot ask to owner
 ╰────────────                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
