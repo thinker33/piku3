@@ -36,11 +36,12 @@ export default class Command extends BaseCommand {
                 }
             }
             let text = `
-╭─「⚠️WARNING - COMMANDS CONTAINS *NUDITY* 」
+╭─️⌜WARNING -⌝
+├COMMANDS CONTAINS *NUDITY* 
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
 │⋊ ɴᴀᴍᴇ: PIKU
 │⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
-╰────────────                            \n\n`
+╰────────────┘                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
                 text += `${this.emojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}* ${this.emojis[keys.indexOf(key)]}\n\n• \`\`\`${categories[
@@ -60,8 +61,7 @@ export default class Command extends BaseCommand {
             )
         }
         const key = parsedArgs.joined.toLowerCase()
-        const command = this.handler.commands.get(key)
- || this.handler.aliases.get(key)
+        const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
         if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
         const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
         M.reply(
