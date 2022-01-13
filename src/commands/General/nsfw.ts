@@ -10,16 +10,16 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'nsfw',
-            description: 'Displays the help menu or shows the info of the command provided',
+            description: 'Displays the NSFW command list',
             category: 'general',
             usage: `${client.config.prefix}nsfw (command_name)`,
-            aliases: ['henlist', 'hlist']
+            aliases: ['henlist', 'hlist', 'nsfwlist']
         })
     }
 
     run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
             const n = [
-            './assets/Pikachu/Pikachu.mp4'
+            './assets/Pikachu/images (1).mp4'
         ]
         let rin = n[Math.floor(Math.random() * n.length)]
         if (!parsedArgs.joined) {
@@ -36,7 +36,7 @@ export default class Command extends BaseCommand {
                 }
             }
             let text = `
-╭─「check guide command *,guide*」
+╭─「⚠️WARNING - COMMANDS CONTAINS *NUDITY* 」
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
 │⋊ ɴᴀᴍᴇ: PIKU
 │⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
@@ -56,12 +56,10 @@ export default class Command extends BaseCommand {
 │   🧨 PIKU
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
-❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
-🎗 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*` }
-            )
+)
         }
         const key = parsedArgs.joined.toLowerCase()
-        const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
+        const command = this.handler.commands.get(key) \n\n this.handler.aliases.get(key)
         if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
         const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
         M.reply(
@@ -76,5 +74,5 @@ export default class Command extends BaseCommand {
             )}\n💎 *Usage:* ${command.config?.usage || ''}\n\n📒 *Description:* ${command.config?.description || ''}`
         )
     }
-    emojis = ['💫', '📚', '⚙️', '👨‍💻', '📚', '👻', '🎲', '😶‍🌫️', '📼', '🦉', '🪜']
+    emojis = ['👀', '📚', '⚙️', '👨‍💻', '📚', '👻', '🎲', '😶‍🌫️', '📼', '🦉', '🪜']
 }
