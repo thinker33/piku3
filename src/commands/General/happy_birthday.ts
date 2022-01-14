@@ -41,14 +41,15 @@ export default class Command extends BaseCommand {
             MessageType.image,
             undefined,
             undefined,
-            {caption :`✨ツ•wíshíng чσu α vєrч vєrч•\n 🥂🎂 *HAPPY BIRTHDAY* 🎂🥂\n🥳🥳🥳✨ *@${user.split('@')[0]}*\n\n`
-         }
+            caption = "✨ツ•wíshíng чσu α vєrч vєrч•\n 🥂🎂 *HAPPY BIRTHDAY* 🎂🥂\n🥳🥳🥳✨ *@${user.split('@')[0]}*\n\n"
+         
             return void M.reply(
             await this.client.getProfilePicture(user),
             MessageType.image,
             Mimetype.png,
-            [user],
-            caption
+            caption,
+            [user]
+          )
         )
     }
 }
