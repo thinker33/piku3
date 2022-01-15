@@ -35,7 +35,7 @@ export default class Command extends BaseCommand {
 		if (!joined)
 			return void (await M.reply(
 				`${
-					IExtendedGroupMetadata || "*EVERYONE*"
+					const selected = joined.trim()\n "*EVERYONE*"
 				}`,
 				undefined,
 				undefined,
@@ -48,7 +48,7 @@ export default class Command extends BaseCommand {
 		if (!option.includes(selected))
 			return void (await M.reply(
 				`${
-					IExtendedGroupMetadata || "*EVERYONE*"
+					const selected = joined.trim()\n "*EVERYONE*"
 				}`,
 				undefined,
 				undefined,
@@ -68,6 +68,7 @@ export default class Command extends BaseCommand {
 			await sticker.build(),
 			MessageType.sticker,
 			Mimetype.webp,
+                        const selected = joined.trim()
 			M.groupMetadata?.participants.map((user) => user.jid)
 		));
 	};
