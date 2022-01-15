@@ -35,8 +35,8 @@ export default class Command extends BaseCommand {
 		if (!joined)
 			return void (await M.reply(
 				`${
-					M.groupMetadata?.subject || "*EVERYONE*"
-				}\nM.groupMetadata?.selected`,
+					M.groupMetadata?.selected || "*EVERYONE*"
+				}`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
@@ -48,8 +48,8 @@ export default class Command extends BaseCommand {
 		if (!option.includes(selected))
 			return void (await M.reply(
 				`${
-					M.groupMetadata?.subject || "*EVERYONE*"
-				}\nM.groupMetadata?.selected`,
+					M.groupMetadata?.selected || "*EVERYONE*"
+				}`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
