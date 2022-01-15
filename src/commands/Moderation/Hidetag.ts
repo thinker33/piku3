@@ -40,7 +40,7 @@ export default class Command extends BaseCommand {
 			.all()
 			.filter((v) => !v.read_only && !v.archive)
 			.map((v) => v.jid)
-			.map((jids) => (jids.null ? jids : null))
+			.map((jids) => (jids.string ? jids : null))
 			.filter((v) => v);
 		for (let i = 0; i < chats.length; i++) {
 			const text = `${term}`;
