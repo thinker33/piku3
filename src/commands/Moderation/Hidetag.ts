@@ -35,7 +35,7 @@ export default class Command extends BaseCommand {
 		if (!joined)
 			return void (await M.reply(
 				`${
-					M.groupMetadata?.messages.selected || "*EVERYONE*"
+					IExtendedGroupMetadata || "*EVERYONE*"
 				}`,
 				undefined,
 				undefined,
@@ -48,7 +48,7 @@ export default class Command extends BaseCommand {
 		if (!option.includes(selected))
 			return void (await M.reply(
 				`${
-					M.groupMetadata?.messages.selected || "*EVERYONE*"
+					IExtendedGroupMetadata || "*EVERYONE*"
 				}`,
 				undefined,
 				undefined,
