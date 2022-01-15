@@ -18,7 +18,7 @@ export default class Command extends BaseCommand {
 	}
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
-        if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)
+        if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)M.mentioned.push
         const user = M.mentioned[0] ? M.mentioned[0] : M.sender.jid
         let username = user === M.sender.jid ? M.sender.username : ''
         if (!username) {
@@ -41,15 +41,7 @@ export default class Command extends BaseCommand {
             MessageType.image,
             undefined,
             undefined,
-            `✨ツ•wíshíng чσu α vєrч vєrч•\n 🥂🎂 *HAPPY BIRTHDAY* 🎂🥂\n🥳🥳🥳✨ *@${user.split('@')[0]}*\n\n"`
-            undefined,
-            )
-            
-            await this.client.getProfilePicture(user),
-            MessageType.image,
-            Mimetype.png,
-            caption,
-            [user]
+            `✨ツ•wíshíng чσu α vєrч vєrч•\n 🥂🎂 *HAPPY BIRTHDAY* 🎂🥂\n🥳🥳🥳✨ *@${user.split('@')[0]}*\n
         )
     }
 }
