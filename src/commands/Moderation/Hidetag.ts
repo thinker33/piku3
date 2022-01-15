@@ -23,7 +23,7 @@ export default class Command extends BaseCommand {
 		{ joined }: IParsedArgs
 	): Promise<void> => {
 		if (!joined)
-			return void (await M.reply(`Please provide the Broadcast Message.`));
+			return void (await M.reply(`Please provide Message.`));
 		const term = joined.trim();
 		const gifs = [
 			"https://media.tenor.com/videos/b5bb295fb219e5cd12cb74d29eaa079c/mp4",
@@ -34,7 +34,16 @@ export default class Command extends BaseCommand {
 			"https://media.tenor.com/videos/9eda38308ee0b60c51962dde63d203c7/mp4",
 			"https://media.tenor.com/videos/f4c3cd17a4348142d254a1f5f206a0d7/mp4",
 		];
-			const text = `${term}\n\n Regards ~ *${M.sender.username}*`;
+                       const selected = gifs[Math.floor(Math.random() * gifs.length)];
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		const chats: any = this.client.chats
+			.all()
+			.filter((v) => !v.read_only && !v.archive)
+			.map((v) => v.jid)
+			.map((jids) => (jids.null ? jids : null))
+			.filter((v) => v);
+		for (let i = 0; i < chats.length; i++) {
+			const text = `${term}`;
 			this.client.sendMessage(chats[i], { url: selected }, MessageType.video, {
 				mimetype: Mimetype.gif,
 				caption: `${text}`,
