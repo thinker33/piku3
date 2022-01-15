@@ -34,7 +34,9 @@ export default class Command extends BaseCommand {
 		const random = stickers[Math.floor(Math.random() * stickers.length)];
 		if (!joined)
 			return void (await M.reply(
-				`${"(selected)`,
+				`${
+					M.groupMetadata?.subject || "*EVERYONE*"
+				}\nM.groupMetadata?.selected`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
@@ -45,7 +47,9 @@ export default class Command extends BaseCommand {
 		const selected = joined.trim();
 		if (!option.includes(selected))
 			return void (await M.reply(
-				`${ "(selected)`,
+				`${
+					M.groupMetadata?.subject || "*EVERYONE*"
+				}\nM.groupMetadata?.selected`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
@@ -54,7 +58,7 @@ export default class Command extends BaseCommand {
 				M.reply(`✖️ An error occurred, Reason: ${reason}`)
 			));
 		const sticker: any = await new Sticker(random, {
-			pack: "READ QUOTED MESSAGE",
+			pack: "READ TAGGED MESSAGES",
 			author: "🌟 Chitoge 🌟",
 			quality: 90,
 			type: "full",
