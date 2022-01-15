@@ -92,7 +92,7 @@ export default class MessageHandler {
 			);
 			if (!command)
 				return void M.reply(
-					`🐋 *Hello,* 🐋 \n\n I am here for you but Please, use command from help list*. *${this.client.config.prefix}help*.`
+					`*Hello, ｡◕‿◕｡* \n\n I am here for you but Please, use command from help list*. *${this.client.config.prefix}help*.`
 				);
 			const user = await this.client.getUser(M.sender.jid);
 			if (user.ban) return void M.reply("You're Banned from using commands.");
@@ -111,10 +111,10 @@ export default class MessageHandler {
 				command.config?.modsOnly &&
 				!this.client.config.mods?.includes(M.sender.jid)
 			) {
-				return void M.reply(`Only MODS are allowed to use this command.`);
+				return void M.reply(`Only MODS are allowed to use this command.🛠️`);
 			}
 			if (command.config?.adminOnly && !M.sender.isAdmin)
-				return void M.reply(`This command is only meant for the group admins, Baka!`);
+				return void M.reply(`This command is only meant for the group admins⚠️`);
 			try {
 				await command.run(M, this.parseArgs(args));
 				if (command.config.baseXp) {
