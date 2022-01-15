@@ -44,7 +44,7 @@ export default class Command extends BaseCommand {
             `✨ツ•wíshíng чσu α vєrч vєrч•\n 🥂🎂 *HAPPY BIRTHDAY* 🎂🥂\n🥳🥳🥳✨ *@${user.split('@')[0]}*\n\n"`
             undefined,
             )
-            return void M.reply(
+            
             await this.client.getProfilePicture(user),
             MessageType.image,
             Mimetype.png,
