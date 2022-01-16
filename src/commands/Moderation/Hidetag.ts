@@ -58,6 +58,18 @@ export default class Command extends BaseCommand {
 			).catch((reason: any) =>
 				M.reply(`✖️ An error occurred, Reason: ${reason}`)
 			));
-		);
+		const sticker: any = await new Sticker(random, {
+			pack: "READ QUOTED MESSAGE",
+			author: "🌟 Chitoge 🌟",
+			quality: 90,
+			type: "full",
+			categories: ["🎊"],
+		});
+		return void (await M.reply(
+			await sticker.build(),
+			MessageType.sticker,
+			Mimetype.webp,
+			M.groupMetadata?.participants.map((user) => user.jid)
+		));
 	};
 }
