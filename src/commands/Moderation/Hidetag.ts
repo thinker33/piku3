@@ -9,9 +9,10 @@ export default class Command extends BaseCommand {
 	constructor(client: WAClient, handler: MessageHandler) {
 		super(client, handler, {
 			command: "htag",
-			description: "Tags all users in group ch,"
+			description: "Tags all users in group chat",
+			aliases: ["all", "tagall", "ping"],
 			category: "moderation",
-			usage: `${client.config.prefix}htag`,
+			usage: `${client.config.prefix}htag,
 			adminOnly: true,
 			baseXp: 20,
 		});
@@ -35,9 +36,7 @@ export default class Command extends BaseCommand {
 		const random = stickers[Math.floor(Math.random() * stickers.length)];
 		if (!joined)
 			return void (await M.reply(
-				`${
-					M.groupMetadata?.subject || "*EVERYONE*"
-				}\n*url: selected*`,
+				`${url: selected}`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
@@ -48,9 +47,7 @@ export default class Command extends BaseCommand {
 		const selected = joined.trim();
 		if (!option.includes(selected))
 			return void (await M.reply(
-				`${
-					M.groupMetadata?.subject || "*EVERYONE*"
-				}\n*url: selected*`,
+				`${url: selected}`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
