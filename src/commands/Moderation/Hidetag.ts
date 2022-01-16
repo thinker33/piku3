@@ -1,23 +1,19 @@
-/** @format */
-
-import { MessageType, Mimetype } from "@adiwajshing/baileys";
-import MessageHandler from "../../Handlers/MessageHandler";
-import BaseCommand from "../../lib/BaseCommand";
-import WAClient from "../../lib/WAClient";
+import MessageHandler from '../../Handlers/MessageHandler'
+import BaseCommand from '../../lib/BaseCommand'
+import WAClient from '../../lib/WAClient'
 import { IParsedArgs, ISimplifiedMessage } from "../../typings";
+import { MessageType, Mimetype } from "@adiwajshing/baileys";
+import { Sticker, Categories, StickerTypes } from "wa-sticker-formatter";
 
 export default class Command extends BaseCommand {
 	constructor(client: WAClient, handler: MessageHandler) {
 		super(client, handler, {
 			command: "htag",
-			description:
-				"Will make a broadcast for groups where the bot is in. Can be used to make announcements.",
-			aliases: ["b", "bcb"],
-			category: "dev",
-			dm: true,
+			description: "Tags all users in group ch,"
+			category: "moderation",
 			usage: `${client.config.prefix}htag`,
 			adminOnly: true,
-			baseXp: 0,
+			baseXp: 20,
 		});
 	}
 
@@ -25,28 +21,43 @@ export default class Command extends BaseCommand {
 		M: ISimplifiedMessage,
 		{ joined }: IParsedArgs
 	): Promise<void> => {
-		if (!joined)
-			return void (await M.reply(`Please provide the Broadcast Message.`));
-		const term = joined.trim();
-		const gifs = [
-			"https://media.tenor.com/videos/b5bb295fb219e5cd12cb74d29eaa079c/mp4",
-			"https://media.tenor.com/videos/cb603deb19eefdb7feee3aa7aa1aa7b6/mp4",
-			"https://media.tenor.com/videos/31edd50dd5096731be4690a67142a1aa/mp4",
-			"https://media.tenor.com/videos/8fb551bffa77b6f6d875eb0a0a5e8fa9/mp4",
-			"https://media.tenor.com/videos/e09c85e729650f03ca9099663718e38c/mp4",
-			"https://media.tenor.com/videos/9eda38308ee0b60c51962dde63d203c7/mp4",
-			"https://media.tenor.com/videos/f4c3cd17a4348142d254a1f5f206a0d7/mp4",
+		const stickers = [
+			"https://wallpapercave.com/wp/wp3144753.jpg",
+			"https://wallpapercave.com/wp/wp4782018.jpg",
+			"https://wallpaperaccess.com/full/1326836.jpg",
+			"https://wallpapermemory.com/uploads/711/chitoge-kirisaki-wallpaper-full-hd-323316.jpg",
+			"https://data.whicdn.com/images/304776416/original.jpg",
+			"https://i.pinimg.com/564x/ca/e7/8a/cae78ad7f8e6459ad20bde350e2eb78b.jpg",
 		];
-		const selected = gifs[Math.floor(Math.random() * gifs.length)];
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any {
-			const text = `*🌟「 CHITOGE BROADCAST 」🌟*\n\n${term}\n\n Regards ~ *${M.sender.username}*`;
-			this.client.sendMessage(, { url: selected }, MessageType.video, {
-				mimetype: Mimetype.gif,
-				caption: `${text}`,
-				contextInfo: {
-					mentionedJid: M.groupMetadata?.participants.map((user) => user.jid),
-				},
-			});
-		}
+		const option = ["--s", "--sticker"];
+                const selected = gifs[Math.floor(Math.random() * gifs.length)];
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		const random = stickers[Math.floor(Math.random() * stickers.length)];
+		if (!joined)
+			return void (await M.reply(
+				`${
+					M.groupMetadata?.subject || "*EVERYONE*"
+				}\n*url: selected*`,
+				undefined,
+				undefined,
+				M.groupMetadata?.participants.map((user) => user.jid)
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			).catch((reason: any) =>
+				M.reply(`✖️ An error occurred, Reason: ${reason}`)
+			));
+		const selected = joined.trim();
+		if (!option.includes(selected))
+			return void (await M.reply(
+				`${
+					M.groupMetadata?.subject || "*EVERYONE*"
+				}\n*url: selected*`,
+				undefined,
+				undefined,
+				M.groupMetadata?.participants.map((user) => user.jid)
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			).catch((reason: any) =>
+				M.reply(`✖️ An error occurred, Reason: ${reason}`)
+			));
+		);
 	};
 }
