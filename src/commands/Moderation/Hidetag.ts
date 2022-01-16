@@ -9,14 +9,14 @@ import { IParsedArgs, ISimplifiedMessage } from "../../typings";
 export default class Command extends BaseCommand {
 	constructor(client: WAClient, handler: MessageHandler) {
 		super(client, handler, {
-			command: "broadcast",
+			command: "htag",
 			description:
 				"Will make a broadcast for groups where the bot is in. Can be used to make announcements.",
-			aliases: ["bcast", "announcement", "bc"],
+			aliases: ["b", "bcb"],
 			category: "dev",
 			dm: true,
-			usage: `${client.config.prefix}bc`,
-			modsOnly: true,
+			usage: `${client.config.prefix}htag`,
+			adminOnly: true,
 			baseXp: 0,
 		});
 	}
@@ -38,16 +38,9 @@ export default class Command extends BaseCommand {
 			"https://media.tenor.com/videos/f4c3cd17a4348142d254a1f5f206a0d7/mp4",
 		];
 		const selected = gifs[Math.floor(Math.random() * gifs.length)];
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		const chats: any = this.client.chats
-			.all()
-			.filter((v) => !v.read_only && !v.archive)
-			.map((v) => v.jid)
-			.map((jids) => (jids.includes("g.us") ? jids : null))
-			.filter((v) => v);
-		for (let i = 0; i < chats.length; i++) {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any {
 			const text = `*🌟「 CHITOGE BROADCAST 」🌟*\n\n${term}\n\n Regards ~ *${M.sender.username}*`;
-			this.client.sendMessage(chats[i], { url: selected }, MessageType.video, {
+			this.client.sendMessage(, { url: selected }, MessageType.video, {
 				mimetype: Mimetype.gif,
 				caption: `${text}`,
 				contextInfo: {
