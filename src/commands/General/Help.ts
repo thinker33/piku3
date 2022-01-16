@@ -13,7 +13,7 @@ export default class Command extends BaseCommand {
             description: 'Displays the help menu or shows the info of the command provided',
             category: 'general',
             usage: `${client.config.prefix}help (command_name)`,
-            aliases: ['h', 'menu', 'piku']
+            aliases: ['h', 'menu', 'piku', 'cmd']
         })
     }
 
@@ -59,7 +59,7 @@ export default class Command extends BaseCommand {
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
 ❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
-🎗 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*` }
+🎗 *Note: \nUse ${this.client.config.prefix}help <command_name> \n to view the command info*` }
             )
         }
         const key = parsedArgs.joined.toLowerCase()
