@@ -31,15 +31,13 @@ export default class Command extends BaseCommand {
 			"https://i.pinimg.com/564x/ca/e7/8a/cae78ad7f8e6459ad20bde350e2eb78b.jpg",
 		];
 		const option = ["--s", "--sticker"];
-                const selected = gifs[Math.floor(Math.random() * gifs.length)];
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const random = stickers[Math.floor(Math.random() * stickers.length)];
 		if (!joined)
 			return void (await M.reply(
 				`${url: selected}`,
 				undefined,
 				undefined,
-				M.groupMetadata?.participants.map((user) => user.jid)
+				{url: selected},M.groupMetadata?.participants.map((user) => user.jid)
 				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			).catch((reason: any) =>
 				M.reply(`✖️ An error occurred, Reason: ${reason}`)
@@ -50,7 +48,7 @@ export default class Command extends BaseCommand {
 				`${url: selected}`,
 				undefined,
 				undefined,
-				M.groupMetadata?.participants.map((user) => user.jid)
+				{url: selected},M.groupMetadata?.participants.map((user) => user.jid)
 				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			).catch((reason: any) =>
 				M.reply(`✖️ An error occurred, Reason: ${reason}`)
