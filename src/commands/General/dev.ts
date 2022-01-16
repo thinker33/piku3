@@ -9,15 +9,15 @@ import request from '../../lib/request'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
- ​            ​command​: ​'dev'​, 
- ​            ​description​:  'command list only for mods/owners'​, 
- ​            ​category​: ​'general'​, 
- ​            ​usage​: ​`​${​client​.​config​.​prefix​}}dev`​, 
- ​            ​dm​: ​false, 
- ​            ​aliases​: ​[​'mh'​, 'mcmd'] 
- ​        ​}​) 
- ​    ​} 
- ​    run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
+            command: 'dev',
+            description: 'Command list for mods',
+            category: 'general',
+            usage: `${client.config.prefix}dev (command_name)`,
+            aliases: ['modlist', 'mlist', 'mh']
+        })
+    }
+
+    run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
             const n = [
             './assets/Pikachu/images (4).mp4'
         ]
@@ -36,8 +36,8 @@ export default class Command extends BaseCommand {
                 }
             }
             let text = `
-╭─️⌜Don't try to use -⌝
-├COMMANDS FOR *MODS* 
+╭─️⌜( ◜‿◝ ) -⌝
+├COMMANDS FOR MODS* 
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
 │⋊ ɴᴀᴍᴇ: PIKU
 │⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
@@ -57,8 +57,10 @@ export default class Command extends BaseCommand {
 │   🧨 PIKU
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
-❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅🎗 *Note: \nUse ${this.client.config.prefix}help <command_name> \n to view the command info*` }            )
-        
+❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
+🎗 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*` }
+            )
+        }
         const key = parsedArgs.joined.toLowerCase()
         const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
         if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
