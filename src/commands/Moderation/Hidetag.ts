@@ -37,7 +37,7 @@ export default class Command extends BaseCommand {
 				`${url: selected}`,
 				undefined,
 				undefined,
-				{url: selected},M.groupMetadata?.participants.map((user) => user.jid)
+				M.groupMetadata?.participants.map((user) => user.jid)
 				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			).catch((reason: any) =>
 				M.reply(`✖️ An error occurred, Reason: ${reason}`)
@@ -48,7 +48,7 @@ export default class Command extends BaseCommand {
 				`${url: selected}`,
 				undefined,
 				undefined,
-				{url: selected},M.groupMetadata?.participants.map((user) => user.jid)
+				M.groupMetadata?.participants.map((user) => user.jid)
 				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			).catch((reason: any) =>
 				M.reply(`✖️ An error occurred, Reason: ${reason}`)
