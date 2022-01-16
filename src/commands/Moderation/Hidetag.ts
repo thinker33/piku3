@@ -48,6 +48,5 @@ export default class Command extends BaseCommand {
 				},
 			});
 		}
-		await M.reply(`✅ Broadcast Message sent to *${chats.length} groups*.`);
 	};
 }
