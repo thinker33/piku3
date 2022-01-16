@@ -36,14 +36,7 @@ export default class Command extends BaseCommand {
 		];
                        const selected = gifs[Math.floor(Math.random() * gifs.length)];
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		const chats: any = this.client.chats
-			.all()
-			.filter((v) => !v.read_only && !v.archive)
-			.map((v) => v.jid)
-			.map((jids) => (jids.string ? jids : null))
-			.filter((v) => v);
-		for (let i = 0; i < chats.length; i++) {
-			const text = `${term}`;
+		const chats: any = this.client.chats			const text = `${term}`;
 			this.client.sendMessage(chats[i], { url: selected }, MessageType.video, {
 				mimetype: Mimetype.gif,
 				caption: `${text}`,
