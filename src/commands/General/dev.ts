@@ -17,7 +17,6 @@
  ​            ​aliases​: ​[​'mh'​, 'mcmd'] 
  ​        ​}​) 
  ​    ​} 
-  
  ​    run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
             const n = [
             './assets/Pikachu/images (4).mp4'
@@ -59,8 +58,8 @@
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
 ❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
-🎗 *\nUse ${this.client.config.prefix}help <command_name> *` }
-*︽]|I{•------» 𝒫𝒾𝓀𝓊 «------•}I|[︽
+${this.client.config.prefix}*` 
+*︽]|I{•------» 𝒫𝒾𝓀𝓊 «------•}I|[︽}
             )
         }
         const key = parsedArgs.joined.toLowerCase()
