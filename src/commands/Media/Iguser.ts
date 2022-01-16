@@ -24,6 +24,8 @@ export default class Command extends BaseCommand {
         const chitoge = joined.trim()
         console.log(chitoge)
         const { data } = await axios.get(`https://api-xcoders.xyz/api/stalk/ig?username=${chitoge}&apikey=LJowCce5Pn`)
+        const g = (data.result.following.split(' Following')[0])
+        const o = (data.result.followers.split(' Followers')[0])
         if ((data as { error: string }).error) return void (await M.reply('Sorry, couldn\'t find'))
         const buffer = await request.buffer(data.result.profile_url).catch((e) => {
             return void M.reply(e.message)
