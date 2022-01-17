@@ -14,7 +14,7 @@ export default class Command extends BaseCommand {
 			command: "advanceglow",
 			description: `Get text image`,
 			aliases: ["adglow"],
-			category: "utils",
+			category: "creation",
 			usage: `${client.config.prefix}advanceglow`,
 			baseXp: 50,
 		});
