@@ -14,7 +14,7 @@ export default class Command extends BaseCommand {
 			command: "harrypotter",
 			description: `Get text image`,
 			aliases: ["hp"],
-			category: "utils",
+			category: "creation",
 			usage: `${client.config.prefix}harrypotter`,
 			baseXp: 50,
 		});
