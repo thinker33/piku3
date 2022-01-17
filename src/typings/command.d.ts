@@ -34,6 +34,7 @@ export type TCategory =
 	| "nsfw"
 	| "utils"
 	| "weeb"
+	| "creation"
 	| "category";
 
 
