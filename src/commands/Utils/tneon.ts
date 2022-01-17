@@ -14,7 +14,7 @@ export default class Command extends BaseCommand {
 			command: "tneon",
 			description: `Get text image`,
 			aliases: ["tneon"],
-			category: "utils",
+			category: "creation",
 			usage: `${client.config.prefix}tneon`,
 			baseXp: 50,
 		});
