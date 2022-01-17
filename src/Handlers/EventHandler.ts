@@ -30,9 +30,9 @@ await this.client.groupLeave(event.jid)
 							.map((jid) => `@${jid.split("@")[0]}`)
 							.join(", ")}`
 					: event.action === "remove"
-					? `Goodbye (◠‿・) *@${
+					? `*Goodbye (◠‿・)* *@${
 							event.participants[0].split("@")[0]
-					  }* Bye,Bye. Hopefully you will be happy.*\n *╮(╯_╰)╭*`
+					  } *Bye,Bye. Hopefully you will be happy.* \n *╮(╯_╰)╭* `
 					: `Ara Ara, looks like *@${
 							event.participants[0].split("@")[0]
 					  }* got ${this.client.util.capitalize(event.action)}d${
