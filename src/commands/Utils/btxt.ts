@@ -14,7 +14,7 @@ export default class Command extends BaseCommand {
 			command: "btxt",
 			description: `Get text image`,
 			aliases: ["btxt"],
-			category: "utils",
+			category: "creation",
 			usage: `${client.config.prefix}btxt`,
 			baseXp: 50,
 		});
