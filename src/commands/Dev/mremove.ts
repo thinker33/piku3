@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
             modsOnly: true,
             aliases: ['mboom', 'mkick', 'mtata'],
             command: 'mremove',
-            description: 'removes the mentioned users',
+            description: '⚠️',
             category: 'dev',
             usage: `${client.config.prefix}mremove [@mention | tag]`,
             baseXp: 10
