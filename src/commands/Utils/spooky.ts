@@ -14,7 +14,7 @@ export default class Command extends BaseCommand {
 			command: "spooky",
 			description: `Get text image`,
 			aliases: ["spooky"],
-			category: "utils",
+			category: "creation",
 			usage: `${client.config.prefix}spooky`,
 			baseXp: 50,
 		});
