@@ -30,7 +30,7 @@ await this.client.groupLeave(event.jid)
 							.map((jid) => `@${jid.split("@")[0]}`)
 							.join(", ")}`
 					: event.action === "remove"
-					? `*Goodbye 🐋* \n\n *@${
+					? `*Goodbye 🐋* *@${
 							event.participants[0].split("@")[0]
 					  }* \n\n  *Even this group is amazing !!  But we all members not gonna miss you .*
  `
