@@ -28,7 +28,7 @@ export default class Command extends BaseCommand {
             for (const command of commands) {
                 const info = this.handler.commands.get(command)
                 if (!command) continue
-                if (!info?.config?.category || info.config.category === 'games' || info.config.category === 'moderation' || info.config.category === 'educative' || info.config.category === 'coding' || info.config.category === 'media' || info.config.category === 'utils' || info.config.category === 'weeb' || info.config.category === 'fun' || info.config.category === 'general' || info.config.category === 'dev') continue
+                if (!info?.config?.category || info.config.category === 'games' || info.config.category === 'creatiom' || info.config.category === 'moderation' || info.config.category === 'educative' || info.config.category === 'coding' || info.config.category === 'media' || info.config.category === 'utils' || info.config.category === 'weeb' || info.config.category === 'fun' || info.config.category === 'general' || info.config.category === 'dev') continue
                 if (Object.keys(categories).includes(info.config.category)) categories[info.config.category].push(info)
                 else {
                     categories[info.config.category] = []
@@ -57,7 +57,7 @@ export default class Command extends BaseCommand {
 │   🧨 PIKU
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
-❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
+❅┈if you want to use these commands\nadmin have unlock through *${this.client.config.prefix}act nsfw*┈❅
 🎗 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*` }
             )
         }
