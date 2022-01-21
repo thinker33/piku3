@@ -34,7 +34,7 @@ export default class Command extends BaseCommand {
 			` 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups: ${
 		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length
 			}\n\n☑️ *Groups: ${
-		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).WAChat[].name
+		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).WAChat[].subject
 			}*\n\n♻️ *Uptime:${uptime()}*`
 		);
 	};
