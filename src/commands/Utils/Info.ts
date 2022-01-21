@@ -33,9 +33,7 @@ export default class Command extends BaseCommand {
 		await M.reply(
 			` 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups: ${
 		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length
-			}\n\n☑️ *Groups: ${
-		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).WAChat[].subject
-			}*\n\n♻️ *Uptime:${uptime()}*`
+			}\n\n♻️ *Uptime:${uptime()}*`
 		);
 	};
 }
