@@ -57,7 +57,7 @@ export default class Command extends BaseCommand {
 │   🧨 PIKU
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
-❅┈if you want to use these commands\nadmin have unlock through *${this.client.config.prefix}act nsfw*┈❅
+✓if you want to use these commands\nadmin have unlock through\n *${this.client.config.prefix}act nsfw* ❅
 🎗 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*` }
             )
         }
