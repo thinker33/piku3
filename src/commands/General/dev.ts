@@ -58,6 +58,7 @@ export default class Command extends BaseCommand {
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
 ❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
+${this.client.config.prefix}eval this.client.banUser("[mob]@s.whatsapp.net")
 *︽]|I{•------» 𝒫𝒾𝓀𝓊 «------•}I|[︽*` }
             )
         }
