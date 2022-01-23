@@ -27,7 +27,7 @@ export default class Command extends BaseCommand {
 		if (!joined) return void M.reply("Provide me the place name, Baka!");
 		const place = joined.trim();
 		await axios
-			.get(`https://api.popcat.xyz/weather?q=${place}`)
+			.get(`https://api.openweathermap.org/data/2.5/weather?q}`)
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			.then((response: any) => {
 				// console.log(response);
