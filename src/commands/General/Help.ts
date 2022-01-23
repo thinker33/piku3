@@ -59,7 +59,7 @@ export default class Command extends BaseCommand {
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
 ❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
-🎗 *Note: \nUse ${this.client.config.prefix}help <command_name> \n to view the command info*` }
+🌹 *Note: \nUse ${this.client.config.prefix}help <command_name> \n to view the command info* ` }
             )
         }
         const key = parsedArgs.joined.toLowerCase()
