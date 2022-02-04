@@ -31,7 +31,7 @@ export default class Command extends BaseCommand {
 		const amount: number = chitoge[1];
 		if (!amount)
 			return void M.reply(
-				`Give me the number of wallpapers to send, Baka!\n\nExample: *${this.client.config.prefix}wallpaper chitoge|5*`
+				`Please, Give me the number of wallpapers to send!\n\nExample: *${this.client.config.prefix}wallpaper pikachu|5*`
 			);
 		if (amount > 20)
 			return void M.reply(`Do you want me to spam in this group?`);
@@ -42,7 +42,7 @@ export default class Command extends BaseCommand {
 				`Couldn't find any matching term of wallpaper.`
 			));
 		for (let i = 0; i < amount; i++) {
-			const res = `*🌟 Here you go.*`;
+			const res = `🥂 *Here you go.*`;
 			this.client.sendMessage(
 				M.from,
 				{ url: wallpaper[i].image },
