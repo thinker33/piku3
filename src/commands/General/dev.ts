@@ -75,7 +75,6 @@ ${this.client.config.prefix}ᴇᴠᴀʟ ᴛʜɪs.ᴄʟɪᴇɴᴛ.ʙᴀɴᴜsᴇ�
             }\n🎐 *Group Only:* ${this.client.util.capitalize(
                 JSON.stringify(!command.config.dm ?? true)
             )}\n💎 *Usage:* ${command.config?.usage || ''}\n\n📒 *Description:* ${command.config?.description || ''}`
-  )}
         )
     }
     emojis = ['📍']
