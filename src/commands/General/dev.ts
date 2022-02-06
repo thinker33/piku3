@@ -44,15 +44,15 @@ export default class Command extends BaseCommand {
 ╰────────────┘                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
-                text += `\n🐇 \`\`\`*${categories[
-                    key*
+                text += `${this.emojis[keys.indexOf(key)]}\n\n╰( ･ ᗜ ･ )➝ \`\`\`\n${categories[
+                    key
                 ]
                     .map((command) => command.config?.command)
                     .join(' , ')}\`\`\`\n\n`
             return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
             mimetype: Mimetype.gif,
             caption: `${text} 
- ──❅┈[ *DEV* ]┈❅───
+ ──❅┈[ ʘ‿ʘ ]┈❅───
 ┌────────────┈❅
 │   🧨 PIKU
 │   ©️ Synthesized Infinity Botto
@@ -78,4 +78,5 @@ ${this.client.config.prefix}ᴇᴠᴀʟ ᴛʜɪs.ᴄʟɪᴇɴᴛ.ʙᴀɴᴜsᴇ�
             )}\n💎 *Usage:* ${command.config?.usage || ''}\n\n📒 *Description:* ${command.config?.description || ''}`
         )
     }
-    }
+    emojis = ['⛏️']
+}
