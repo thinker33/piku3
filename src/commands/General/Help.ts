@@ -45,7 +45,7 @@ export default class Command extends BaseCommand {
 ╰────────────                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
-                text += `${this.lemojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}* ${this.remojis[keys.indexOf(key)]}\n\n• \`\`\`${categories[
+                text += `${this.lemojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n\n• \`\`\`${categories[
                     key
                 ]
                     .map((command) => command.config?.command)
@@ -78,6 +78,5 @@ export default class Command extends BaseCommand {
             )}\n💎 *Usage:* ${command.config?.usage || ''}\n\n📒 *Description:* ${command.config?.description || ''}`
         )
     }
-    lemojis = ['💕','💕','💕','💕','💕','💕','💕','💕','💕','💕','💕']
-remojis = ['💞','💞','💞','💞','💞','💞','💞','💞','💞','💞','💞']
+    lemojis = ['🔖','🔖','🔖','🔖','🔖','🔖','🔖','🔖','🔖','🔖']
 }
