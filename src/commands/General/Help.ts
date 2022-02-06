@@ -40,7 +40,7 @@ export default class Command extends BaseCommand {
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
 │⋊ ɴᴀᴍᴇ: PIKU
 │⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
-│⋊ ᴏᴡɴᴇʀ: <${this.client.config.prefix}mod>
+│⋊ ᴏᴡɴᴇʀ: *${this.client.config.prefix}mods*
 │⋊ ᴏᴡɴᴇʀ: if you wanna add bot ask to owner
 ╰────────────                            \n\n`
             const keys = Object.keys(categories)
@@ -53,13 +53,13 @@ export default class Command extends BaseCommand {
             return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
             mimetype: Mimetype.gif,
             caption: `${text} 
- ──❅┈[ Chitoge ]┈❅───
+ ──❅┈[ *Chitoge* ]┈❅───
 ┌────────────┈❅
-│   🧨 PIKU
+│   🧨 *PIKU*
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
 ❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
-🌹 *Note: \nUse ${this.client.config.prefix}help <command_name> \n to view the command info* ` }
+🌹 *Note:* \nUse *${this.client.config.prefix}help* <command_name> \n to view the command info ` }
             )
         }
         const key = parsedArgs.joined.toLowerCase()
