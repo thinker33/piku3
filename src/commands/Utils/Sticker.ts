@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'sticker',
-            aliases: ['s'],
+            aliases: ['s', '...'],
             description: 'Converts images/videos into stickers',
             category: 'utils',
             usage: `${client.config.prefix}sticker [(as caption | tag)[video | image]]`,
@@ -85,7 +85,8 @@ export default class Command extends BaseCommand {
 						quality,
 						type: StickerTypes[
 							parsedArgs.flags.includes("--crop") ||
-							parsedArgs.flags.includes("--c")
+							parsedArgs.flags.includes("--c") ||
+							parsedArgs.flags.includes("c")
 								? "CROPPED"
 								: parsedArgs.flags.includes("--stretch") ||
 								  parsedArgs.flags.includes("--s")
