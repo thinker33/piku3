@@ -113,6 +113,7 @@ export default class Command extends BaseCommand {
 			.setProgressBar("#fff5f5", "COLOR")
 			.setOverlay("#96a6e0")
 			.setUsername(username)
+			.setDiscriminator("0001")
 			.setBackground("COLOR", "#facfcf");
 		rank.build({}).then((rankcard) => {
 			const text = `🌷 *Username: ${username}*\n*________________________*\n👑 *Level: ${level}*\n*________________________*\n🐇 *Exp: ${
