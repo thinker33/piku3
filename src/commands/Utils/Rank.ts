@@ -108,7 +108,7 @@ export default class Command extends BaseCommand {
 			.setAvatar(pfp)
 			.setCurrentXP(exp || 0)
 			.setRequiredXP(required)
-			.setStatus("dnd")
+			.setStatus("online", true)
 			.setLevel(level, "Level:", true)
 			.setRank(0, `Role: ${role}`, true)
 			.setProgressBar("#fff5f5", "COLOR")
