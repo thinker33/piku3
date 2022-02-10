@@ -108,18 +108,17 @@ export default class Command extends BaseCommand {
 			.setAvatar(pfp)
 			.setCurrentXP(exp || 0)
 			.setRequiredXP(required)
-			.setStatus("online", true)
 			.setLevel(level, "Level:", true)
 			.setRank(0, `Role: ${role}`, true)
 			.setProgressBar("#1c1c1c", "COLOR")
-			.setOverlay("#000000")
+			.setOverlay("#96a6e0")
 			.setUsername(username)
 			.setDiscriminator("0001")
 			.setBackground("COLOR", "#facfcf");
 		rank.build({}).then((rankcard) => {
-			const text = `🏮 *Username: ${username}*\n\n〽️ *Level: ${level}*\n\n⭐ *Exp: ${
+			const text = `🌷 *Username: ${username}*\n\n👑 *Level: ${level}*\n\n🐇 *Exp: ${
 				exp || 0
-			} / ${required}*\n\n💫 *Role: ${role}*\n\n📍 *status: ${online}*\n\n`;
+			} / ${required}*\n\n\n\n🎗️ *Role: ${role}*\n\n`;
 			M.reply(
 				rankcard,
 				MessageType.image,
