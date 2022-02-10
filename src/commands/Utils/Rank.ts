@@ -34,7 +34,7 @@ export default class Command extends BaseCommand {
 		} catch (err) {
 			M.reply(`Profile Picture not Accessible of ${username}`);
 			pfp =
-				"https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg";
+				"https://i.ibb.co/bmc4Cx3/images-1-4.jpg";
 		}
 		const exp = (await this.client.getUser(user)).Xp;
 		let role: string;
@@ -111,15 +111,15 @@ export default class Command extends BaseCommand {
 			.setStatus("online", true)
 			.setLevel(level, "Level:", true)
 			.setRank(0, `Role: ${role}`, true)
-			.setProgressBar("#e68e15", "COLOR")
+			.setProgressBar("#1c1c1c", "COLOR")
 			.setOverlay("#000000")
 			.setUsername(username)
 			.setDiscriminator("0001")
-			.setBackground("COLOR", "#ffffff");
+			.setBackground("COLOR", "#facfcf");
 		rank.build({}).then((rankcard) => {
 			const text = `🏮 *Username: ${username}*\n\n〽️ *Level: ${level}*\n\n⭐ *Exp: ${
 				exp || 0
-			} / ${required}*\n\n💫 *Role: ${role}*\n\n`;
+			} / ${required}*\n\n💫 *Role: ${role}*\n\n📍 *status: ${online}*\n\n`;
 			M.reply(
 				rankcard,
 				MessageType.image,
