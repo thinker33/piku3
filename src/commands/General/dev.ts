@@ -11,7 +11,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'dev',
             description: 'Command list for mods',
-            category: 'general',
+            category: 'dev',
             usage: `${client.config.prefix}dev (command_name)`,
             aliases: ['modlist', 'mlist', 'mh']
         })
