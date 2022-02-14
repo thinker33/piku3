@@ -29,13 +29,9 @@ export default class Command extends BaseCommand {
 			return void (await M.reply(`Please provide the Broadcast Message.`));
 		const term = joined.trim();
 		const gifs = [
-			"https://media.tenor.com/videos/b5bb295fb219e5cd12cb74d29eaa079c/mp4",
-			"https://media.tenor.com/videos/cb603deb19eefdb7feee3aa7aa1aa7b6/mp4",
-			"https://media.tenor.com/videos/31edd50dd5096731be4690a67142a1aa/mp4",
-			"https://media.tenor.com/videos/8fb551bffa77b6f6d875eb0a0a5e8fa9/mp4",
-			"https://media.tenor.com/videos/e09c85e729650f03ca9099663718e38c/mp4",
-			"https://media.tenor.com/videos/9eda38308ee0b60c51962dde63d203c7/mp4",
-			"https://media.tenor.com/videos/f4c3cd17a4348142d254a1f5f206a0d7/mp4",
+			"https://c.tenor.com/tZVpbfTIjNMAAAAC/pikachu.mp4",
+			"https://c.tenor.com/p6I6OADySl4AAAAC/piku.mp4",
+			"https://c.tenor.com/jHHKjbx6ZIoAAAAC/pikachu.mp4",
 		];
 		const selected = gifs[Math.floor(Math.random() * gifs.length)];
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
