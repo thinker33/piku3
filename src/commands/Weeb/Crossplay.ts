@@ -20,12 +20,12 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-        // fetch result of https://waifu.pics/api/sfw/waifu from the API using axios
-        return void M.reply( await request.buffer(`https://velgrynd.herokuapp.com/api/image/cosplay`),
+        // fetch result of https://velgrynd.herokuapp.com/api/randomimage/cosplay?apikey=Kuxw2RRu from the API using axios
+        return void M.reply( await request.buffer(`https://velgrynd.herokuapp.com/api/randomimage/cosplay?apikey=Kuxw2RRu`),
         MessageType.image,
                     undefined,
                     undefined,
-                    `🌟 Here you go.\n`,
+                    '🥂.\n`,
                     undefined
                 ).catch((reason: any) =>
             M.reply(`✖ An error occurred. Please try again later.`))
