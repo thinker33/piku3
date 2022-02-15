@@ -20,10 +20,10 @@ export default class Command extends BaseCommand {
     // static count = 0
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
         
-        if (!joined) return void M.reply('Provide the keywords you wanna search, Baka!')
+        if (!joined) return void M.reply('Provide the keywords you wanna search,🍭')
         const chitoge = joined.trim()
         console.log(chitoge)
-        const { data } = await axios.get(`https://api.zekais.com/pinterest?query=${chitoge}&apikey=CnXf9Ojs`)
+        const { data } = await axios.get(`https://hanzz-web.herokuapp.com/api/pinterest?query=${term}`)
         if ((data as { error: string }).error) return void (await M.reply('Sorry, couldn\'t find'))
         const buffer = await request.buffer(data.result[Math.floor(Math.random() * data.result.length)]).catch((e) => {
             return void M.reply(e.message)
