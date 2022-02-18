@@ -32,10 +32,10 @@ export default class Command extends BaseCommand {
 		];
 		const option = ["--s", "--sticker"];
 		const random = stickers[Math.floor(Math.random() * stickers.length)];
-		const term = joined.trim();
+		const tem = joined.trim();
                         if (!joined)
 			return void (await M.reply(
-				`${term}`,
+				`${tem}`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
