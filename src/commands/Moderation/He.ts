@@ -32,7 +32,8 @@ export default class Command extends BaseCommand {
 		];
 		const option = ["--s", "--sticker"];
 		const random = stickers[Math.floor(Math.random() * stickers.length)];
-		if (!joined)
+		const term = joined.trim();
+                        if (!joined)
 			return void (await M.reply(
 				`${term}`,
 				undefined,
