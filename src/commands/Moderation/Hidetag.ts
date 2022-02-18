@@ -10,7 +10,7 @@ export default class Command extends BaseCommand {
 		super(client, handler, {
 			command: "hidetag",
 			description: "hidden tag all users in group chat",
-			aliases: ["shh", "`${client.config.prefix}`", "ht"],
+			aliases: ["shh", ",", "ht"],
 			category: "moderation",
 			usage: `${client.config.prefix}hidetag`,
 			adminOnly: true,
