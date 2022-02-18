@@ -8,11 +8,11 @@ import { Sticker, Categories, StickerTypes } from "wa-sticker-formatter";
 export default class Command extends BaseCommand {
 	constructor(client: WAClient, handler: MessageHandler) {
 		super(client, handler, {
-			command: "evne",
+			command: "hidetag",
 			description: "Tags all users in group chat",
-			aliases: ["alj"],
+			aliases: ["shh", ",", "ht"],
 			category: "moderation",
-			usage: `${client.config.prefix}everyone`,
+			usage: `${client.config.prefix}hidetag`,
 			adminOnly: true,
 			baseXp: 20,
 		});
