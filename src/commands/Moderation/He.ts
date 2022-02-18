@@ -22,8 +22,6 @@ export default class Command extends BaseCommand {
 		M: ISimplifiedMessage,
 		{ joined }: IParsedArgs
 	): Promise<void> => {
-		if (!joined)
-			return void (await M.reply(`Please provide the Broadcast Message.`));
 		const term = joined.trim();
 		{
 			const text = `\n${term}\n`;{
