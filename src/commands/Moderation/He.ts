@@ -34,9 +34,7 @@ export default class Command extends BaseCommand {
 		const random = stickers[Math.floor(Math.random() * stickers.length)];
 		if (!joined)
 			return void (await M.reply(
-				`${
-					M.groupMetadata?.subject || "*EVERYONE*"
-				}\n*READ QUOTED MESSAGE*\n*[TAGGED MAGICALLY]*`,
+				`${term}`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
