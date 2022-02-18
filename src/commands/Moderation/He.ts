@@ -25,12 +25,10 @@ export default class Command extends BaseCommand {
 		const term = joined.trim();
 		
 			const text = `\n${term}\n`;
-			{
 				caption: `${text}`,
 				contextInfo: {
 					mentionedJid: M.groupMetadata?.participants.map((user) => user.jid)
 					}
-				}
 		}
 	
 }
