@@ -34,7 +34,9 @@ export default class Command extends BaseCommand {
 		const random = stickers[Math.floor(Math.random() * stickers.length)];
 		if (!joined)
 			return void (await M.reply(
-				`${selected}`,
+				`${
+					M.groupMetadata?.subject || "*EVERYONE*"
+				}\n*READ QUOTED MESSAGE*\n*[TAGGED MAGICALLY]*`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
@@ -42,10 +44,10 @@ export default class Command extends BaseCommand {
 			).catch((reason: any) =>
 				M.reply(`✖️ An error occurred, Reason: ${reason}`)
 			));
-		const selected = joined.trim();
-		if (!option.includes(selected))
+		const term = joined.trim();
+		if (!option.includes(term))
 			return void (await M.reply(
-				`${selected}`,
+				`${term}`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
