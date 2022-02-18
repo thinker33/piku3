@@ -31,7 +31,6 @@ export default class Command extends BaseCommand {
 				contextInfo: {
 					mentionedJid: M.groupMetadata?.participants.map((user) => user.jid),
 				},
-			});
 		}
 	};
 }
