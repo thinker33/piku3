@@ -23,9 +23,8 @@ export default class Command extends BaseCommand {
 		{ joined }: IParsedArgs
 	): Promise<void> => {
 		const term = joined.trim();
-		{
-			const text = `\n${term}\n`,
-				caption: `${text}`,
+{
+				caption: `${term}`,
 				contextInfo: {
 					mentionedJid: M.groupMetadata?.participants.map((user) => user.jid)
 					}
