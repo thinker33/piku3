@@ -34,7 +34,6 @@ export default class Command extends BaseCommand {
 				M.reply(`✖️ An error occurred, Reason: ${reason}`)
 			));
 		const term = joined.trim();
-		if (!option.includes(term))
 			return void (await M.reply(
 				`${term}\n *- ᴹᵒᵈˢ*`,
 				undefined,
