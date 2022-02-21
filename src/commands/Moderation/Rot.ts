@@ -20,11 +20,10 @@ export default class Command extends BaseCommand {
         M.sender.jid,
         const term = joined.trim();
             if (!joined)
-));
         
         return void this.client.mods.sendMessage(M.from, `${term}`, {quoted:M.WAMessage,
             caption: `Sent you the report in personal message \n` }
         )
-
+        ));
         }
 }
