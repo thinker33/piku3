@@ -19,9 +19,9 @@ export default class Command extends BaseCommand {
         (await this.client.mods.sendMessage(
         const term = joined.trim();
             
-        return void this.client.mods.sendMessage(M.from, `${term}`, {quoted:M.WAMessage,
+        return void this.client.mods.sendMessage(M.reply, `${term}`, {quoted:M.WAMessage,
             caption: `Sent you the report in personal message \n` }
         )
-        ));
-        }
+    ));
+}
 }
