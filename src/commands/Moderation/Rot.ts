@@ -16,9 +16,10 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-        (await this.client.mods.sendMessage( M.sender.jid
+        (await this.client.mods.sendMessage( M.sender.jid `${term}`
         const term = joined.trim(),
-        return void this.client.mods.sendMessage(M.reply, {term}, {quoted:M.WAMessage,
+        return void this.client.mods.sendMessage(M.reply,
+           {quoted:M.WAMessage,
             caption: `Sent you the report in personal message \n` }
         )
     ));
