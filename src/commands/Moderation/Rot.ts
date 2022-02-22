@@ -16,7 +16,7 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-        (await this.client.mods.sendMessage(
+        (await this.client.Mods.sendMessage(
         M.sender.jid,
         `testing`,
            MessageType.text
@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
             './assets/hello-kitty.mp4'
         ]
         let beckylynch = n[Math.floor(Math.random() * n.length)]
-        return void this.client.mods.sendMessage(M.from, { url:beckylynch }, MessageType.video, {quoted:M.WAMessage,
+        return void this.client.Mods.sendMessage(M.from, { url:beckylynch }, MessageType.video, {quoted:M.WAMessage,
             mimetype: Mimetype.gif,
             caption: `Sent you the support Link in personal message \n` }
         )
