@@ -16,12 +16,19 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-        (await this.client.mods.sendMessage( M.sender.jid `joined.trim()`
-        const term = joined.trim();
-        return void this.client.mods.sendMessage(M.reply, { url: term },
-           {quoted:M.WAMessage,
-            caption: `Sent you the report in personal message \n` }
+        (await this.client.mods.sendMessage(
+        M.sender.jid,
+        `testing`,
+           MessageType.text
+        ))
+        const n = [
+            './assets/hello-kitty.mp4'
+        ]
+        let beckylynch = n[Math.floor(Math.random() * n.length)]
+        return void this.client.mods.sendMessage(M.from, { url:beckylynch }, MessageType.video, {quoted:M.WAMessage,
+            mimetype: Mimetype.gif,
+            caption: `Sent you the support Link in personal message \n` }
         )
-    ));
-}
+
+        }
 }
