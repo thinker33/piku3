@@ -22,7 +22,7 @@ export default class Command extends BaseCommand {
 			.map((v) => v.jid)
 			.map((jids) => (jids.includes("g.us") ? jids : name))
 			.filter((v) => v);
-                const users: any = this.client.chats
+                const users: any = this.client.getUser
 			.all()
 			.filter((v) => !v.jid.endsWith && !v.archive)
 			.map((v) => v.jid)
@@ -38,7 +38,7 @@ export default class Command extends BaseCommand {
 		const uptime = () => formatTime(process.uptime());
 		await M.reply(
 			` 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
-		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n\n\n➰ *users:* ${this.client.getUser.all().filter(chat => chat.jid.endsWith('@s.whatsapp.net')).length}\n\n♻️ *Uptime:${uptime()}*`
+		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n\n\n➰ *users:* ${this.client.getUser.all().filter(users => chat.jid.endsWith('@s.whatsapp.net')).length}\n\n♻️ *Uptime:${uptime()}*`
 		);
 	};
 }
