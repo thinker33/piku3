@@ -26,7 +26,7 @@ export default class Command extends BaseCommand {
 			.all()
 			.filter((v) => !v.jid.endsWith && !v.archive)
 			.map((v) => v.jid)
-			.map((jids) => (ban.includes("true") ? jids : name))
+			.map((jids) => (jid.includes("@s.whatsapp.net") ? jids : name))
 			.filter((v) => v);
 		const pad = (s: any) => (s < 10 ? "0" : "") + s;
 		const formatTime = (seconds: any) => {
