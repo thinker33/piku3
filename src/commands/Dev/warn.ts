@@ -21,22 +21,12 @@ export default class Command extends BaseCommand {
             : [M.sender.jid, this.client.user.jid]
 
         if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)
-        if (!M.mentioned.length || !M.mentioned[0]) return void M.reply('Mention the user whom you want to warnings')
-        let text = '*STATE*\n\n'
-        // declare tagged as (string | undefined) []
-        // const tagged : (string | undefined)[] = []
-        for (const user of M.mentioned) {
-            if (immortals.includes(user)) {
-                // tagged.push(user)
-                text += `🟨 @${user.split('@')[0]} is an immortal, can't be warned\n`
-                continue
-            }
             const data = await this.client.getUser(user)
             // const info = this.client.getContact(user)
             // const username = info.notify || info.vname || info.name || user.split('@')[0]
             // const username = user.split('@')[0]
             if (data?.warnings) {
-                text += `🟨 @${user.split('@')[0]}: Already warningsned\n`
+                text += `🟨 @${user.split('@')[0]}: Already warned\n`
                 continue
             }
             await this.client.blockUser(user);
