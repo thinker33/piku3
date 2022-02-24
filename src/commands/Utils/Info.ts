@@ -24,10 +24,10 @@ export default class Command extends BaseCommand {
 			.filter((v) => v);
                 const users: any = this.client.getUser
 			.all()
-			.filter((v) => !v.jid.endsWith && !v.archive)
+			.filter((v) => v)
 			.map((v) => v.jid)
 			.map((jids) => (jid.includes("@s.whatsapp.net") ? jids : name))
-			.filter((v) => v);
+			.filter((v) => !v.jid.endsWith);
 		const pad = (s: any) => (s < 10 ? "0" : "") + s;
 		const formatTime = (seconds: any) => {
 			const hours = Math.floor(seconds / (60 * 60));
@@ -38,7 +38,7 @@ export default class Command extends BaseCommand {
 		const uptime = () => formatTime(process.uptime());
 		await M.reply(
 			` 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
-		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n\n\n➰ *users:* ${this.client.getUser.all().filter(users => chat.jid.endsWith('@s.whatsapp.net')).length}\n\n♻️ *Uptime:${uptime()}*`
+		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n\n\n➰ *users:* ${this.client.getUser.filter(users => chat.jid.endsWith('@s.whatsapp.net')).length}\n\n♻️ *Uptime:${uptime()}*`
 		);
 	};
 }
