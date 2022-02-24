@@ -26,7 +26,7 @@ export default class Command extends BaseCommand {
 			.all()
 			.filter((v) => !v.jid.endsWith && !v.archive)
 			.map((v) => v.jid)
-			.map((jids) => (jids.includes("@s.whatsapp.net") ? jids : name))
+			.map((jids) => (ban.includes("true") ? jids : name))
 			.filter((v) => v);
 		const pad = (s: any) => (s < 10 ? "0" : "") + s;
 		const formatTime = (seconds: any) => {
@@ -38,7 +38,7 @@ export default class Command extends BaseCommand {
 		const uptime = () => formatTime(process.uptime());
 		await M.reply(
 			` 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
-		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n\n\n➰ *users:* ${this.client.chats.all().filter(chat => chat.jid.endsWith('@s.whatsapp.net')).length}\n\n♻️ *Uptime:${uptime()}*`
+		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n\n\n➰ *ban:* ${this.client.chats.all().filter(chat => chat.ban.endsWith('true')).length}\n\n♻️ *Uptime:${uptime()}*`
 		);
 	};
 }
