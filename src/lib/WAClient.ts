@@ -227,6 +227,16 @@ export default class WAClient extends Base {
 			}).save();
 	};
 
+	setwarnings = async (jid: string, min: number, max: number): Promise<void> => {
+		const warnings = Math.floor(Math.random() * max) + min;
+		const result = await this.DB.user.updateOne({ jid }, { $inc: { warnings } });
+		if (!result.nModified)
+			await new this.DB.user({
+				jid,
+				warnings,
+			}).save();
+	};
+
 	setXp = async (jid: string, min: number, max: number): Promise<void> => {
 		const Xp = Math.floor(Math.random() * max) + min;
 		const result = await this.DB.user.updateOne({ jid }, { $inc: { Xp } });
