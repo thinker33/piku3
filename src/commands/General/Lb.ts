@@ -2,7 +2,6 @@ import MessageHandler from "../../Handlers/MessageHandler";
 import BaseCommand from "../../lib/BaseCommand";
 import WAClient from "../../lib/WAClient";
 import { IParsedArgs, ISimplifiedMessage, IUser } from "../../typings";
-import ordinal from "ordinal";
 import { MessageType } from "@adiwajshing/baileys";
 
 export default class Command extends BaseCommand {
@@ -105,7 +104,7 @@ export default class Command extends BaseCommand {
       await this.client.getBuffer(
         "https://c.tenor.com/tZVpbfTIjNMAAAAC/pikachu.mp4"
       ),
-      MessageType.gif,
+      MessageType.image,
       undefined,
       undefined,
       text
