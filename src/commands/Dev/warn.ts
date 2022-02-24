@@ -35,8 +35,8 @@ export default class Command extends BaseCommand {
             // const info = this.client.getContact(user)
             // const username = info.notify || info.vname || info.name || user.split('@')[0]
             // const username = user.split('@')[0]
-            if (data?.ban) {
-                text += `🟨 @${user.split('@')[0]}: `@${count}\n`
+            if (data?.warnings) {
+                text += `🟨 @${user.split('@')[0]}: done \n`
                 continue
             }
             await this.client.blockUser(user);
