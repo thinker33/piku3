@@ -92,7 +92,7 @@ export default class MessageHandler {
 			);
 			if (!command)
 				return void M.reply(
-					`*Hello, ｡◕‿◕｡* \n\n I am here for you but Please, use command from help list*. *${this.client.config.prefix}help*.`
+					` *꧁ Hello there ꧂* \n\n Thanks for using bot. Bot is available for you kindly use *${this.client.config.prefix}help* .`
 				);
 			const user = await this.client.getUser(M.sender.jid);
 			if (user.ban) return void M.reply("You're Banned from using commands.");
