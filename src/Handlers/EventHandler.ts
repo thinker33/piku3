@@ -26,11 +26,11 @@ await this.client.groupLeave(event.jid)
         const text = add
 					? `- ${group.subject || "___"} -\n\n💠 *Group Description:*\n${
 							group.desc
-					  }\n\n*🛑🛑🛑🛑🛑🛑🛑🛑\n{Please deactivate this feature}*\n\n${event.participants
+					  }\n\n${event.participants
 							.map((jid) => `@${jid.split("@")[0]}`)
 							.join(", ")}`
 					: event.action === "remove"
-					? `*🛑🛑🛑🛑🛑🛑🛑🛑\n{Please deactivate this feature}* *@${
+					? `*Sayonara* *@${
 							event.participants[0].split("@")[0]
 					  }* \n\n  *Even this group is amazing !!  But we all members not gonna miss you .*
  `
@@ -43,10 +43,7 @@ await this.client.groupLeave(event.jid)
             mentionedJid: event.actor ? [...event.participants, event.actor] : event.participants
         }
         if (add) {
-            let image = (await this.client.getProfilePicture(event.jid)) || this.client.assets.get('404.png')
-            if (typeof image === 'string') image = await request.buffer(image)
-            if (image)
-                return void (await this.client.sendMessage(event.jid, image, MessageType.image, {
+                return void (await this.client.sendMessage(event.jid, 
                     caption: text,
                     contextInfo
                 }))
