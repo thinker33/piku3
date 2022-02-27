@@ -43,8 +43,13 @@ await this.client.groupLeave(event.jid)
             mentionedJid: event.actor ? [...event.participants, event.actor] : event.participants
         }
         if (add) {
-                return void (await this.client.sendMessage(event.jid, text, contextInfo,
-                    ))
+ ​            ​let​ ​image​ ​=​ ​(​await​  this​.​client​.​assets​.​get​(​'0_Pokemon-2019-Nintendo-Switch-new-game-announcement-761157.jpeg'​) 
+ ​            ​if​ ​(​typeof​ ​image​ ​===​ ​'string'​)​ ​image​ ​=​ ​await​ ​request​.​buffer​(​image​) 
+ ​            ​if​ ​(​image​) 
+ ​                ​return​ ​void​ ​(​await​ ​this​.​client​.​sendMessage​(​event​.​jid​,​ ​image​,​ ​MessageType​.​image​,​ ​{ 
+ ​                    ​caption​: ​text​, 
+ ​                    contextInfo 
+ ​                ​}​)​)
         }
         return void this.client.sendMessage(event.jid, text, MessageType.extendedText, { contextInfo })
     }
