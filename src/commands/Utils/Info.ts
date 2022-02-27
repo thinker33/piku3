@@ -24,7 +24,6 @@ export default class Command extends BaseCommand {
 			.filter((v) => v);
 
                 const dbuser = await this.DB.user.count();
-		for (const users of dbuser); 
 
                 const pad = (s: any) => (s < 10 ? "0" : "") + s;
 		const formatTime = (seconds: any) => {
@@ -36,7 +35,7 @@ export default class Command extends BaseCommand {
 		const uptime = () => formatTime(process.uptime());
 		await M.reply(
 			` 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
-		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n\n\n➰ *users:* ${await.this.client.DB.user.count()}\n\n♻️ *Uptime:${uptime()}*`
+		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n\n\n➰ *users:* ${this.client.dbuser(dbuser => awaitthis.client.DB.user.count()}\n\n♻️ *Uptime:${uptime()}*`
 		);
 	};
 }
