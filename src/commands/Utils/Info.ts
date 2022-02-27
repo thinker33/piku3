@@ -23,7 +23,7 @@ export default class Command extends BaseCommand {
 			.map((jids) => (jids.includes("g.us") ? jids : name))
 			.filter((v) => v);
 
-                const dbuser = await this.DB.user.count();
+                const user = await this.DB.user.count();
 
                 const pad = (s: any) => (s < 10 ? "0" : "") + s;
 		const formatTime = (seconds: any) => {
@@ -35,7 +35,7 @@ export default class Command extends BaseCommand {
 		const uptime = () => formatTime(process.uptime());
 		await M.reply(
 			` 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
-		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n\n\n➰ *users:* ${dbuser}\n\n♻️ *Uptime:${uptime()}*`
+		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n\n\n➰ *users:* ${user.count()}\n\n♻️ *Uptime:${uptime()}*`
 		);
 	};
 }
