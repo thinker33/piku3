@@ -43,7 +43,7 @@ await this.client.groupLeave(event.jid)
             mentionedJid: event.actor ? [...event.participants, event.actor] : event.participants
         }
         if (add) {
-                let image = this.client.buffer(`https://i.ibb.co/FWTD0JT/images-1-7.jpg`),
+                let image = this.client.fetch(`https://i.ibb.co/FWTD0JT/images-1-7.jpg`),
             if (typeof image === 'string') image = await request.buffer(image)
             if (image)
                 return void (await this.client.sendMessage(event.jid, image, MessageType.image, { 
