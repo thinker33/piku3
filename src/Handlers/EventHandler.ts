@@ -24,7 +24,7 @@ await this.client.groupLeave(event.jid)
         if (!data.events) return void null
         const add = event.action === 'add'
         const text = add
-					? `- ${group.subject || "___"} -\n\n💠 *Group Description:*\n${
+					? `╰☆☆ Ｗｅｌｃｏｍｅ ☆☆╮ \n- *${group.subject || "___"}* -\n\n💠 *Group Description:*\n${
 							group.desc
 					  }\n\n${event.participants
 							.map((jid) => `@${jid.split("@")[0]}`)
@@ -44,7 +44,7 @@ await this.client.groupLeave(event.jid)
         }
         if (add) {
             let image = (await this.client.assets.get('0_Pokemon-2019-Nintendo-Switch-new-game-announcement-761157.jpeg'))
-            if (typeof image === 'string') image = await request.buffer(image)
+           
             if (image)
                 return void (await this.client.sendMessage(event.jid, image, MessageType.image, {
                     caption: text,
