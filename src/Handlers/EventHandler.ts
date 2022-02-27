@@ -43,7 +43,7 @@ await this.client.groupLeave(event.jid)
             mentionedJid: event.actor ? [...event.participants, event.actor] : event.participants
         }
         if (add) {
-                return void (await this.client.sendMessage(event.jid, text, contextInfo
+                return void (await this.client.sendMessage(event.jid, text, contextInfo,
                     ))
         }
         return void this.client.sendMessage(event.jid, text, MessageType.extendedText, { contextInfo })
