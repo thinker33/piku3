@@ -22,6 +22,9 @@ export default class Command extends BaseCommand {
 			.map((v) => v.jid)
 			.map((jids) => (jids.includes("g.us") ? jids : name))
 			.filter((v) => v);
+                const dbuser = await this.DB.user.count();
+		for (const users of dbuser) {
+			this.user.set(user.user.toString(), feature.count);
                 const pad = (s: any) => (s < 10 ? "0" : "") + s;
 		const formatTime = (seconds: any) => {
 			const hours = Math.floor(seconds / (60 * 60));
