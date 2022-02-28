@@ -24,15 +24,15 @@ await this.client.groupLeave(event.jid)
         if (!data.events) return void null
         const add = event.action === 'add'
         const text = add
-					? `╰☆☆ Ｗｅｌｃｏｍｅ ☆☆╮ \n\n\n\n *${group.subject || "___"}* -\n\n\n 🧾 *Group Description:* 🧾\n\n${
+					? `╰☆☆ Ｗｅｌｃｏｍｅ ☆☆╮ \n\\n *${group.subject || "___"}* \n\n\nᴳᴿᴼᵁᴾ ᴰᴱˢᶜᴿᴵᴾᵀᴵᴼᴺ: \n\n${
 							group.desc
 					  }\n\n${event.participants
 							.map((jid) => `@${jid.split("@")[0]}`)
 							.join(", ")}`
 					: event.action === "remove"
-					? `*Sayonara* *@${
+					? ꧁🐤  *Hello members*  ꧂\n\n𓆏  *Look the person who leave this group ,even everyone know this is amazing group ,i am sure i am gonna miss this person*  𓀐\n༄ *@${
 							event.participants[0].split("@")[0]
-					  }* \n\n  *Even this group is amazing !!  But we all members not gonna miss you .*
+					  }* ༆\n\n 
  `
 					: `Ara Ara, looks like *@${
 							event.participants[0].split("@")[0]
