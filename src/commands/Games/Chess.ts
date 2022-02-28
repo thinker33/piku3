@@ -12,7 +12,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'chess',
             description: 'Play Chess ♟️ on WhatsApp.',
-            category: 'games',
+            category: 'fun',
             usage: `${client.config.prefix}chess`,
             baseXp: 20
         })
