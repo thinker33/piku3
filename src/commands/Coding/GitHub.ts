@@ -51,7 +51,7 @@ export default class Command extends BaseCommand {
             command: 'github',
             aliases: ['gh'],
             description: 'Get github information about a user/repo',
-            category: 'coding',
+            category: 'educative',
             usage: `${client.config.prefix}github`
         })
     }
