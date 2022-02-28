@@ -22,7 +22,7 @@ export default class Command extends BaseCommand {
 			.map((v) => v.jid)
 			.map((jids) => (jids.includes("g.us") ? jids : name))
 			.filter((v) => v);
- ​               ​const​ ​user = this.DB.user.count();
+ ​               ​const​ ​user = this.client.user.count();
                 const pad = (s: any) => (s < 10 ? "0" : "") + s;
 		const formatTime = (seconds: any) => {
 			const hours = Math.floor(seconds / (60 * 60));
