@@ -32,7 +32,7 @@ await this.client.groupLeave(event.jid)
 					: event.action === "remove"
 					? `꧁🐤  *Hello members*  ꧂\n\n𓆏  *Look the person who leave this group ,even everyone know this is amazing group ,i am sure i am gonna miss this person*  𓀐\n༄ *@${
 							event.participants[0].split("@")[0]
-					  }* ༆\n\n `
+					  }* ༆\n\n 
  `
 					: `Ara Ara, looks like *@${
 							event.participants[0].split("@")[0]
