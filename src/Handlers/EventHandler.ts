@@ -47,10 +47,7 @@ await this.client.groupLeave(event.jid)
 	    if (typeof image === 'string') image = await request.buffer(image);
            
             if (image)
-                return void (await this.client.sendMessage(event.jid, image, MessageType.image, {
-                    caption: text,
-                    contextInfo
-                }))
+                return void (await this.client.sendMessage(event.jid, image, MessageType.image, { contextInfo }))
         }
         return void this.client.sendMessage(event.jid, text, MessageType.extendedText, { contextInfo })
     }
