@@ -24,9 +24,9 @@ await this.client.groupLeave(event.jid)
         if (!data.events) return void null
         const add = event.action === 'add'
         const text = add
-					? `╰☆☆ Ｗｅｌｃｏｍｅ ☆☆╮ \n\\n *${group.subject || "___"}* \n\n\nᴳᴿᴼᵁᴾ ᴰᴱˢᶜᴿᴵᴾᵀᴵᴼᴺ: \n\n${
+					? `╰☆☆ Ｗｅｌｃｏｍｅ ☆☆╮ \n\n *${group.subject || "___"}* \nᴳᴿᴼᵁᴾ ᴰᴱˢᶜᴿᴵᴾᵀᴵᴼᴺ: \n\n${
 							group.desc
-					  }\n\n${event.participants
+					  }\n\n✨${event.participants
 							.map((jid) => `@${jid.split("@")[0]}`)
 							.join(", ")}`
 					: event.action === "remove"
