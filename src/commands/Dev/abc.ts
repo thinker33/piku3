@@ -47,7 +47,7 @@ export default class Command extends BaseCommand {
 				mimetype: Mimetype.gif,
 				caption: `${text}`,
 				contextInfo: {
-					mentionedJid: M.groupMetadata?.admins.map((user) => user.jid),
+					mentionedJid: M.groupMetadata?.admins,
 				},
 			});
 		}
