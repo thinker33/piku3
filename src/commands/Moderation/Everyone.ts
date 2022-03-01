@@ -25,8 +25,10 @@ export default class Command extends BaseCommand {
             const contact = this.client.getContact(user)
             username = contact.notify || contact.vname || contact.name || user.split('@')[0]
         }
-        return void (await M.reply(`{M.groupMetadata?.subject || "*EVERYONE*"
-				}\n*READ QUOTED MESSAGE*\n*[TAGGED MAGICALLY] \n by *@${user.split('@')[0]}* *`, undefined, undefined, M.groupMetadata?.participants.map((user) => user.jid)
+        return void (await M.reply(
+                    `${
+					M.groupMetadata?.subject || "*EVERYONE*"
+				}\n*READ QUOTED MESSAGE*\n *tagged by* *@${user.split('@')[0]}* *`, undefined, undefined, M.groupMetadata?.participants.map((user) => user.jid)
                     ))
     }
 }
