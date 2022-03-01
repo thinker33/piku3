@@ -33,7 +33,7 @@ export default class Command extends BaseCommand {
 			return `${pad(hours)}:${pad(minutes)}:${pad(secs)}`;
 		};
 		const uptime = () => formatTime(process.uptime());
-
+}
 		this.run = async (M: typings.ISimplifiedMessage): Promise<void> => {
 		const gif = [
 			"https://c.tenor.com/tZVpbfTIjNMAAAAC/pikachu.mp4"
@@ -47,6 +47,6 @@ export default class Command extends BaseCommand {
 					caption:
 			`🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
 		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n*Ban Users: ${uban}*\n\n*Users: ${users}*\n\n♻️ *Uptime:${uptime()}*`
-		);
+		)
 	};
 }
