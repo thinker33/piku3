@@ -15,13 +15,14 @@ export default class Command extends BaseCommand {
 	}
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
+                let pfp: string
         try {
             pfp =
                 'https://i.ibb.co/v18ZFWK/images-1-5.jpg'
         }
 		/*eslint-disable @typescript-eslint/no-explicit-any*/
-                let pfp: string
                 const users = await this.client.DB.user.count();
+                const uban = await this.client.DB.ban.count();
 		const chats: any = this.client.chats
 			.all()
 			.filter((v) => !v.jid.endsWith && !v.archive)
@@ -44,7 +45,7 @@ export default class Command extends BaseCommand {
             undefined,
             undefined,
 			` 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
-		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n*Users: ${users}*\n♻️ *Uptime:${uptime()}*`
+		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n*Ban Users: ${uban}*\n\n*Users: ${users}*\n\n♻️ *Uptime:${uptime()}*`
 		);
 	};
 }
