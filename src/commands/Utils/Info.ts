@@ -41,7 +41,6 @@ export default class Command extends BaseCommand {
 				{ url: gif },
 				MessageType.video,
 				{
-					quoted: M.WAMessage,
 					mimetype: Mimetype.gif,
 					caption:
 			`🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
