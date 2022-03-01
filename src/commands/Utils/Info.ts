@@ -38,8 +38,7 @@ export default class Command extends BaseCommand {
 		const uptime = () => formatTime(process.uptime());
 		await M.reply(
                 await request.buffer(
-                pfp ||
-                    'https://i.ibb.co/v18ZFWK/images-1-5.jpg'
+                pfp
             ),
             MessageType.image,
             undefined,
