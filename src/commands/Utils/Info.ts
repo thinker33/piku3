@@ -15,11 +15,6 @@ export default class Command extends BaseCommand {
 	}
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
-                let pfp: string
-        try {
-            pfp =
-                'https://i.ibb.co/v18ZFWK/images-1-5.jpg'
-        }
 		/*eslint-disable @typescript-eslint/no-explicit-any*/
                 const users = await this.client.DB.user.count();
                 const uban = await this.client.DB.ban.count();
@@ -38,12 +33,6 @@ export default class Command extends BaseCommand {
 		};
 		const uptime = () => formatTime(process.uptime());
 		await M.reply(
-                await request.buffer(
-                pfp
-            ),
-            MessageType.image,
-            undefined,
-            undefined,
 			` 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
 		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n*Ban Users: ${uban}*\n\n*Users: ${users}*\n\n♻️ *Uptime:${uptime()}*`
 		);
