@@ -27,8 +27,6 @@ export default class Command extends BaseCommand {
         }
         return void (await M.reply(`{M.groupMetadata?.subject || "*EVERYONE*"
 				}\n*READ QUOTED MESSAGE*\n*[TAGGED MAGICALLY] \n by *@${user.split('@')[0]}* *`, undefined, undefined, M.groupMetadata?.participants.map((user) => user.jid)
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (reason: any) => M.reply(`an error occurred, Reason: ${reason}`)
-        ))
+                    ))
     }
 }
