@@ -20,7 +20,7 @@ export default class Command extends BaseCommand {
         try {
             pfp =
                 'https://i.ibb.co/v18ZFWK/images-1-5.jpg'
-        }
+        };
                 const users = await this.client.DB.user.count();
 		const chats: any = this.client.chats
 			.all()
