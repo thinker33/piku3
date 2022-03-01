@@ -37,7 +37,14 @@ export default class Command extends BaseCommand {
 		};
 		const uptime = () => formatTime(process.uptime());
 		await M.reply(
-			`${gif} 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
+                 await request.buffer(
+                gif ||
+                    'https://i.ibb.co/v18ZFWK/images-1-5.jpg'
+            ),
+            MessageType.gif,
+            undefined,
+            undefined,
+			`🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
 		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n*Ban Users: ${uban}*\n\n*Users: ${users}*\n\n♻️ *Uptime:${uptime()}*`
 		);
 	};
