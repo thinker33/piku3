@@ -15,12 +15,12 @@ export default class Command extends BaseCommand {
 	}
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
-		/*eslint-disable @typescript-eslint/no-explicit-any*/
-                let pfp: string
         try {
             pfp =
                 'https://i.ibb.co/v18ZFWK/images-1-5.jpg'
-        };
+        }
+		/*eslint-disable @typescript-eslint/no-explicit-any*/
+                let pfp: string
                 const users = await this.client.DB.user.count();
 		const chats: any = this.client.chats
 			.all()
