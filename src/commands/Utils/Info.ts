@@ -16,6 +16,7 @@ export default class Command extends BaseCommand {
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
 		/*eslint-disable @typescript-eslint/no-explicit-any*/
+                const users = await this.client.DB.user.count();
 		const chats: any = this.client.chats
 			.all()
 			.filter((v) => !v.jid.endsWith && !v.archive)
@@ -32,7 +33,7 @@ export default class Command extends BaseCommand {
 		const uptime = () => formatTime(process.uptime());
 		await M.reply(
 			` 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
-		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n\n♻️ *Uptime:${uptime()}*`
+		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n*Users: ${users}*\n♻️ *Uptime:${uptime()}*`
 		);
 	};
 }
