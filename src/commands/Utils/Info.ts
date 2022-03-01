@@ -15,9 +15,6 @@ export default class Command extends BaseCommand {
 	}
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
-		const gif = [
-			"https://c.tenor.com/tZVpbfTIjNMAAAAC/pikachu.mp4"
-		];
 		
 		/*eslint-disable @typescript-eslint/no-explicit-any*/
                 const users = await this.client.DB.user.count();
@@ -36,6 +33,11 @@ export default class Command extends BaseCommand {
 			return `${pad(hours)}:${pad(minutes)}:${pad(secs)}`;
 		};
 		const uptime = () => formatTime(process.uptime());
+
+		this.run = async (M: typings.ISimplifiedMessage): Promise<void> => {
+		const gif = [
+			"https://c.tenor.com/tZVpbfTIjNMAAAAC/pikachu.mp4"
+		];
 		return void this.client.sendMessage(
                              M.from,
 				{ url: gif },
