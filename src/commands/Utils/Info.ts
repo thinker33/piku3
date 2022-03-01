@@ -15,12 +15,10 @@ export default class Command extends BaseCommand {
 	}
 
 	run = async (M: ISimplifiedMessage): Promise<void> => {
-		const gifs = [
-			"https://c.tenor.com/tZVpbfTIjNMAAAAC/pikachu.mp4",
-			"https://c.tenor.com/p6I6OADySl4AAAAC/piku.mp4",
-			"https://c.tenor.com/jHHKjbx6ZIoAAAAC/pikachu.mp4",
+		const gif = [
+			"https://c.tenor.com/tZVpbfTIjNMAAAAC/pikachu.mp4"
 		];
-		const selected = gifs[Math.floor(Math.random() * gifs.length)];
+		
 		/*eslint-disable @typescript-eslint/no-explicit-any*/
                 const users = await this.client.DB.user.count();
                 const uban = await this.client.DB.user.count({ban: true});
@@ -39,8 +37,7 @@ export default class Command extends BaseCommand {
 		};
 		const uptime = () => formatTime(process.uptime());
 		await M.reply(
-			`{ url: selected }, MessageType.video, {
-				mimetype: Mimetype.gif, 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
+			`${gif} 🅿︎🅸︎🅺︎🆄︎ \n\n➰ *Groups:* ${
 		this.client.chats.all().filter(chat => chat.jid.endsWith('g.us')).length}\n*Ban Users: ${uban}*\n\n*Users: ${users}*\n\n♻️ *Uptime:${uptime()}*`
 		);
 	};
