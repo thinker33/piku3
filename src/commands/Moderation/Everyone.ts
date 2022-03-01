@@ -18,27 +18,17 @@ export default class Command extends BaseCommand {
 		});
 	}
 
-	run = async (
-		M: ISimplifiedMessage,
-		{ joined }: IParsedArgs
-	): Promise<void> => {
-
-		const selected = joined.trim();
-		if (!option.includes(selected))
-			return void (await M.reply(
-				`${
-					M.groupMetadata?.subject || "*EVERYONE*"
-				}\n*READ QUOTED MESSAGE*\n*[TAGGED MAGICALLY]*`,
-				undefined,
-				undefined,
-				M.groupMetadata?.participants.map((user) => user.jid)
-				// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			).catch((reason: any) =>
-				M.reply(`✖️ An error occurred, Reason: ${reason}`)
-			));
-			return void (await M.reply(
-			
-			M.groupMetadata?.participants.map((user) => user.jid)
-		));
-	};
+	run = async (M: ISimplifiedMessage): Promise<void> => {
+       const user = M.mentioned[0] ? M.mentioned[0] : M.sender.jid
+        let username = user === M.sender.jid ? M.sender.username : ''
+        if (!username) {
+            const contact = this.client.getContact(user)
+            username = contact.notify || contact.vname || contact.name || user.split('@')[0]
+        }
+        return void (await M.reply(`M.groupMetadata?.subject || "*EVERYONE*"
+				}\n*READ QUOTED MESSAGE*\n*[TAGGED MAGICALLY]*`, undefined, undefined, M.groupMetadata?.participants.map((user) => user.jid)
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (reason: any) => M.reply(`an error occurred, Reason: ${reason}`)
+        ))
+    }
 }
