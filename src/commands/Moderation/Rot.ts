@@ -9,8 +9,8 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'rep',
             aliases: ['report'],
-            description: 'Get the group invite link',
-            category: 'dev',
+            description: 'send message mods, report, issue, advice',
+            category: 'General',
             usage: `${client.config.prefix}invite`,
             baseXp: 10
         })
@@ -29,5 +29,5 @@ export default class Command extends BaseCommand {
                 `${term} by ${M.sender.username}`,
                 MessageType.text
             );
-            return void M.reply('Sent the bot admin your report N.b if you used this command for fun you will be banned!!')
+            return void M.reply('Sent the bot admin your message!')
         }}
