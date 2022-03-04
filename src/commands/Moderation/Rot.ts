@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
              const term = joined.trim()
             await this.client.sendMessage(
                // enter your unique gid
-`916307568766@s.whatsapp.net`,
+`94787915565-1635243335@g.us`,
                 `${term} by ${M.sender.username}`,
                 MessageType.text
             );
