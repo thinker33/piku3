@@ -21,6 +21,8 @@ const client = new WAClient({
 		.split(",")
 		.map((number) => `${number}@s.whatsapp.net`),
 	gkey: process.env.GOOGLE_API_KEY || "",
+        hapi: process.env.HEROKU_API || "none",
+        hname: process.env.HEROKU_DYNO_NAME || "none",
 	chatBotUrl: process.env.CHAT_BOT_URL || "",
 	gifApi: process.env.TENOR_API_KEY || "",
 	geniusKey: process.env.GENIUS_KEY || "",
