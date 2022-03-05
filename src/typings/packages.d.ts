@@ -1,6 +1,8 @@
 /** @format */
 
 declare module "akaneko";
+declare module "heroku-client";
+declare module "got"
 declare module "lolis.life";
 declare module "mathjs";
 declare module "node-fetch";
