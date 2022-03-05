@@ -13,8 +13,8 @@ export default class Command extends BaseCommand {
 		super(client, handler, {
 			command: "snow",
 			description: `Get text image`,
-			aliases: ["hgrap"],
-			category: "icy",
+			aliases: ["ice"],
+			category: "creation",
 			usage: `${client.config.prefix}snow`,
 			baseXp: 50,
 		});
