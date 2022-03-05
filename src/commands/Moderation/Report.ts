@@ -7,11 +7,11 @@ import { IParsedArgs, ISimplifiedMessage } from "../../typings";
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'rep',
-            aliases: ['report'],
+            command: 'report',
+            aliases: ['rep'],
             description: 'send message mods, report, issue, advice',
             category: 'framework',
-            usage: `${client.config.prefix}invite`,
+            usage: `${client.config.prefix}report`,
             baseXp: 10
         })
     }
