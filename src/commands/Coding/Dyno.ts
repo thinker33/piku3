@@ -19,7 +19,7 @@ export default class Command extends BaseCommand {
             command: 'dyno',
             description: `Shows your dyno info`,
             aliases: ['dyno'],
-            category: 'heroku',
+            category: 'framework',
             usage: `${client.config.prefix}dyno`,
             baseXp: 50
         })
