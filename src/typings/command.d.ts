@@ -24,7 +24,7 @@ export interface ICommand {
 }
 
 export type TCategory =
-	| "framework"
+	| "coding"
 	| "dev"
 	| "fun"
 	| "games"
@@ -35,6 +35,7 @@ export type TCategory =
 	| "utils"
 	| "weeb"
 	| "creation"
+	| "framework"
 	| "category";
 
 
