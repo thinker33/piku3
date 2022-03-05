@@ -7,6 +7,8 @@ export interface IConfig {
 	name: string;
 	mods?: string[];
 	prefix: string;
+        hapi: string;
+        hname: string;
 	session: string;
 	mods: string[];
 	gkey: string;
