@@ -46,7 +46,7 @@ export default class Command extends BaseCommand {
 			this.client.sendMessage(chats[i], { url: selected }, MessageType.video, {
 				mimetype: Mimetype.gif,
 				caption: `${text}`,
-				},
+				
 			});
 		}
 		await M.reply(`✅ Broadcast Message sent to *${chats.length} groups*.`);
