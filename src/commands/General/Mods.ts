@@ -10,6 +10,7 @@ export default class Command extends BaseCommand {
             description: "Displays the Moderators' contact info",
             category: 'general',
             usage: `${client.config.prefix}mods`,
+            dm: true,
             aliases: ['moderators', 'support', 'owner']
         })
     }
