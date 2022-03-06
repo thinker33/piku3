@@ -39,8 +39,8 @@ export default class Command extends BaseCommand {
 ╭─️⌜COMMANDS FOR MODS⌝
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
 │⋊ ɴᴀᴍᴇ: PIKU
-│⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}`
-╰────────────┘                            \n
+│⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
+╰────────────┘                            \n`
             const keys = Object.keys(categories)
             for (const key of keys)
                 text += `✨ \`\`\`${categories[
