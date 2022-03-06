@@ -9,13 +9,13 @@ import { IParsedArgs, ISimplifiedMessage } from "../../typings";
 export default class Command extends BaseCommand {
 	constructor(client: WAClient, handler: MessageHandler) {
 		super(client, handler, {
-			command: "abc",
+			command: "sbc",
 			description:
 				"Will make a broadcast for groups where the bot is in. Can be used to make announcements.",
-			aliases: ["acast", "a.announcement", "adminbc"],
+			aliases: ["scast", "silentannouncement", "silentbc"],
 			category: "dev",
 			dm: true,
-			usage: `${client.config.prefix}abc`,
+			usage: `${client.config.prefix}sbc`,
 			modsOnly: true,
 			baseXp: 0,
 		});
@@ -42,12 +42,10 @@ export default class Command extends BaseCommand {
 			.map((jids) => (jids.includes("g.us") ? jids : null))
 			.filter((v) => v);
 		for (let i = 0; i < chats.length; i++) {
-			const text = `*🍃🎋「 Admin's Broadcast 」🎋🍃*\n\n${term}\n\n`;
+			const text = `*🍃🎋「 🐇 PIKU says 」🎋🍃*\n\n${term}\n\n`;
 			this.client.sendMessage(chats[i], { url: selected }, MessageType.video, {
 				mimetype: Mimetype.gif,
 				caption: `${text}`,
-				contextInfo: {
-					mentionedJid: M.groupMetadata?.admins,
 				},
 			});
 		}
