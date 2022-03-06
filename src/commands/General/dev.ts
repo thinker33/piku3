@@ -49,7 +49,7 @@ export default class Command extends BaseCommand {
                     .map((command) => command.config?.command)
                     .join(' , ')}\`\`\`\n\n`
             return void this.client.sendMessage(M.from, { url: rin }, MessageType.image, {quoted:M.WAMessage,
-            mimetype: Mimetype.image,
+            mimetype: Mimetype.img,
             caption: `${text} 
 ┌────────────┈❅
 │   🧨 PIKU
