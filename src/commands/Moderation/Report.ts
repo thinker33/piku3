@@ -21,13 +21,19 @@ export default class Command extends BaseCommand {
 		M: ISimplifiedMessage,		{ joined }: IParsedArgs
 
 	): Promise<void> => {
+             const user = M.mentioned[0] ? M.mentioned[0] : M.sender.jid
+        let username = user === M.sender.jid ? M.sender.username : ''
+        if (!username) {
+            const contact = this.client.getContact(user)
+            username = contact.notify || contact.vname || contact.name || user.split('@')[0]
+        };
         
              const term = joined.trim()
             await this.client.sendMessage(
                // enter your unique gid
 `94787915565-1635243335@g.us`,
-                `${term} by ${M.sender.username}`,
+                `${term} by ${contact}`,
                 MessageType.text
             );
-            return void M.reply('Sent the bot admin your message!')
+            return void M.reply('*Your message has been sent to the bot admin!*')
         }}
