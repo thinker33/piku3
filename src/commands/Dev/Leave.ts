@@ -28,7 +28,7 @@ export default class Command extends BaseCommand {
             const s = url.split('/')
             
         await M.reply(`*Goodbye* 👋`)
-        return void M.reply(`leave ${(await this.client.fetchGroupMetadataFromWA(gid)).subject}`)
+        return void M.reply(`leave`)
        
     }
 }
