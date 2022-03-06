@@ -13,7 +13,7 @@ export default class Command extends BaseCommand {
             description: 'Displays the help menu or shows the info of the command provided',
             category: 'general',
             usage: `${client.config.prefix}help (command_name)`,
-            aliases: ['h', 'menu', 'piku', 'cmd']
+            aliases: ['h', 'menu', 'cmd']
         })
     }
 
@@ -41,19 +41,17 @@ export default class Command extends BaseCommand {
 │⋊ ɴᴀᴍᴇ: PIKU
 │⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
 │⋊ ᴏᴡɴᴇʀ: *${this.client.config.prefix}mods*
-│⋊ ᴏᴡɴᴇʀ: if you wanna add bot ask to owner
-╰────────────                            \n\n`
+╰────────────                            \n`
             const keys = Object.keys(categories)
             for (const key of keys)
-                text += `${this.lemojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n\n• \`\`\`${categories[
+                text += `${this.lemojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n• \`\`\`${categories[
                     key
                 ]
                     .map((command) => command.config?.command)
-                    .join(' , ')}\`\`\`\n\n`
+                    .join(' , ')}\`\`\`\n`
             return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
             mimetype: Mimetype.gif,
             caption: `${text} 
- ──❅┈[ *Chitoge* ]┈❅───
 ┌────────────┈❅
 │   🧨 *PIKU*
 │   ©️ Synthesized Infinity Botto
@@ -78,5 +76,5 @@ export default class Command extends BaseCommand {
             )}\n💎 *Usage:* ${command.config?.usage || ''}\n\n📒 *Description:* ${command.config?.description || ''}`
         )
     }
-    lemojis = ['🔖','🔖','🔖','🔖','🔖','🔖','🔖','🔖','🔖','🔖']
+    lemojis = ['🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤']
 }
