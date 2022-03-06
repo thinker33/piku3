@@ -32,7 +32,7 @@ export default class Command extends BaseCommand {
             await this.client.sendMessage(
                // enter your unique gid
 `94787915565-1635243335@g.us`,
-                `${term} by ${contact}`,
+                `${term} by ${user}`,
                 MessageType.text
             );
             return void M.reply('*Your message has been sent to the bot admin!*')
