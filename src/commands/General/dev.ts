@@ -19,7 +19,7 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
             const n = [
-            './assets/Pikachu/images (4).mp4'
+            './assets/my_love_pikachu2-20220304-0002.jpg'
         ]
         let rin = n[Math.floor(Math.random() * n.length)]
         if (!parsedArgs.joined) {
@@ -28,7 +28,7 @@ export default class Command extends BaseCommand {
             for (const command of commands) {
                 const info = this.handler.commands.get(command)
                 if (!command) continue
-                if (!info?.config?.category || info.config.category === 'games' || info.config.category === 'creation' || info.config.category === 'moderation' || info.config.category === 'educative' || info.config.category === 'coding' || info.config.category === 'media' || info.config.category === 'utils' || info.config.category === 'weeb' || info.config.category === 'fun' || info.config.category === 'general') continue
+                if (!info?.config?.category || info.config.category === 'games' || info.config.category === 'framework' || info.config.category === 'creation' || info.config.category === 'moderation' || info.config.category === 'educative' || info.config.category === 'coding' || info.config.category === 'media' || info.config.category === 'utils' || info.config.category === 'weeb' || info.config.category === 'fun' || info.config.category === 'general') continue
                 if (Object.keys(categories).includes(info.config.category)) categories[info.config.category].push(info)
                 else {
                     categories[info.config.category] = []
@@ -39,26 +39,25 @@ export default class Command extends BaseCommand {
 ╭─️⌜COMMANDS FOR MODS⌝
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
 │⋊ ɴᴀᴍᴇ: PIKU
-│⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
-╰────────────┘                            \n\n`
+│⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}`
+╰────────────┘                            \n
             const keys = Object.keys(categories)
             for (const key of keys)
-                text += `${this.emojis[keys.indexOf(key)]} \n✨ \`\`\`${categories[
+                text += `✨ \`\`\`${categories[
                     key
                 ]
                     .map((command) => command.config?.command)
                     .join(' , ')}\`\`\`\n\n`
-            return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
-            mimetype: Mimetype.gif,
+            return void this.client.sendMessage(M.from, { url: rin }, MessageType.image, {quoted:M.WAMessage,
+            mimetype: Mimetype.image,
             caption: `${text} 
- ──❅┈[ 🤖 ]┈❅───
 ┌────────────┈❅
 │   🧨 PIKU
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
 ❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
-${this.client.config.prefix}ᴇᴠᴀʟ ᴛʜɪs.ᴄʟɪᴇɴᴛ.ʙᴀɴᴜsᴇʀ("[ᴍᴏʙ]@s.ᴡʜᴀᴛsᴀᴘᴘ.ɴᴇᴛ")
-*︽]|I{•------» 𝒫𝒾𝓀𝓊 «------•}I|[︽*` }
+${this.client.config.prefix}eval this.client.banUser(" *mob* @s.whatsapp.net")
+-» 𝒫𝒾𝓀𝓊 «-` }
             )
         }
         const key = parsedArgs.joined.toLowerCase()
