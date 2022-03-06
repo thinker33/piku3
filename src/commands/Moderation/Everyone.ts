@@ -26,9 +26,9 @@ export default class Command extends BaseCommand {
             username = contact.notify || contact.vname || contact.name || user.split('@')[0]
         }
         return void (await M.reply(
-                    `*Group Name -* ${
+                    `*🌹Group Name -* \n ${
 					M.groupMetadata?.subject
-				}\n*READ QUOTED MESSAGE*\n *everyone tagged by* \n *@${user.split('@')[0]}* `, undefined, undefined, M.groupMetadata?.participants.map((user) => user.jid)
+				}\n\n*READ QUOTED MESSAGE*\n *EVERYONE* tagged by \n *@${user.split('@')[0]}* `, undefined, undefined, M.groupMetadata?.participants.map((user) => user.jid)
                     ))
     }
 }
