@@ -112,7 +112,7 @@
         "wikipedia": "^1.1.6",
         "youtubei.js": "^1.2.8-npm",
         "yt-search": "^2.10.2",
-        "ytdl-core": "^4.9.1",
+        "ytdl-core": "^4.10.1",
         "yuri-canvas": "^4.0.6"
     }
 }
