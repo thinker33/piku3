@@ -44,7 +44,7 @@ export default class Command extends BaseCommand {
 ╰────────────                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
-                text += `${this.lemojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n◈➢ \`\`\`${categories[
+                text += `${this.lemojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n◈ \`\`\`${categories[
                     key
                 ]
                     .map((command) => command.config?.command)
@@ -56,7 +56,7 @@ export default class Command extends BaseCommand {
 │   🧨 *PIKU*
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
-❅┈[🌹𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅ ` }
+❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅ \n\n🌹 ` }
             )
         }
         const key = parsedArgs.joined.toLowerCase()
