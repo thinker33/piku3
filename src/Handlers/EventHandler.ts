@@ -29,12 +29,6 @@ await this.client.groupLeave(event.jid)
 					  }\n\n✨${event.participants
 							.map((jid) => `@${jid.split("@")[0]}`)
 							.join(", ")}✨`
-	const remove =  event.action === 'remove'
-              const text = remove
-					? `꧁🐤  *Hello members*  ꧂\n\n𓆏  *Look the person who leave this group ,Even everyone know this is amazing group ,I am sure I am gonna miss this person*  𓀐\n༄ *@${
-							event.participants[0].split("@")[0]
-					  }* ༆
- `
 					: `Ara Ara, looks like *@${
 							event.participants[0].split("@")[0]
 					  }* got ${this.client.util.capitalize(event.action)}d${
@@ -43,15 +37,6 @@ await this.client.groupLeave(event.jid)
         const contextInfo = {
             mentionedJid: event.actor ? [...event.participants, event.actor] : event.participants
         }
-        if (remove) {
-            let pfp = this.client.assets.get('0_Pokemon-2019-Nintendo-Switch-new-game-announcement-761157')
-            if (typeof pfp === 'string') pfp = await request.buffer(pfp)
-            if (pfp)
-                return void (await this.client.sendMessage(event.jid, pfp, MessageType.image, {
-                    caption: text,
-                    contextInfo
-                }))
-        };
         if (add) {
             let pfp = this.client.assets.get('0_Pokemon-2019-Nintendo-Switch-new-game-announcement-761157')
             if (typeof pfp === 'string') pfp = await request.buffer(pfp)
