@@ -33,7 +33,7 @@ await this.client.groupLeave(event.jid)
               const text = remove
 					? `꧁🐤  *Hello members*  ꧂\n\n𓆏  *Look the person who leave this group ,Even everyone know this is amazing group ,I am sure I am gonna miss this person*  𓀐\n༄ *@${
 							event.participants[0].split("@")[0]
-					  }* ༆`
+					  }* ༆
  `
 					: `Ara Ara, looks like *@${
 							event.participants[0].split("@")[0]
@@ -51,7 +51,7 @@ await this.client.groupLeave(event.jid)
                     caption: text,
                     contextInfo
                 }))
-        }
+        };
         if (add) {
             let pfp = this.client.assets.get('0_Pokemon-2019-Nintendo-Switch-new-game-announcement-761157')
             if (typeof pfp === 'string') pfp = await request.buffer(pfp)
