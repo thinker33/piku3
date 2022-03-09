@@ -42,6 +42,15 @@ await this.client.groupLeave(event.jid)
         const contextInfo = {
             mentionedJid: event.actor ? [...event.participants, event.actor] : event.participants
         }
+        if (remove) {
+            let pfp = this.client.assets.get('0_Pokemon-2019-Nintendo-Switch-new-game-announcement-761157')
+            if (typeof pfp === 'string') pfp = await request.buffer(pfp)
+            if (pfp)
+                return void (await this.client.sendMessage(event.jid, pfp, MessageType.image, {
+                    caption: text,
+                    contextInfo
+                }))
+        }
         if (add) {
             let pfp = this.client.assets.get('0_Pokemon-2019-Nintendo-Switch-new-game-announcement-761157')
             if (typeof pfp === 'string') pfp = await request.buffer(pfp)
