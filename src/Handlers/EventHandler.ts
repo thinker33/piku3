@@ -30,19 +30,19 @@ await this.client.groupLeave(event.jid)
 							.map((jid) => `@${jid.split("@")[0]}`)
 							.join(", ")}✨`
 					: event.action === "remove"
-					? `꧁ Hᴇʏ ᴍᴇᴍʙᴇʀs ꧂\n\n *Sᴇᴇ ᴛʜɪs ɴɪɢɢᴀ, ᴡʜᴏ ʟᴇᴀᴠᴇ ᴛʜɪs ɢʀᴏᴜᴘ ,sᴇᴇᴍ ʟɪᴋᴇ ʜᴇ/sʜᴇ ɪs sᴇɴᴇʟᴇss ᴀɴᴅ ᴅᴏɴᴛ know ʜᴏᴡ ᴀᴍᴀᴢɪɴɢ this ɢʀᴏᴜᴘ ɪs ,ʟᴇᴛs ғᴏʀɢᴇᴛ sᴜᴄʜ ᴀ ᴄʜɪʟᴅɪsʜ ᴍᴇᴍᴇʙᴇʀ ᴀɴᴅ ʟᴇᴛs ᴇɴᴊᴏʏ ʜᴇʀᴇ ᴡɪᴛʜᴏᴜᴛ ʜɪᴍ/ , 👽* \n\nᴡᴇ ɴᴏᴛ ɢᴏɴɴᴀ ᴍɪss ʏᴏᴜ 👋🏻 *@${
+					? `꧁🤾🏻‍♂️  *Hᴇʏ ᴍᴇᴍʙᴇʀs*   ⛹🏻‍♂️꧂ \n\n *Sᴇᴇ ᴛʜɪs ɴɪɢɢᴀ, ᴡʜᴏ ʟᴇᴀᴠᴇ ᴛʜɪs ɢʀᴏᴜᴘ ,sᴇᴇᴍ ʟɪᴋᴇ ʜᴇ/sʜᴇ ɪs sᴇɴᴇʟᴇss ᴀɴᴅ ᴅᴏɴᴛ know ʜᴏᴡ ᴀᴍᴀᴢɪɴɢ this ɢʀᴏᴜᴘ ɪs ,ʟᴇᴛs ғᴏʀɢᴇᴛ sᴜᴄʜ ᴀ ᴄʜɪʟᴅɪsʜ ᴍᴇᴍᴇʙᴇʀ ᴀɴᴅ ʟᴇᴛs ᴇɴᴊᴏʏ ʜᴇʀᴇ ᴡɪᴛʜᴏᴜᴛ ʜɪᴍ/ʜᴇʀ. 👽*  \n\n ᴡᴇ ɴᴏᴛ ɢᴏɴɴᴀ ᴍɪss ʏᴏᴜ. \n\n👋🏻👋🏻 *@${
 							event.participants[0].split("@")[0] 
 					  }* 👋🏻
  `
-					: `Ara Ara, looks like *@${
+					: `Oh.. 👀, looks like *@${
 							event.participants[0].split("@")[0]
-					  }* got ${this.client.util.capitalize(event.action)}d${
+					  }* got ${this.client.util.capitalize(event.action)}d ✨${
 							event.actor ? ` by @${event.actor.split("@")[0]}` : ""
 					  }`;
         const contextInfo = {
             mentionedJid: event.actor ? [...event.participants, event.actor] : event.participants
         }
-        if (add) {
+        if (add) || (remove){
             let pfp = this.client.assets.get('0_Pokemon-2019-Nintendo-Switch-new-game-announcement-761157')
             if (typeof pfp === 'string') pfp = await request.buffer(pfp)
             if (pfp)
