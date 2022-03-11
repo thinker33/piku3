@@ -17,19 +17,9 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-        if (!M.urls.length) return void M.reply('Link?')
-        const url = M.urls.find((url) => url.includes('chat.whatsapp.com'))
-        if (!url) return void M.reply('No WhatsApp Invite URLs found in your message')
-        if (this.client.config.mods?.includes(M.sender.jid)) {
-            const groups = this.client.chats
-                .all()
-                .filter((chat) => chat.jid.endsWith('g.us'))
-                .map((chat) => chat.jid)
-            const s = url.split('/')
-            
-        await M.reply(`*Goodbye* 👋`)
-        return void M.reply(`leave`)
-       
-    }
-}
+    await M.reply(`*Goodbye* 👋🐿️`);
+    await this.client
+      .groupLeave(M.from)
+      .catch(() => M.reply("Failed to leave the Group"));
+  };
 }
