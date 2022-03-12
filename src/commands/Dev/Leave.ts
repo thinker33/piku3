@@ -16,14 +16,18 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-    const n = [
-            './assets/ezgif-1-3294f0e28c.mp4'
-        ]
-        let piku = n[Math.floor(Math.random() * n.length)]
-        return void this.client.sendMessage(M.from, { url: piku }, MessageType.video, {
-            quoted: M.WAMessage,
-            mimetype: Mimetype.gif,
-            caption: `*Goodbye* 👋🐿️` }
-    await, this.client.groupLeave(M.from).catch();
-  };
+    const chitoge =
+			"assets/ezgif-1-3294f0e28c.mp4";
+		return void this.client.groupLeave(M.from).catch(() => M.reply('Failed to leave the Group'))
+    this.client.sendMessage(
+			M.from,
+			{ url: chitoge },
+			MessageType.video,
+			{
+				quoted: M.WAMessage,
+				mimetype: Mimetype.gif,
+				caption: `Goodbye 🐿️ \n`,
+			}
+		);
+	};
 }
