@@ -24,6 +24,6 @@ export default class Command extends BaseCommand {
             quoted: M.WAMessage,
             mimetype: Mimetype.gif,
             caption: `*Goodbye* 👋🐿️` }
-    await {this.client.groupLeave(M.from).catch() ( => M.reply("Failed to leave the Group"));}
+    await, {this.client.groupLeave(M.from).catch();}
   };
 }
