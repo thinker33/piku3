@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
 			MessageType.video,
 			{
 				quoted: M.WAMessage,
-				mimetype: Mimetype.gif,
+				mimetype: MimeType.gif,
 				caption: `Goodbye 🐿️ \n`,
 			}
 		);
