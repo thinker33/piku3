@@ -23,7 +23,7 @@ export default class Command extends BaseCommand {
         return void this.client.sendMessage(M.from, { url: piku }, MessageType.video, {
             quoted: M.WAMessage,
             mimetype: Mimetype.gif,
-            caption: `*Goodbye* 👋🐿️`` }
+            caption: `*Goodbye* 👋🐿️` }
     await this.client
       .groupLeave(M.from)
       .catch(() => M.reply("Failed to leave the Group"));
