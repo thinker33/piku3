@@ -9,7 +9,6 @@ export default class Command extends BaseCommand {
             command: 'leave',
             description: 'Bot Leaves the group',
             category: 'dev',
-            dm: true,
             usage: `${client.config.prefix}leave`,
             modsOnly: true,
             baseXp: 0
@@ -17,7 +16,14 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-    await M.reply(`*Goodbye* 👋🐿️`);
+    const n = [
+            './assets/ezgif-1-3294f0e28c.mp4'
+        ]
+        let piku = n[Math.floor(Math.random() * n.length)]
+        return void this.client.sendMessage(M.from, { url: piku }, MessageType.video, {
+            quoted: M.WAMessage,
+            mimetype: Mimetype.gif,
+            caption: `*Goodbye* 👋🐿️`` }
     await this.client
       .groupLeave(M.from)
       .catch(() => M.reply("Failed to leave the Group"));
