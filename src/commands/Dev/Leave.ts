@@ -18,16 +18,6 @@ export default class Command extends BaseCommand {
     run = async (M: ISimplifiedMessage): Promise<void> => {
     const chitoge =
 			"assets/ezgif-1-3294f0e28c.mp4";
-		return void this.client.groupLeave(M.from).catch(() => M.reply('Failed to leave the Group'))
-    this.client.sendMessage(
-			M.from,
-			{ url: chitoge },
-			MessageType.video,
-			{
-				quoted: M.WAMessage,
-				mimetype: MimeType.gif,
-				caption: `Goodbye 🐿️ \n`,
-			}
-		);
-	};
+		await M.reply(`*Goodbye* 👋`), (chitoge)
+        await this.client.groupLeave(M.from).catch(() => M.reply('Failed to leave the Group'))
 }
