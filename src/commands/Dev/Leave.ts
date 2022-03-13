@@ -11,7 +11,6 @@ export default class Command extends BaseCommand {
             command: 'leave',
             description: 'Bot Leaves the group',
             category: 'dev',
-            dm: true,
             usage: `${client.config.prefix}leave`,
             modsOnly: true,
             baseXp: 0
@@ -19,11 +18,11 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-    await M.reply( await request.buffer(`https://c.tenor.com/QNtFLycfQiAAAAAC/pika-pikachu.mp4`),
-        MessageType.video,
+    await M.reply( await request.buffer(`https://telegra.ph/file/69bd7a4a6fc7021515716.jpg`),
+        MessageType.image,
                     undefined,
                     undefined,
-                    `*Sayonara Mina* 👋\n`,
+                    `*👋🏻Time to leave, Good bye 👋🏻*\n`,
                     undefined
                     ).catch((reason: any) =>
                     M.reply(`✖ An error occurred. Please try again later.`))
