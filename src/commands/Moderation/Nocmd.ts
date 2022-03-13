@@ -14,7 +14,7 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         const n = [
-            'https://media.tenor.com/images/6aeaa6a17b6042764ee5d7964f418414/tenor.mp4'
+            './assets/nocmd.mp4'
         ]
         let lucy = n[Math.floor(Math.random() * n.length)]
         return void this.client.sendMessage(M.from, { url: lucy }, MessageType.video, {
