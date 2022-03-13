@@ -10,7 +10,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'calculator',
-            aliases: ['calc'],
+            aliases: ['calc', '0'],
             description: 'Calculates the given value. ',
             category: 'educative',
             usage: `${client.config.prefix}calc [value]`,
