@@ -11,7 +11,7 @@ export default class Command extends BaseCommand {
             description: 'Group Description.',
             category: 'moderation',
             aliases: ['ginfo', 'gc'],
-            usage: `${client.config.prefix}group)`,
+            usage: `${client.config.prefix}group`,
             baseXp: 0
         })
     }
