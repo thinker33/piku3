@@ -14,13 +14,13 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         const n = [
-            './assets/my_love_pikachu2-20220304-0002 (1).mp4'
+            'https://media.tenor.com/images/6aeaa6a17b6042764ee5d7964f418414/tenor.mp4'
         ]
         let lucy = n[Math.floor(Math.random() * n.length)]
         return void this.client.sendMessage(M.from, { url: lucy }, MessageType.video, {
             quoted: M.WAMessage,
             mimetype: Mimetype.gif,
-            caption: `No such command ${M.sender.username}! Do you mean *${this.client.config.prefix}help*? \n` }
+            caption: `*꧁ Hello there ꧂* \n\n Thanks for using bot. Bot is available for you kindly use *${this.client.config.prefix}help* . \n\n` }
         )
     }
 }
