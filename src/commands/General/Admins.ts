@@ -14,7 +14,10 @@ export default class Command extends BaseCommand {
         })
     }
 
-    run = async (M: ISimplifiedMessage{ joined }): Promise<void> => {
+    run = async (
+		M: ISimplifiedMessage,
+		{ joined }: IParsedArgs
+	): Promise<void> => {
       const tem = joined.trim();
        const user = M.mentioned[0] ? M.mentioned[0] : M.sender.jid
         let username = user === M.sender.jid ? M.sender.username : ''
