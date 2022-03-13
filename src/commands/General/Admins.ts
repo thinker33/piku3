@@ -26,7 +26,7 @@ export default class Command extends BaseCommand {
             username = contact.notify || contact.vname || contact.name || user.split('@')[0]
         }
         return void (await M.reply( `*Admins* \n
-				${tem} by *@${user.split('@')[0]}*` 
+				${tem} by *@${user.split('@')[0]}*`,
 				undefined,
 				undefined,
 				M.groupMetadata?.admins).catch(
