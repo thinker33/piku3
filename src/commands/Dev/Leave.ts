@@ -18,7 +18,7 @@ export default class Command extends BaseCommand {
     run = async (M: ISimplifiedMessage): Promise<void> => {
     const tem =
 			"assets/ezgif-1-3294f0e28c.mp4";
-		await M.reply `(`*Goodbye* 👋`)`, `${tem}`,
+		await M.reply `(`*Goodbye* 👋`)`, `${tem}`
         await this.client.groupLeave(M.from).catch(() => M.reply('Failed to leave the Group'))
 }
 }
