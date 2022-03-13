@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
             const contact = this.client.getContact(user)
             username = contact.notify || contact.vname || contact.name || user.split('@')[0]
         }
-        return void (await M.reply(`*ADMINS!*\n\n[ `${tem}` by *@${user.split('@')[0]}* ]`, undefined, undefined, M.groupMetadata?.admins).catch(
+        return void (await M.reply(`*ADMINS!*\n\n[ `${tem}`, by *@${user.split('@')[0]}* ]`, undefined, undefined, M.groupMetadata?.admins).catch(
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (reason: any) => M.reply(`an error occurred, Reason: ${reason}`)
         ))
