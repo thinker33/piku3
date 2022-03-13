@@ -90,14 +90,9 @@ export default class MessageHandler {
 					groupMetadata?.subject || "DM"
 				)}`
 			);
-			if (!command)
-				return void M.reply( await request.buffer(`https://github.com/thinker33/piku3/blob/4cd2f9a695c2173344b71a4239c76cdf380a203b/assets/my_love_pikachu2-20220304-0002%20(1).mp4`),
-        MessageType.image,
-                    undefined,
-                    undefined,
-                    `` *꧁ Hello there ꧂* \n\n Thanks for using bot. Bot is available for you kindly use *${this.client.config.prefix}help**`,
-                    undefined
-                )
+			return void M.reply(
+					` *꧁ Hello there ꧂* \n\n Thanks for using bot. Bot is available for you kindly use *${this.client.config.prefix}help* .`
+				);
 			const user = await this.client.getUser(M.sender.jid);
 			if (user.ban) return void M.reply("You're Banned from using commands.");
 			const state = await this.client.DB.disabledcommands.findOne({
