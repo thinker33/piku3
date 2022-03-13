@@ -25,8 +25,7 @@ export default class Command extends BaseCommand {
             const contact = this.client.getContact(user)
             username = contact.notify || contact.vname || contact.name || user.split('@')[0]
         }
-        return void (await M.reply( `*Admins* \n
-				${tem} by *@${user.split('@')[0]}*`,
+        return void (await M.reply( `*Admins* \n _${tem}_ by *@${user.split('@')[0]}*`,
 				undefined,
 				undefined,
 				M.groupMetadata?.admins).catch(
