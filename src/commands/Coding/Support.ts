@@ -7,11 +7,11 @@ import { ISimplifiedMessage } from '../../typings'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'support',
+            command: 'casino',
             aliases: ['support'],
             description: 'Gets the support group links',
             category: 'framework',
-            usage: `${client.config.prefix}Support`,
+            usage: `${client.config.prefix}casino`,
             baseXp: 10
         })
     }
