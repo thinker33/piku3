@@ -1,11 +1,8 @@
-import { MessageType } from '@adiwajshing/baileys/lib/WAConnection'
 import axios from 'axios'
 import chalk from 'chalk'
 import { join } from 'path'
 import BaseCommand from '../lib/BaseCommand'
-import request from '../lib/request'
 import WAClient from '../lib/WAClient'
-import { ICommand, IParsedArgs, ISimplifiedMessage } from "../typings";
 import { ICommand, IParsedArgs, ISimplifiedMessage } from '../typings'
 
 export default class MessageHandler {
@@ -94,16 +91,8 @@ export default class MessageHandler {
 				)}`
 			);
 			if (!command)
-				return void M.reply( await request.buffer(`https://telegra.ph/file/ef991666e113b620d3932.jpg`),
-        MessageType.image,
-                    undefined,
-                    undefined,
-                    `*꧁ Hello there ꧂* \n\n Thanks for using bot. Bot is available for you kindly use *${this.client.config.prefix}help* .`,
-                    undefined
-                )
-if (!command)
 				return void M.reply(
-					``
+					`*꧁ Hello there ꧂* \n\n Thanks for using bot. Bot is available for you kindly use *${this.client.config.prefix}help* .`
 				);
 			const user = await this.client.getUser(M.sender.jid);
 			if (user.ban) return void M.reply("You're Banned from using commands.\n Talk to mods ┐(￣ヘ￣)┌....");
