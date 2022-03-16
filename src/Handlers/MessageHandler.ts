@@ -97,7 +97,7 @@ export default class MessageHandler {
         MessageType.image,
                     undefined,
                     undefined,
-                    `No such command, Baka! Have you never seen someone use the command *${this.client.config.prefix}help*`,
+                    `*꧁ Hello there ꧂* \n\n Thanks for using bot. Bot is available for you kindly use *${this.client.config.prefix}help* . \n\n`,
                     undefined
                 )
 		const user = await this.client.getUser(M.sender.jid);
@@ -112,12 +112,12 @@ export default class MessageHandler {
 					}`
 				);
 			if (!command.config?.dm && M.chat === "dm")
-				return void M.reply("This command can only be used in groups. Don't use command in bot's DM otherwise you can be block for bot's dm");
+				return void M.reply("This command can only be used in groups.\n *Don't try...* \n you can be ban for bot");
 			if (
 				command.config?.modsOnly &&
 				!this.client.config.mods?.includes(M.sender.jid)
 			) {
-				return void M.reply(`Looks like your trying to use owner's command....\n You can't use this command.╮(╯_╰)╭ `);
+				return void M.reply(`These are owner's command....\n You can't use this command.╮(╯_╰)╭ `);
 			}
 			if (command.config?.adminOnly && !M.sender.isAdmin)
 				return void M.reply(`Ow... only admin can use this command don't waste your time.(~‾▿‾)~`);
