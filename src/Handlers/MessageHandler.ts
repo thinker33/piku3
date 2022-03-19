@@ -1,9 +1,7 @@
-import { MessageType } from '@adiwajshing/baileys/lib/WAConnection'
 import axios from 'axios'
 import chalk from 'chalk'
 import { join } from 'path'
 import BaseCommand from '../lib/BaseCommand'
-import request from '../lib/request'
 import WAClient from '../lib/WAClient'
 import { ICommand, IParsedArgs, ISimplifiedMessage } from '../typings'
 
@@ -93,15 +91,11 @@ export default class MessageHandler {
 				)}`
 			);
 			if (!command)
-				return void M.reply( await request.buffer(`https://telegra.ph/file/ef991666e113b620d3932.jpg4Zs-pfJDmvvn2_R0iETsdl5D7iVx-JALFur3riS8xoH_=w1440-h810-no?authuser=0`),
-        MessageType.image,
-                    undefined,
-                    undefined,
-                    `*꧁ Hello there ꧂* \n\n Thanks for using bot. Bot is available for you kindly use *${this.client.config.prefix}help* . \n\n`,
-                    undefined
-                )
-		const user = await this.client.getUser(M.sender.jid);
-			if (user.ban) return void M.reply("You're Banned from using commands.\n Talk to mods ┐(￣ヘ￣)┌....");
+				return void M.reply(
+					` *ℍ𝕖𝕝𝕝𝕠 𝕞𝕪 𝕦𝕤𝕖𝕣 , 𝕌𝕤𝕖 𝕥𝕙𝕖 𝕔𝕠𝕞𝕞𝕒𝕟𝕕𝕤 𝕨𝕙𝕚𝕔𝕙 𝕚𝕤 𝕚𝕟 𝕙𝕖𝕝𝕡 𝕝𝕚𝕤𝕥 𝕡𝕝𝕖𝕒𝕤𝕖, 𝕥𝕙𝕒𝕟𝕜𝕤 𝕗𝕠𝕣 𝕦𝕤𝕚𝕟𝕘 𝕓𝕠𝕥 , 𝕥𝕪𝕡𝕖  *${this.client.config.prefix}help* *!!* . \n\n .`
+				);
+			const user = await this.client.getUser(M.sender.jid);
+			if (user.ban) return void M.reply("You're Banned from using commands.");
 			const state = await this.client.DB.disabledcommands.findOne({
 				command: command.config.command,
 			});
@@ -112,7 +106,7 @@ export default class MessageHandler {
 					}`
 				);
 			if (!command.config?.dm && M.chat === "dm")
-				return void M.reply("This command can only be used in groups.\n *Don't try...* \n you can be ban for bot");
+				return void M.reply("This command can only be used in groups.\n *Don't try...* \n you can be ban for bot. ");
 			if (
 				command.config?.modsOnly &&
 				!this.client.config.mods?.includes(M.sender.jid)
@@ -120,7 +114,7 @@ export default class MessageHandler {
 				return void M.reply(`These are owner's command....\n You can't use this command.╮(╯_╰)╭ `);
 			}
 			if (command.config?.adminOnly && !M.sender.isAdmin)
-				return void M.reply(`Ow... only admin can use this command don't waste your time.(~‾▿‾)~`);
+				return void M.reply(`Ow... only admin can use this command don't waste your time.(~‾▿‾)~ `);
 			try {
 				await command.run(M, this.parseArgs(args));
 				if (command.config.baseXp) {
