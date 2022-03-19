@@ -60,7 +60,7 @@ export default class Command extends BaseCommand {
             )
         }
         const key = parsedArgs.joined.toLowerCase()
-        const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
+        const command = this.handler.commands.creation.get(key) || this.handler.aliases.creation.get(key)
         if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
         const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
         M.reply(
