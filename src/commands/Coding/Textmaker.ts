@@ -9,7 +9,7 @@ import request from '../../lib/request'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: textmaker',
+            command: 'textmaker',
             description: 'Displays the help menu or shows the info of the command provided',
             category: 'creation',
             usage: `${client.config.prefix}textmaker`,
