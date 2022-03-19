@@ -24,7 +24,7 @@ export default class Command extends BaseCommand {
         let rin = n[Math.floor(Math.random() * n.length)]
         if (!parsedArgs.joined) {
             const commands = this.handler.commands.keys()
-            const categories: { [key: string]: ICommand[] } = {}
+            const categories: { [key: string]: ICommand[creation] } = {}
             for (const command of commands) {
                 const info = this.handler.commands.get(command)
                 if (!command) continue
@@ -60,7 +60,7 @@ export default class Command extends BaseCommand {
             )
         }
         const key = parsedArgs.joined.toLowerCase()
-        const command = this.handler.commands.creation.get(key) || this.handler.aliases.creation.get(key)
+        const command = this.handler.get(key) || this.handler.aliases.get(key)
         if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
         const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
         M.reply(
