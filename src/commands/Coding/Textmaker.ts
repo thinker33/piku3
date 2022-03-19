@@ -18,7 +18,9 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
-         
+         const n = [
+            './assets/Pikachu/Pikachu.mp4'
+        ]
         let rin = n[Math.floor(Math.random() * n.length)]
         if (!parsedArgs.joined) {
             const commands = this.handler.commands.keys()
@@ -57,8 +59,8 @@ export default class Command extends BaseCommand {
 ❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅ \n\n🌹 ` }
             )
         }
-        const key = parsedArgs.joined.toLowerCase(creation)
-        const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
+        const key = parsedArgs.joined.toLowerCase()
+        const command = this.handler.commands.creation || this.handler.aliases.creation
         if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
         const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
         M.reply(
