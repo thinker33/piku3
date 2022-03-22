@@ -56,7 +56,8 @@ export default class Command extends BaseCommand {
 │   🧨 *PIKU*
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
-❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅ \n\n ` }
+❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
+🐇 *${username} Exp: ${(await this.client.getUser(user)).Xp || 0}*  ` }
             )
         }
         const key = parsedArgs.joined.toLowerCase()
