@@ -18,11 +18,7 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
-         const n = [
-            './assets/Pikachu/Pikachu.mp4'
-        ]
-        let rin = n[Math.floor(Math.random() * n.length)]
-        if (!parsedArgs.joined) {
+         if (!parsedArgs.joined) {
             const commands = this.handler.commands.keys()
             const categories: { [key: string]: ICommand[] } = {}
             for (const command of commands) {
@@ -49,8 +45,7 @@ export default class Command extends BaseCommand {
                 ]
                     .map((command) => command.config?.command)
                     .join(' , ')}\`\`\`\n\n`
-            return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
-            mimetype: Mimetype.gif,
+            return void this.client.sendMessage(M.from, 
             caption: `${text}` }
             )
         }
