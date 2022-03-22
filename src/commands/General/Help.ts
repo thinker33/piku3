@@ -7,7 +7,6 @@ import request from '../../lib/request'
 
 
 export default class Command extends BaseCommand {
-        if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'help',
@@ -19,6 +18,8 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
+        if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)
+            const user = M.mentioned[0] ? M.mentioned[0] : M.sender.jid
             const n = [
             './assets/Pikachu/Pikachu.mp4'
         ]
@@ -58,7 +59,7 @@ export default class Command extends BaseCommand {
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
 ❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
-🐇 *USER Exp*: *${(await this.client.getUser(M.sender.jid)).Xp || 0}*  ` }
+🐇 *USER Exp*: *${(await this.client.getUser(user)).Xp || 0}*  ` }
             )
         }
         const key = parsedArgs.joined.toLowerCase()
