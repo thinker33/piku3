@@ -58,7 +58,7 @@ export default class Command extends BaseCommand {
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
 ❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
-🐇 *USER Exp*: *${(await this.client.getUser(M.sender)).Xp || 0}*  ` }
+🐇 *USER Exp*: *${(await this.client.getUser(M.sender.jid)).Xp || 0}*  ` }
             )
         }
         const key = parsedArgs.joined.toLowerCase()
