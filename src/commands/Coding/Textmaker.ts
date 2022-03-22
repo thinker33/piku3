@@ -45,7 +45,7 @@ export default class Command extends BaseCommand {
             const keys = Object.keys(categories)
             for (const key of keys)
                 text += `${this.lemojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n◈ \`\`\`\n ${categories[
-                    key\n
+                    key
                 ]
                     .map((command) => command.config?.command)
                     .join(' , ')}\`\`\`\n\n`
