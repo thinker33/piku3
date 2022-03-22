@@ -7,7 +7,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             adminOnly: true,
-            aliases: ['boom', 'kick', 'tata'],
+            aliases: ['boom', 'bye', 'tata', '🏁'],
             command: 'remove',
             description: 'removes the mentioned users',
             category: 'moderation',
