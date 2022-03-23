@@ -25,8 +25,9 @@ export default class Command extends BaseCommand {
         })
     }
     
-    run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<Buffer> => {
-
+    run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
+        let buffer
+ let   exe = promisify(exec)
                 const read = buffer
                 const destination = `./${Math.random().toString(32)}`
 
