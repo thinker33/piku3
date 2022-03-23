@@ -58,7 +58,4 @@ export default class Command extends BaseCommand {
                 undefined,
                 undefined
             )
-
-        };
-    };
-}
+        }
