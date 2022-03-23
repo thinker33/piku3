@@ -42,31 +42,16 @@ export default class Command extends BaseCommand {
 ╰────────────                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
-                text += `${this.lemojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n◈ \`\`\`\n ${categories [
+                text += `* \`\`\`\n ${categories [
                     key
                 ]
                     .map((command) => command.config?.command)
-                    .join('\n')}\`\`\`\n\n`
+                    .join('\n\n ༄')}\`\`\`\n\n*`
             return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
             mimetype: Mimetype.gif,
             caption: `${text}` }
             )
         }
-        const key = parsedArgs.joined.toLowerCase()
-        const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
-        if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
-        const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
-        M.reply(
-            `🎈 *Command:* ${this.client.util.capitalize(command.config?.command)}\n📉 *Status:* ${
-                state ? 'Disabled' : 'Available'
-            }\n⛩ *Category:* ${this.client.util.capitalize(command.config?.category || '')}${
-                command.config.aliases
-                    ? `\n♦️ *Aliases:* ${command.config.aliases.map(this.client.util.capitalize).join(', ')}`
-                    : ''
-            }\n🎐 *Group Only:* ${this.client.util.capitalize(
-                JSON.stringify(!command.config.dm ?? true)
-            )}\n💎 *Usage:* ${command.config?.usage || ''}\n\n📒 *Description:* ${command.config?.description || ''}`
-        )
+        
     }
-    lemojis = ['🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤','🔹➤']
 }
