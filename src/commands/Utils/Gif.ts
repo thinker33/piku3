@@ -45,9 +45,7 @@ export default class Command extends BaseCommand {
               //  await fs.rm(destination.slice(2), { recursive: true, force: true })
                 console.log(buff)
                 console.log(await existsSync(`${destination}/out.mp4`))
-                return buff
-
-            }
+             
                 
                const animatedgif = await tomp4(buffer);
 
