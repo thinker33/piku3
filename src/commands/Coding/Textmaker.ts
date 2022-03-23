@@ -42,11 +42,11 @@ export default class Command extends BaseCommand {
 ╰────────────                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
-                text += `* \`\`\`\n ${categories [
+                text += `* \`\`\`\n('💎') *${categories [
                     key
-                ] ('💎')
+                ]
                     .map((command) => command.config?.command)
-                    .join('༄\n\n')}\`\`\`\n\n*`
+                    .join('༄\n\n')}*\`\`\`\n\n*`
             return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
             mimetype: Mimetype.gif,
             caption: `${text}` }
