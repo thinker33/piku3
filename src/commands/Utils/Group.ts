@@ -17,7 +17,7 @@ export default class Command extends BaseCommand {
     }
  ​    ​run = async (M: ISimplifiedMessage): Promise<void> => { 
  ​         const​ ​metadata​ ​=​ ​await​ ​this​.​groupMetadata​(​jid​)
- ​        ​metadata​.​participants​.​forEach​(​(​user​)​.length ​=>​ ​(​user​.​isAdmin​ ? ​admins​.​push​(​user​.​jid​)​ : ​''​)​) 
+ ​        ​metadata​.​participants​.​forEach​(​(​user​)​.length ​=>​ ​(​user​.​isAdmin​ ? ​admins​.​push​(​user​.​jid​)) 
  ​        ​let​ ​data​ ​=​ ​await​ ​this​.​GroupModel​.​findOne​(​{​ jid ​}​) 
  ​        ​if​ ​(​!​data​)​ ​data​ ​=​ ​await​ ​new​ ​this​.​GroupModel​(​{​ jid ​}​)​.​save​(​) 
  ​        ​return​ ​{​ metadata​,​ admins​,​ data ​} 
