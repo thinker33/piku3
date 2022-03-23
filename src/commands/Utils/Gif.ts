@@ -35,7 +35,7 @@ export default class Command extends BaseCommand {
 
                 const writeFileDest = destination + '/input.webp'
                 const frames = destination + '/frames.png'
-                await fs.writeFile(writeFileDest, read)
+                await  fs.writeFile(`${filename}.webp`,buffer)
 
 
                 await exe(`magick ${writeFileDest} ${frames}`)
@@ -48,7 +48,7 @@ export default class Command extends BaseCommand {
                 console.log(await existsSync(`${destination}/out.mp4`))
              
                 
-               const animatedgif = await tomp4(buffer);
+               const animatedgif = await fs.readFile(`${filename}.tomp4(buffer);
 
 
             return void M.reply(
