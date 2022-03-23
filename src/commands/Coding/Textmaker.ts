@@ -10,14 +10,16 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'textmaker',
-            description: 'Displays the help menu or shows the info of the command provided',
+            description: 'Displays the textmaker menu',
             category: 'fun',
             usage: `${client.config.prefix}textmaker`,
-            aliases: ['tlist', 'tm']
+            aliases: ['tlist']
         })
     }
 
     run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
+        if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)
+            const user = M.mentioned[0] ? M.mentioned[0] : M.sender.jid
          const n = [
             './assets/Pikachu/ezgif-2-f9c4b6f8f1.mp4'
         ]
@@ -38,15 +40,16 @@ export default class Command extends BaseCommand {
             let text = `
 ╭─「text maker command」
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}* 
+│⋊ *USER Exp*: *${(await this.client.getUser(user)).Xp || 0}*  ` }
 │⋊ ɴᴀᴍᴇ: PIKU
-╰────────────                            \n\n`
+╰────────────                            \n`
             const keys = Object.keys(categories)
             for (const key of keys)
-                text += `* \`\`\`\n('💎') *${categories [
+                text += ` \`\`\`\n💎 ${categories [
                     key
                 ]
                     .map((command) => command.config?.command)
-                    .join('༄\n\n')}*\`\`\`\n\n*`
+                    .join('༄\n\n💎')}\`\`\`\n`
             return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
             mimetype: Mimetype.gif,
             caption: `${text}` }
