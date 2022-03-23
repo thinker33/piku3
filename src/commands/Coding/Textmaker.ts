@@ -40,7 +40,6 @@ export default class Command extends BaseCommand {
             let text = `
 ╭─「text maker command」
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}* 
-│⋊ *USER Exp*: *${(await this.client.getUser(user)).Xp || 0}*  ` }
 │⋊ ɴᴀᴍᴇ: PIKU
 ╰────────────                            \n`
             const keys = Object.keys(categories)
@@ -52,9 +51,7 @@ export default class Command extends BaseCommand {
                     .join('༄\n\n💎')}\`\`\`\n`
             return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
             mimetype: Mimetype.gif,
-            caption: `${text}
-
-*〜(꒪꒳꒪)〜* ` }
+            caption: `${text}` }
             )
         }
         
