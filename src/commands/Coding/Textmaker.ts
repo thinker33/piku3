@@ -35,8 +35,6 @@ export default class Command extends BaseCommand {
 ╭─「text maker command」
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
 │⋊ ɴᴀᴍᴇ: PIKU
-│⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
-│⋊ ᴏᴡɴᴇʀ: *${this.client.config.prefix}mods*
 ╰────────────                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
@@ -45,8 +43,7 @@ export default class Command extends BaseCommand {
                 ]
                     .map((command) => command.config?.command)
                     .join(' , ')}\`\`\`\n\n`
-            return void this.client.sendMessage(M.from, {quoted:M.WAMessage, 
-            caption: `${text}` }
+            return void this.client.sendMessage(M.from, `${text}` }
             )
         }
         const key = parsedArgs.joined.toLowerCase()
