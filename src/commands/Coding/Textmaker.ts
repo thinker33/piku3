@@ -38,12 +38,12 @@ export default class Command extends BaseCommand {
 ╰────────────                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
-                text += `${this.lemojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n◈ \`\`\`\n ${categories[
+                text += `${this.lemojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n◈ \`\`\`\n ${categories \n [
                     key
                 ]
                     .map((command) => command.config?.command)
                     .join(' , ')}\`\`\`\n\n`
-            return void this.client.sendMessage(M.from, `${text}` }
+            return void this.client.sendMessage(M.from, `${text}` 
             )
         }
         const key = parsedArgs.joined.toLowerCase()
