@@ -7,7 +7,7 @@
 
 > A Fully Modular and Efficient Bot <br>
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/iamherok/Cara_public)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/thinker33/piku3)
 
 </div>
 <div align="center">
@@ -41,7 +41,10 @@
 
 ### 🟢 WhatsApp Group
 
-# [![WhatsApp Group](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JkxmxZ593N16JYaiJ4Sx09)
+# [![WhatsApp Group](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/IxyzjfkMcG83xUaWIbSNoL)
+
+#### download this image and scan in whatsapp
+<a href="https://coolwallpapers.me/5045071-anime-blonde-blue-eyes-chitoge-kirisaki-nisekoi.html"><img src="https://gcdnb.pbrd.co/images/7U9ml6JyGRxC.jpg" alt="Cara" border="0"></a>
 
 ## 📄 License
 
