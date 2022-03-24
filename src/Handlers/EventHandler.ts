@@ -34,7 +34,7 @@ await this.client.groupLeave(event.jid)
 							event.participants[0].split("@")[0] 
 					  }* 😍👋🏻
  `
-					: ` *ʕ•ᴥ•ʔ* *@${
+					: ` ⊙.☉ *@${
 							event.participants[0].split("@")[0]
 }* got ${this.client.util.capitalize(event.action)}d${
 							event.actor ? ` by @${event.actor.split("@")[0]}` : ""
