@@ -68,7 +68,7 @@ export default class MessageHandler {
 				);
 			const cmd = args[0].slice(this.client.config.prefix.length).toLowerCase();
 			// If the group is set to muted, don't do anything
-			const allowedCommands = ["activate", "deactivate", "act", "deact", "act", "deact"];
+			const allowedCommands = ["activate", "deactivate", "act", "deact", "a.", "d."];
 			if (
 				!(
 					allowedCommands.includes(cmd) ||
@@ -134,7 +134,7 @@ export default class MessageHandler {
 			if (M.sender.isAdmin) return void null;
 			if (M.urls.length) {
 				const groupinvites = M.urls.filter((url) =>
-					url.includes("chat.whatsapp.com")
+					url.includes("chat.whatsapp.com", "fuck", "btest", )
 				);
 				if (groupinvites.length) {
 					groupinvites.forEach(async (invite) => {
