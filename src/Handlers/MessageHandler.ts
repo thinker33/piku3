@@ -134,7 +134,7 @@ export default class MessageHandler {
 			if (M.sender.isAdmin) return void null;
 			if (M.urls.length) {
 				const groupinvites = M.urls.filter((url) =>
-					url.includes("chat.whatsapp.com", "fuck", "btest", )
+					url.includes("chat.whatsapp.com", "fuck", "btest")
 				);
 				if (groupinvites.length) {
 					groupinvites.forEach(async (invite) => {
