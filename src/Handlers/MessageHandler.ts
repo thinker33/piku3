@@ -68,7 +68,7 @@ export default class MessageHandler {
 				);
 			const cmd = args[0].slice(this.client.config.prefix.length).toLowerCase();
 			// If the group is set to muted, don't do anything
-			const allowedCommands = ["activate", "deactivate", "act", "deact"];
+			const allowedCommands = ["activate", "deactivate", "act", "deact", "act", "deact"];
 			if (
 				!(
 					allowedCommands.includes(cmd) ||
@@ -92,7 +92,7 @@ export default class MessageHandler {
 			);
 			if (!command)
 				return void M.reply(
-					` *Hello(＾∇＾)ﾉ♪*  \n        *Please!! The command which you using its wrong ,please type help and see whole our commands and use that correctly! ${this.client.config.prefix}help* 💞  \n.`
+					` *Hello*  \n\n        *Please!! The command which you using its wrong ,please type help and see whole our commands and use that correctly!* *_${this.client.config.prefix}help_* 💞  \n.`
 				);
 			const user = await this.client.getUser(M.sender.jid);
 			if (user.ban) return void M.reply("You're Banned from using commands.");
@@ -101,12 +101,12 @@ export default class MessageHandler {
 			});
 			if (state)
 				return void M.reply(
-					`✖ This command is disabled${
+					`✖ Can't use. This command is disabled${
 						state.reason ? ` for ${state.reason}` : ""
 					}`
 				);
 			if (!command.config?.dm && M.chat === "dm")
-				return void M.reply("This command can only be used in groups.\n *Don't try...* \n you can be ban for bot. ");
+				return void M.reply("This command can only be used in groups.\n *Don't try...* \n you can be ban for bot. \n You can use guide and mods commands. \n\n *_${this.client.config.prefix}guide_* \n *_${this.client.config.prefix}mods_* ");
 			if (
 				command.config?.modsOnly &&
 				!this.client.config.mods?.includes(M.sender.jid)
