@@ -48,8 +48,7 @@ export default class Command extends BaseCommand {
                 console.log(await existsSync(`${destination}/out.mp4`))
              
                 
-               const animatedgif = await fs.readFile(`${filename}.tomp4(buffer);
-
+               const animatedgif = await tomp4(buffer);
 
             return void M.reply(
                 animatedgif,
