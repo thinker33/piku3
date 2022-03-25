@@ -37,14 +37,11 @@ export default class Command extends BaseCommand {
                     categories[info.config.category].push(info)
                 }
             }
-filteredMap.forEach(
-            (user, index) =>
-                (text += `\n ⎛${index + 1}⎠\n🐿️
+
             let text = `
-╭─「text maker command」
-│⋊ ᴜꜱᴇʀ: *${M.sender.username}* 
-│⋊ ɴᴀᴍᴇ: PIKU
-╰────────────                            \n`
+「text maker command
+ ᴜꜱᴇʀ: *${M.sender.username}*」
+\n`
             const keys = Object.keys(categories)
             for (const key of keys)
               filteredMap.forEach(
