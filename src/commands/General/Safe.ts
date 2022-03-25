@@ -17,11 +17,13 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-        let text = '*Action*\n\n' else {
+        let text = '*Action*\n\n'
+       
+             else {
                 text += `🟥 Removed *@${user.split('@')[0]}*\n`
                 await this.client.groupRemove(M.from, [user])
             }
-        })
-        await M.reply(`${text}`, undefined, undefined, [ M.sender.jid])
+        
+        await M.reply(`${text}`, undefined, undefined, [...M.mentioned, M.sender.jid])
     }
 }
