@@ -17,17 +17,9 @@ export default class Command extends BaseCommand {
         })
     }
 
-    run = async (
-		M: ISimplifiedMessage,
-		{ joined }: IParsedArgs
-	): Promise<void> => {
-        let text = '*Action*\n\n'
-       
-              {
-                text += `🟥 Removed *@${user.split('@')[0]}*\n`
-                await this.client.groupRemove(M.from, [user])
-            }
-        
-        await M.reply(`${text}`, undefined, undefined, [M.sender.jid])
+    run = async (M: ISimplifiedMessage): Promise<void> => {
+        if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)
+        const user = M.sender.jid
+        }
+        await this.client.groupRemove(M.from, [user])
     }
-}
