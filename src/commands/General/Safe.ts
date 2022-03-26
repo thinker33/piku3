@@ -18,9 +18,9 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-        if (M.quoted?.sender) M.mentioned.push(M.quoted.sender)
-        {const user: M.sender.jid
-        }
+        if (M.quoted?.sender) 
+        const user: M.sender.jid
+        
         await this.client.groupRemove(M.from, [user])
     }
 }
