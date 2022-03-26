@@ -23,7 +23,7 @@ export default class Command extends BaseCommand {
 	): Promise<void> => {
         let text = '*Action*\n\n'
        
-             else {
+              {
                 text += `🟥 Removed *@${user.split('@')[0]}*\n`
                 await this.client.groupRemove(M.from, [user])
             }
