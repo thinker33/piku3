@@ -5419,13 +5419,6 @@ shebang-regex@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz"
 
-shentai@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/shentai/-/shentai-2.0.0.tgz"
-  dependencies:
-    cheerio "^1.0.0-rc.10"
-    node-fetch "^2.6.1"
-
 shimmer@^1.1.0:
   version "1.2.1"
   resolved "https://registry.npmjs.org/shimmer/-/shimmer-1.2.1.tgz"
@@ -6152,9 +6145,9 @@ vtuber-wiki@^1.1.5:
     axios "^0.21.1"
     hermitpurple "^0.2.0"
 
-w5-textmaker@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/w5-textmaker/-/w5-textmaker-1.0.2.tgz"
+w5-textmaker@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/w5-textmaker/-/w5-textmaker-1.0.4.tgz"
   dependencies:
     axios "^0.21.1"
     cheerio "^1.0.0-rc.5"
@@ -6427,9 +6420,9 @@ yt-search@^2.10.2, yt-search@^2.8.0:
     minimist "~1.2.5"
     node-fzf "~0.5.1"
 
-ytdl-core@^4.10.1:
-  version "4.10.1"
-  resolved "https://registry.yarnpkg.com/ytdl-core/-/ytdl-core-4.10.1.tgz#6648d65faca787919181b2cee1be470b2ef9fdcb"
+ytdl-core@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/ytdl-core/-/ytdl-core-4.11.0.tgz#6648d65faca787919181b2cee1be470b2ef9fdcb"
   integrity sha512-idBhW+e7HCzs5fR5cqp7Ci+mJhEch41YAaWabYlneQFCL6IGf6Hycv99yVx01Zl1Ci0t/70faOelMSrXaQTE/A==
   dependencies:
     m3u8stream "^0.8.3"
