@@ -26,11 +26,11 @@ export default class Command extends BaseCommand {
         if (!videos || videos.length <= 0) return void M.reply(`⚓ No Matching videos found for the term : *${term}*`)
         const video = new YT(videos[0].url, 'video')
         if (!video.url) return
-        M.reply('👾 Sending your video, Please hold on. It may takes some times.')
+        M.reply('⏳ Sending your video, Please hold on. It may takes some times.')
         this.client
             .sendMessage(M.from, await video.getBuffer(), MessageType.video, {
                 quoted: M.WAMessage,
-               caption: 'HERE YOU GO....'
+               caption: ' *♪(┌・。・)┌* ....'
             })
             .catch((reason: any) => M.reply(`❌ an error occupered, Reason: ${reason}`))
     }
