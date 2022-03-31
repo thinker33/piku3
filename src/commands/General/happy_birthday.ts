@@ -24,7 +24,7 @@ export default class Command extends BaseCommand {
         if (!username) {
             const contact = this.client.getContact(user)
             username = contact.notify || contact.vname || contact.name || user.split('@')[0]
-        }
+            username = user.split('@')[0]   }
         let pfp: string
         try {
             pfp = await this.client.getProfilePicture(user)
@@ -39,6 +39,7 @@ export default class Command extends BaseCommand {
                     'https://i.ibb.co/SQzsdt1/images-1-6.jpg'
             ),
             MessageType.image,
+[M.sender.jid, ...M.mentioned],
             undefined,
             undefined,
             `✨ツ•wíshíng чσu α vєrч vєrч•\n 🥂🎂 *HAPPY BIRTHDAY* 🎂🥂\n🥳🥳🥳✨ *@${user.split('@')[0]}*\n\n`
