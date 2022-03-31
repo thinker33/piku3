@@ -39,10 +39,9 @@ export default class Command extends BaseCommand {
                     'https://i.ibb.co/SQzsdt1/images-1-6.jpg'
             ),
             MessageType.image,
-[M.sender.jid, ...M.mentioned],
             undefined,
             undefined,
-            `✨ツ•wíshíng чσu α vєrч vєrч•\n 🥂🎂 *HAPPY BIRTHDAY* 🎂🥂\n🥳🥳🥳✨ *@${user.split('@')[0]}*\n\n`
+            `✨ツ•wíshíng чσu α vєrч vєrч•\n 🥂🎂 *HAPPY BIRTHDAY* 🎂🥂\n🥳🥳🥳✨ *@${user.split('@')[0]}* \n\n`
         )
     }
 }
