@@ -19,7 +19,7 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
             const n = [
-            './assets/my_love_pikachu2-20220304-0002 (1).mp4'
+            './assets/dev.mp4'
         ]
         let rin = n[Math.floor(Math.random() * n.length)]
         if (!parsedArgs.joined) {
@@ -39,25 +39,22 @@ export default class Command extends BaseCommand {
 ╭─️⌜COMMANDS FOR MODS⌝
 │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
 │⋊ ɴᴀᴍᴇ: PIKU
-│⋊ ᴘʀᴇꜰɪx: ${this.client.config.prefix}
 ╰────────────┘                            \n`
             const keys = Object.keys(categories)
             for (const key of keys)
-                text += `✨ \`\`\`${categories[
+                text += `\`\`\`⋄ ${categories[
                     key
                 ]
                     .map((command) => command.config?.command)
-                    .join(' , ')}\`\`\`\n\n`
+                    .join(' \n⋄ ')} ⋄\`\`\`\n\n`
             return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
             mimetype: Mimetype.gif,
             caption: `${text} 
 ┌────────────┈❅
-│   🧨 PIKU
 │   ©️ Synthesized Infinity Botto
 └────────────┈⁂
-❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
 ${this.client.config.prefix}eval this.client.banUser(" *mob* @s.whatsapp.net")
--» 𝒫𝒾𝓀𝓊 «-` }
+《«₌₌ *PIKU* ₌₌»》` }
             )
         }
         const key = parsedArgs.joined.toLowerCase()
