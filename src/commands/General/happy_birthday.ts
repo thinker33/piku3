@@ -1,4 +1,4 @@
-import { MessageType, Mimetype } from '@adiwajshing/baileys'
+import { MessageType } from '@adiwajshing/baileys'
 import MessageHandler from '../../Handlers/MessageHandler'
 import BaseCommand from '../../lib/BaseCommand'
 import request from '../../lib/request'
@@ -24,7 +24,7 @@ export default class Command extends BaseCommand {
         if (!username) {
             const contact = this.client.getContact(user)
             username = contact.notify || contact.vname || contact.name || user.split('@')[0]
-            username = user.split('@')[0]   }
+        }
         let pfp: string
         try {
             pfp = await this.client.getProfilePicture(user)
@@ -41,7 +41,7 @@ export default class Command extends BaseCommand {
             MessageType.image,
             undefined,
             undefined,
-            `✨ツ•wíshíng чσu α vєrч vєrч•\n 🥂🎂 *HAPPY BIRTHDAY* 🎂🥂\n🥳🥳🥳✨ "@${user.split("@")[0]}" \n\n`
+            `✨ツ•wíshíng чσu α vєrч vєrч•\n 🥂🎂 *HAPPY BIRTHDAY* 🎂🥂\n🥳🥳🥳✨ *@${user.split('@')[0]}*\n\n`
         )
     }
 }
