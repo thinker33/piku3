@@ -13,7 +13,7 @@ export default class Command extends BaseCommand {
                         aliases: ["hello", "hey", "hello bot"],
 			description: "Generally used to check if bot is Up",
 			category: "general",
-			usage: `${client.config.prefix}hi`,
+			usage: `hi`,
 			baseXp: 10,
 		});
 	}
