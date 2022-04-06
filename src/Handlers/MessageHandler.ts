@@ -162,8 +162,19 @@ handleState = async (): Promise<void> => {
     await this.client.sendMessage(
       "94787915565-1635243335@g.us",
       text,
+      MessageType.text
     );
   };
+
+  sendReconnectMessage = async (): Promise<void> => {
+    const text = `I'm back, Darling !! `;
+    await this.client.sendMessage(
+      "94787915565-1635243335@g.us",
+      text,
+      MessageType.text
+    );
+  };
+
 
 		loadCommands = (): void => {
 			this.client.log(chalk.green("Loading Commands..."));
