@@ -156,7 +156,14 @@ export default class MessageHandler {
 				}
 			}
 		};
-
+handleState = async (): Promise<void> => {
+    const text = `🎇BACK TO BUSINESS!!🎇 (t-ehe)`;
+    await this.client.sendMessage(
+      "94787915565-1635243335@g.us",
+      text,
+      MessageType.text
+    );
+  };
 		loadCommands = (): void => {
 			this.client.log(chalk.green("Loading Commands..."));
 			const path = join(__dirname, "..", "commands");
