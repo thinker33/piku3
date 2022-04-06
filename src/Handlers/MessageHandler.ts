@@ -170,7 +170,7 @@ handleState = async (): Promise<void> => {
   sendReconnectMessage = async (): Promise<void> => {
     const text = `I'm back, Darling !! `;
     await this.client.sendMessage(
-      "94787915565-1635243335@g.us",
+      "94771512092-1635694864@g.us",
       text,
       MessageType.text
     );
