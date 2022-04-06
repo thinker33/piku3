@@ -162,7 +162,6 @@ handleState = async (): Promise<void> => {
     await this.client.sendMessage(
       "94787915565-1635243335@g.us",
       text,
-      Messagetype.text
     );
   };
 
